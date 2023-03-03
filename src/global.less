@@ -1,0 +1,96 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  color: @theme_black;
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC,
+    Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei,
+    sans-serif;
+}
+#admin-system-template {
+  height: 100%;
+}
+a {
+  color: @theme_black;
+  text-decoration: none;
+}
+.danger_color {
+  color: @danger_color;
+  cursor: pointer;
+}
+.primary_color {
+  color: @primary_color;
+  cursor: pointer;
+}
+.cursor_not_allowed {
+  color: @gray_color;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.primary_color {
+  color: @primary_color;
+  cursor: pointer;
+}
+.cursor_pointer {
+  white-space: nowrap;
+  cursor: pointer;
+}
+.detail_color {
+  color: #4290f7;
+}
+.gray_color {
+  color: @gray_color;
+}
+.search_tool {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  .search_btn {
+    display: flex;
+    button {
+      margin-right: 16px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+.ant-card-body {
+	padding: 16px;
+}
+ol,
+ul {
+  margin-bottom: 0;
+  li {
+    margin: 0;
+    list-style: none;
+  }
+}
+img {
+  display: block;
+  border: none;
+}
+input,
+button {
+  border: none;
+  outline: none;
+}
+.ant-form-item {
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+@keyframes round_animate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+.chrome_download {
+	font-size: 18px;
+	font-weight: bold;
+	color: #eb3223;
+}
