@@ -23,9 +23,7 @@ brew install node
 
 node -v
 
-npm i yarn -g
-
-yarn global add @vitejs/create-app
+pnpm i -g @vitejs/create-app
 ```
 
 ## Run
@@ -33,25 +31,25 @@ yarn global add @vitejs/create-app
 - Dev
 
 ```
-dev环境：yarn dev
-联调环境：yarn dev:debug
-mock环境：yarn dev:mock
-test环境：yarn dev:test
-生产环境：yarn dev:production
+dev环境：pnpm dev
+联调环境：pnpm dev:debug
+mock环境：pnpm dev:mock
+test环境：pnpm dev:test
+生产环境：pnpm dev:production
 ```
 
 - Build
 
 ```
-dev环境：yarn build:dev
-test环境：yarn build:test
-生产环境：yarn build:prod
+dev环境：pnpm build:dev
+test环境：pnpm build:test
+生产环境：pnpm build:prod
 ```
 
 - Preview
 
 ```
-yarn preview
+pnpm preview
 ```
 
 ## Link
