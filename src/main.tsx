@@ -53,11 +53,3 @@ ReactDOM.createRoot(document.getElementById('admin-system-template') as HTMLElem
     </StrictMode>
   </ConfigProvider>,
 );
-// react17
-// import ReactDOM from "react-dom";
-// ReactDOM.render(
-//   <ConfigProvider locale={zhCN}>
-//     <App />
-//   </ConfigProvider>,
-//   document.getElementById("admin-system-template")
-// );

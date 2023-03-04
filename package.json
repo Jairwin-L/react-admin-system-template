@@ -53,6 +53,12 @@
     "vite-plugin-externals": "^0.1.5",
     "vite-plugin-style-import": "^1.0.1"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "f2elint commit-file-scan",
+      "commit-msg": "f2elint commit-msg-scan"
+    }
+  },
   "ci": {
     "type": "ci",
     "stages": {
@@ -74,11 +80,5 @@
   },
   "cnpm": {
     "mode": "pnpm"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "f2elint commit-file-scan",
-      "commit-msg": "f2elint commit-msg-scan"
-    }
   }
 }

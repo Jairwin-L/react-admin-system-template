@@ -11,7 +11,7 @@ const MainRouter = [
         element: <Home />,
         meta: {
           title: '工作台',
-          key: 'main',
+          key: 'MAIN',
           selectedKeys: ['/main'],
         },
       },

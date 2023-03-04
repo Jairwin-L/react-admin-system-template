@@ -19,7 +19,7 @@ const MenuRouter = [
         element: <MenuOne />,
         meta: {
           title: '菜单1',
-          key: 'menu.one',
+          key: 'MENU.ONE',
           selectedKeys: ['/menu/menu-one'],
         },
       },
@@ -28,7 +28,7 @@ const MenuRouter = [
         element: <MenuTwoOne />,
         meta: {
           title: '菜单2-1',
-          key: 'menu.two.one',
+          key: 'MENU.TWO.ONE',
           selectedKeys: ['/menu/menu-two/menu-two-one'],
         },
       },
@@ -37,7 +37,7 @@ const MenuRouter = [
         element: <MenuTwoTwoOne />,
         meta: {
           title: '菜单2-2-1',
-          key: 'menu.two.two.one',
+          key: 'MENU.TWO.TWO.ONE',
           selectedKeys: ['/menu/menu-two/menu-two-two/menu-two-two-one'],
         },
       },
@@ -46,7 +46,7 @@ const MenuRouter = [
         element: <MenuTwoTwoTwo />,
         meta: {
           title: '菜单2-2-2',
-          key: 'menu.two.two.two',
+          key: 'MENU.TWO.TWO.TWO',
           selectedKeys: ['/menu/menu-two/menu-two-two/menu-two-two-two'],
         },
       },
@@ -55,7 +55,7 @@ const MenuRouter = [
         element: <MenuTwoThree />,
         meta: {
           title: '菜单2-3',
-          key: 'menu.two.three',
+          key: 'MENU.TWO.THREE',
           selectedKeys: ['/menu/menu-two/menu-two-three'],
         },
       },
@@ -64,7 +64,7 @@ const MenuRouter = [
         element: <MenuThree />,
         meta: {
           title: '菜单3',
-          key: 'menu.three',
+          key: 'MENU.THREE',
           selectedKeys: ['/menu/menu-three'],
         },
       },

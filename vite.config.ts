@@ -59,7 +59,9 @@ export default defineConfig({
     // },
   },
   esbuild: {},
-  optimizeDeps: {},
+  // optimizeDeps: {
+  //   exclude: ['react', 'react-dom'],
+  // },
   server: {
     port: 9000,
   },
@@ -102,12 +104,6 @@ export default defineConfig({
       '@pages': resolvePath('src/pages'),
       '@constant': resolvePath('src/constant'),
       // TODO:for esm cdn
-      // react:
-      //   "https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js",
-      // "react-dom":
-      //   "https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js",
-      // "react-router-dom":
-      //   "https://cdnjs.cloudflare.com/ajax/libs/react-router-dom/6.6.1/react-router-dom.production.min.js",
     },
   },
 });

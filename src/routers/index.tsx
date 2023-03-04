@@ -10,7 +10,7 @@ export const rootRouter: RouteObject & ILayoutRender.ElementRouteItem[] = [
     element: <Login />,
     meta: {
       title: '登录',
-      key: 'login',
+      key: 'LOGIN',
     },
   },
   ...MainRouter,
