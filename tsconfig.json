@@ -14,11 +14,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-		"jsx": "preserve",
-		"suppressImplicitAnyIndexErrors": false,
-		"paths": {
-			"@/*": ["./src/*"]
-		}
+    "jsx": "preserve",
+    "suppressImplicitAnyIndexErrors": false,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
-  "include": ["./src"]
+  "include": ["./src", "./auto-imports.d.ts"]
 }

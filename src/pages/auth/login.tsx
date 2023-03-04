@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Layout, Input, Form, Button } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import './index.less';
-import { useNavigate } from 'react-router-dom';
 import { Store } from 'antd/es/form/interface';
 
 const Login = (): JSX.Element => {

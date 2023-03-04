@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-// import legacy from "@vitejs/plugin-legacy";
 import AutoImport from 'unplugin-auto-import/vite';
 import viteCompression from 'vite-plugin-compression';
 import path from 'path';
@@ -32,6 +31,9 @@ export default defineConfig({
     AutoImport({
       imports: ['react', 'react-router-dom'],
       dts: true, // 生成 TypeScript 声明
+      eslintrc: {
+        enabled: true, // <-- this
+      },
     }),
     // viteExternalsPlugin({
     // 	React: "react",
