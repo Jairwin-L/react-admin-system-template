@@ -1,16 +1,16 @@
-import Login from "@/pages/auth/login";
-import MainRouter from "@/pages/main/router";
-import MenuRouter from "@/pages/menu/router";
-import ILayoutRender from "@/typings/layout";
-import { type RouteObject, useRoutes } from "react-router-dom";
+import Login from '@/pages/auth/login';
+import MainRouter from '@/pages/main/router';
+import MenuRouter from '@/pages/menu/router';
+import ILayoutRender from '@/typings/layout';
+import { type RouteObject, useRoutes } from 'react-router-dom';
 
 export const rootRouter: RouteObject & ILayoutRender.ElementRouteItem[] = [
-	{
-    path: "/",
+  {
+    path: '/',
     element: <Login />,
     meta: {
-      title: "登录",
-      key: "login",
+      title: '登录',
+      key: 'login',
     },
   },
   ...MainRouter,
@@ -18,7 +18,7 @@ export const rootRouter: RouteObject & ILayoutRender.ElementRouteItem[] = [
 ];
 
 const Router = () => {
-	// @ts-ignoreTODO:
+  // @ts-ignoreTODO:
   const routes = useRoutes(rootRouter);
   return routes;
 };

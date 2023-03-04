@@ -1,12 +1,12 @@
-import { type FC, useEffect, useState } from "react";
-import { Outlet, useNavigate } from "react-router-dom";
-import { Layout, Menu, ConfigProvider } from "antd";
-import type { MenuProps } from "antd";
-import { getRouteMeta, getOpenKeys } from "./util";
-import Header from "./header";
-import { menuItems } from "./menus";
-import Logo from "./logo";
-import "./index.less";
+import { type FC, useEffect, useState } from 'react';
+import { Outlet, useNavigate } from 'react-router-dom';
+import { Layout, Menu, ConfigProvider } from 'antd';
+import type { MenuProps } from 'antd';
+import { getRouteMeta, getOpenKeys } from './util';
+import Header from './header';
+import { menuItems } from './menus';
+import Logo from './logo';
+import './index.less';
 
 const { Sider } = Layout;
 
@@ -17,29 +17,29 @@ const LayoutRender: FC = () => {
   const [openKeys, setOpenKeys] = useState<string[]>([]);
   const [collapsed, setCollapsed] = useState<boolean>(false);
   // 点击当前菜单跳转页面
-  const onChangeMenu: MenuProps["onClick"] = (menuProps) => {
-		const { key } = menuProps;
+  const onChangeMenu: MenuProps['onClick'] = (menuProps) => {
+    const { key } = menuProps;
     navigate(key);
   };
   // SubMenu 展开/关闭的回调
-  const onOpenChange = (selectedKeys: string[]) => {
-    if (selectedKeys.length === 0 || selectedKeys.length === 1)
-      return setOpenKeys(selectedKeys);
-    const latestOpenKey = selectedKeys[selectedKeys.length - 1];
-    if (latestOpenKey.includes(selectedKeys[0])) return setOpenKeys(selectedKeys);
+  const onOpenChange = (subMenuSelectedKeys: string[]) => {
+    if (subMenuSelectedKeys.length === 0 || subMenuSelectedKeys.length === 1)
+      return setOpenKeys(subMenuSelectedKeys);
+    const latestOpenKey = subMenuSelectedKeys[subMenuSelectedKeys.length - 1];
+    if (latestOpenKey.includes(subMenuSelectedKeys[0])) return setOpenKeys(subMenuSelectedKeys);
     setOpenKeys([latestOpenKey]);
   };
   const onSelectedKeys = () => {
     const { meta = {} } = getRouteMeta();
     let menuSelectedKey: string[] = meta.selectedKeys || [];
     if (!meta) {
-      const pathArr: string[] = pathname.split("/").filter((item) => item);
-      menuSelectedKey = [
-        `/${pathArr.splice(0, pathArr?.length - 2).join("/")}`,
-      ];
+      const pathArr: string[] = pathname.split('/').filter((item) => item);
+      menuSelectedKey = [`/${pathArr.splice(0, pathArr?.length - 2).join('/')}`];
     }
     setSelectedKeys(menuSelectedKey);
-    collapsed ? null : setOpenKeys(getOpenKeys(pathname));
+    if (!collapsed) {
+      setOpenKeys(getOpenKeys(pathname));
+    }
   };
   // 刷新页面菜单保持高亮
   useEffect(() => {
@@ -68,14 +68,13 @@ const LayoutRender: FC = () => {
           />
           <ConfigProvider
             getPopupContainer={(node): HTMLElement => {
-              const popupContainer =
-                document.getElementById("popup_container") || node;
+              const popupContainer = document.getElementById('popup_container') || node;
               if (node) {
                 // 目前只全局处理select和picker分离问题，如其他组件分离此处添加配置
                 if (
-                  node.className.indexOf("ant-select-selector") > -1 ||
-                  node.className.indexOf("ant-picker") > -1 ||
-                  node.className.indexOf("anticon-history") > -1
+                  node.className.indexOf('ant-select-selector') > -1 ||
+                  node.className.indexOf('ant-picker') > -1 ||
+                  node.className.indexOf('anticon-history') > -1
                 ) {
                   return popupContainer as HTMLElement;
                 }
@@ -85,7 +84,7 @@ const LayoutRender: FC = () => {
           >
             <div id="popup_container">
               <div className="outlet">
-								<Outlet />
+                <Outlet />
               </div>
             </div>
           </ConfigProvider>

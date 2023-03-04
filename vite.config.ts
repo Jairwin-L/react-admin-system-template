@@ -1,11 +1,11 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 // import legacy from "@vitejs/plugin-legacy";
-import AutoImport from "unplugin-auto-import/vite";
-import viteCompression from "vite-plugin-compression";
-import path from "path";
-import { theme } from "antd";
-import { convertLegacyToken } from "@ant-design/compatible/lib";
+import AutoImport from 'unplugin-auto-import/vite';
+import viteCompression from 'vite-plugin-compression';
+import path from 'path';
+import { theme } from 'antd';
+import { convertLegacyToken } from '@ant-design/compatible/lib';
 
 const { defaultAlgorithm, defaultSeed } = theme;
 
@@ -30,7 +30,7 @@ export default defineConfig({
     //   ],
     // }),
     AutoImport({
-      imports: ["react", "react-router-dom"],
+      imports: ['react', 'react-router-dom'],
       dts: true, // 生成 TypeScript 声明
     }),
     // viteExternalsPlugin({
@@ -61,7 +61,7 @@ export default defineConfig({
   server: {
     port: 9000,
   },
-	preview: {
+  preview: {
     port: 9010,
   },
   css: {
@@ -70,22 +70,22 @@ export default defineConfig({
         modifyVars: v4Token,
       },
       less: {
-        additionalData: "@import \"./src/global.less\";",
+        additionalData: '@import "./src/global.less";',
         modifyVars: {
-          "@primary_color": "#1890ff",
-          "@detail_color": "#2db7f5",
-          "@edit_color": "#8354ee",
-          "@danger_color": "#ec4e3d",
-          "@white": "#fff",
-          "@theme_black": "#333",
-          "@pink": "#ffc0cb",
-          "@divideColor": "#f1f5ff",
-          "@textColor": "#999",
-          "@themeColor": "#3e71f8",
-          "@gray_color": "#c4c4c4",
-          "@defaultFontSize": "16px",
-          "@commonFontSize": "14px",
-          "@smallFontSize": "12px",
+          '@primary_color': '#1890ff',
+          '@detail_color': '#2db7f5',
+          '@edit_color': '#8354ee',
+          '@danger_color': '#ec4e3d',
+          '@white': '#fff',
+          '@theme_black': '#333',
+          '@pink': '#ffc0cb',
+          '@divideColor': '#f1f5ff',
+          '@textColor': '#999',
+          '@themeColor': '#3e71f8',
+          '@gray_color': '#c4c4c4',
+          '@defaultFontSize': '16px',
+          '@commonFontSize': '14px',
+          '@smallFontSize': '12px',
         },
         javascriptEnabled: true,
       },
@@ -93,12 +93,12 @@ export default defineConfig({
   },
   resolve: {
     // 自动解析确定的扩展，可以在引入模块时不带扩展
-    extensions: [".js", ".jsx", ".json", ".less", ".ts", ".tsx", ".mjs"],
+    extensions: ['.js', '.jsx', '.json', '.less', '.ts', '.tsx', '.mjs'],
     // 路径别名
     alias: {
-      "@": resolvePath("src"),
-      "@pages": resolvePath("src/pages"),
-      "@constant": resolvePath("src/constant"),
+      '@': resolvePath('src'),
+      '@pages': resolvePath('src/pages'),
+      '@constant': resolvePath('src/constant'),
       // TODO:for esm cdn
       // react:
       //   "https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js",

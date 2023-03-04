@@ -1,19 +1,21 @@
-import { useState } from "react";
-import { Layout, Input, Form, Button } from "antd";
-import { UserOutlined, LockOutlined } from "@ant-design/icons";
-import "./index.less";
-import { useNavigate } from "react-router-dom";
+import { useState } from 'react';
+import { Layout, Input, Form, Button } from 'antd';
+import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import './index.less';
+import { useNavigate } from 'react-router-dom';
+import { Store } from 'antd/es/form/interface';
 
 const Login = (): JSX.Element => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
-  const onFinish = async (values: any) => {
+  const onFinish = (values: Store) => {
+    console.log(`values----->：`, values);
     setLoading(true);
     try {
       setLoading(false);
-			navigate('/main');
+      navigate('/main');
     } catch (error) {
-      console.error("login", error);
+      console.error('login', error);
     }
   };
 
@@ -26,20 +28,10 @@ const Login = (): JSX.Element => {
           </div>
           <h3>admin-system-template</h3>
           <Form name="normal_login" onFinish={onFinish}>
-            <Form.Item
-              name="username"
-              rules={[{ required: true, message: "请输入用户名" }]}
-            >
-              <Input
-                size="large"
-                placeholder="请输入用户名"
-                prefix={<UserOutlined />}
-              />
+            <Form.Item name="username" rules={[{ required: true, message: '请输入用户名' }]}>
+              <Input size="large" placeholder="请输入用户名" prefix={<UserOutlined />} />
             </Form.Item>
-            <Form.Item
-              name="password"
-              rules={[{ required: true, message: "请输入密码" }]}
-            >
+            <Form.Item name="password" rules={[{ required: true, message: '请输入密码' }]}>
               <Input
                 type="password"
                 size="large"

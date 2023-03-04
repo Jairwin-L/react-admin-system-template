@@ -1,11 +1,8 @@
-import { FC, useEffect, useState } from "react";
-import LogoPng from "/logo.png";
+import ILayoutRender from '@/typings/layout';
+import { FC, useEffect, useState } from 'react';
+import LogoPng from '/logo.png';
 
-type ILogo = {
-  collapsed: boolean;
-};
-
-const Logo: FC<ILogo> = (props) => {
+const Logo: FC<ILayoutRender.Logo> = (props) => {
   const { collapsed } = props || {};
   const [isCollapsed, setIsCollapsed] = useState<boolean>(collapsed);
   useEffect(() => {
@@ -14,9 +11,7 @@ const Logo: FC<ILogo> = (props) => {
   return (
     <div className="logo_box">
       <img src={LogoPng} alt="logo" className="logo_img" />
-      {!isCollapsed ? (
-        <span className="logo_text">admin-system-template</span>
-      ) : null}
+      {!isCollapsed ? <span className="logo_text">admin-system-template</span> : null}
     </div>
   );
 };

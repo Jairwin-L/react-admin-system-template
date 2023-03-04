@@ -1,24 +1,26 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 declare namespace ILayoutRender {
-  type ElementRoute = Array<ElementRouteItem>;
-	type ElementRouteItem = {
+  type ElementRoute = ElementRouteItem[];
+  interface ElementRouteItem {
     children?: ElementRouteItem[];
     element?: ReactNode;
     index?: boolean;
     path?: string;
     meta?: MetaInfo;
   }
-	type MetaInfo = {
+  interface MetaInfo {
     title?: string;
     key?: string;
     selectedKeys?: string[];
   }
-	type Header = {
-		collapsed: boolean;
-		onSetCollapsed: (visible: boolean) => void
-	}
+  interface Header extends Logo {
+    onSetCollapsed: (visible: boolean) => void;
+  }
+  interface Logo {
+    collapsed: boolean;
+  }
 }
 
-export = ILayoutRender
-export as namespace ILayoutRender
+export = ILayoutRender;
+export as namespace ILayoutRender;

@@ -1,16 +1,16 @@
-import type { MenuProps } from "antd";
-import { rootRouter } from "@/routers";
-import { Key, ReactNode } from "react";
+import type { MenuProps } from 'antd';
+import { rootRouter } from '@/routers';
+import { Key, ReactNode } from 'react';
 
 // 定义 menu 类型
-export type MenuItem = Required<MenuProps>["items"][number];
+export type MenuItem = Required<MenuProps>['items'][number];
 
 export function getMenuItem(
   label: ReactNode,
   key: Key,
   icon?: ReactNode,
   children?: MenuItem[],
-  type?: "group"
+  type?: 'group',
 ): MenuItem {
   return {
     key,
@@ -18,7 +18,7 @@ export function getMenuItem(
     children,
     label,
     type,
-  } as MenuItem;
+  };
 }
 
 /**
@@ -27,10 +27,7 @@ export function getMenuItem(
  * @param {Array} routes 路由列表
  * @returns array
  */
-export function searchRoute(
-  path: string,
-  routes: ILayoutRender.ElementRoute = []
-) {
+export function searchRoute(path: string, routes: ILayoutRender.ElementRoute = []) {
   let result: ILayoutRender.ElementRouteItem = {};
   for (const item of routes) {
     if (item.path === path) return item;
@@ -41,22 +38,6 @@ export function searchRoute(
   }
   return result;
 }
-
-export const getItem = (
-  label: ReactNode,
-  key?: Key | null,
-  icon?: ReactNode,
-  children?: MenuItem[],
-  type?: "group"
-): MenuItem => {
-  return {
-    key,
-    icon,
-    children,
-    label,
-    type,
-  } as MenuItem;
-};
 
 /**
  * @description 获取当前路由meta数据
@@ -75,11 +56,11 @@ export function getRouteMeta() {
  * @returns array
  */
 export function getOpenKeys(path: string): string[] {
-  let currentPath = "";
+  let currentPath = '';
   const pathArray: string[] = [];
-  const arr = path?.split("/")?.map((i) => `/${i}`);
+  const arr = path?.split('/')?.map((i) => `/${i}`);
   for (let i = 1; i < arr.length - 1; i++) {
-		currentPath += arr[i];
+    currentPath += arr[i];
     pathArray.push(currentPath);
   }
   return pathArray;

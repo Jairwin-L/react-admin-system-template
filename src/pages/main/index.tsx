@@ -1,11 +1,7 @@
-import "./index.less";
+import './index.less';
 
 const Main = () => {
-  return (
-    <>
-			Main
-    </>
-  );
+  return <>Main</>;
 };
 
 export default Main;

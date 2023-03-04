@@ -1,5 +1,5 @@
-import LayoutRender from "@/layout";
-import Home from "@/pages/main/index";
+import LayoutRender from '@/layout';
+import Home from '@/pages/main/index';
 
 // 首页模块
 const MainRouter = [
@@ -7,12 +7,12 @@ const MainRouter = [
     element: <LayoutRender />,
     children: [
       {
-        path: "/main",
+        path: '/main',
         element: <Home />,
         meta: {
-          title: "工作台",
-          key: "main",
-          selectedKeys: ["/main"],
+          title: '工作台',
+          key: 'main',
+          selectedKeys: ['/main'],
         },
       },
     ],

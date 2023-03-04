@@ -1,21 +1,21 @@
-import { StrictMode } from "react";
-import ReactDOM from "react-dom/client";
-import App from "./app";
-import { Alert, ConfigProvider, Watermark } from "antd";
-import { ENV } from "@/constant";
-import dayjs from "dayjs";
-import "dayjs/locale/zh-cn";
-import zhCN from "antd/locale/zh_CN";
-import "antd/dist/reset.css";
-import "./global.less";
-import { isMobile } from "react-device-detect";
+import { StrictMode } from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './app';
+import { Alert, ConfigProvider, Watermark } from 'antd';
+import { ENV } from '@/constant';
+import dayjs from 'dayjs';
+import 'dayjs/locale/zh-cn';
+import zhCN from 'antd/locale/zh_CN';
+import 'antd/dist/reset.css';
+import './global.less';
+import { isMobile } from 'react-device-detect';
 
-dayjs.locale("zh-cn");
+dayjs.locale('zh-cn');
 
-if (ENV.MODE !== "production") {
+if (ENV.MODE !== 'production') {
   console.log(
     `%c【此提示只在非生产环境生效】当前系统环境：${ENV.VITE_CONSOLE_LOG}`,
-    "text-shadow: 1px 2px 3px rgba(67,8,7,0.8);color:#F686BD;font-size:20px;"
+    'text-shadow: 1px 2px 3px rgba(67,8,7,0.8);color:#F686BD;font-size:20px;',
   );
 }
 
@@ -42,20 +42,16 @@ const MobileNode = () => (
   </>
 );
 
-ReactDOM.createRoot(
-  document.getElementById("admin-system-template") as HTMLElement
-).render(
+ReactDOM.createRoot(document.getElementById('admin-system-template') as HTMLElement).render(
   // * react严格模式
   <ConfigProvider locale={zhCN}>
-    {isMobile ? (
-      <Alert message={<MobileNode />} type="warning" showIcon />
-    ) : null}
+    {isMobile ? <Alert message={<MobileNode />} type="warning" showIcon /> : null}
     <StrictMode>
       <Watermark content="管理平台">
         <App />
       </Watermark>
     </StrictMode>
-  </ConfigProvider>
+  </ConfigProvider>,
 );
 // react17
 // import ReactDOM from "react-dom";
