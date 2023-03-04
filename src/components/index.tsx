@@ -1,1 +1,1 @@
-export const Test = "test";
+export { default as Icon } from "./icon";
