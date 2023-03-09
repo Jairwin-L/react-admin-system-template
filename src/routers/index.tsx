@@ -1,25 +1,28 @@
 import LayoutRender from '@/layout';
-import Login from '@/pages/auth/login';
-import BizRouter from '@/pages/biz/router';
-import MainRouter from '@/pages/main/router';
-import MenuRouter from '@/pages/menu/router';
 import ILayoutRender from '@/typings/layout';
-import { type RouteObject, useRoutes } from 'react-router-dom';
+import { useRoutes } from 'react-router-dom';
 
-export const rootRouter: RouteObject & ILayoutRender.ElementRouteItem[] = [
+const rootRouter: ILayoutRender.ElementRouteItem[] = [];
+// * 导入所有router
+const metaRouters: Record<string, ILayoutRender.ElementRouteItem[]> = import.meta.glob(
+  '../pages/**/router.tsx',
   {
-    path: '/',
-    element: <Login />,
-    meta: {
-      title: '登录',
-      key: 'LOGIN',
-    },
+    eager: true,
+    import: 'default',
   },
-  {
-    element: <LayoutRender />,
-    children: [...BizRouter, ...MainRouter, ...MenuRouter],
-  },
-];
+);
+
+Object.keys(metaRouters).forEach((item) => {
+  metaRouters?.[item].forEach((subItem) => {
+    if (subItem.meta?.key === 'LOGIN') {
+      rootRouter.push(subItem);
+    }
+    rootRouter.push({
+      element: <LayoutRender />,
+      children: [subItem],
+    });
+  });
+});
 
 const Router = () => {
   // @ts-ignoreTODO:
