@@ -2,7 +2,7 @@ import { type FC, useEffect, useState } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { Layout, Menu, ConfigProvider } from 'antd';
 import type { MenuProps } from 'antd';
-import { getRouteMeta, getOpenKeys } from './util';
+import { getOpenKeys } from './util';
 import Header from './header';
 import { menuItems } from './menus';
 import Logo from './logo';
@@ -30,20 +30,18 @@ const LayoutRender: FC = () => {
     setOpenKeys([latestOpenKey]);
   };
   const onSelectedKeys = () => {
-    const { meta = {} } = getRouteMeta();
-    let menuSelectedKey: string[] = meta.selectedKeys || [];
-    if (!meta) {
-      const pathArr: string[] = pathname.split('/').filter((item) => item);
-      menuSelectedKey = [`/${pathArr.splice(0, pathArr?.length - 2).join('/')}`];
-    }
-    setSelectedKeys(menuSelectedKey);
+    const menuSelectedKey = pathname.match(/(\S*)\/(detail|add|edit)/);
+    const selectedKey = menuSelectedKey?.[1] || [pathname];
+    setSelectedKeys(selectedKey as string[]);
     if (!collapsed) {
       setOpenKeys(getOpenKeys(pathname));
     }
   };
   // 刷新页面菜单保持高亮
   useEffect(() => {
-    onSelectedKeys();
+    if (pathname) {
+      onSelectedKeys();
+    }
   }, [pathname, collapsed]);
   return (
     <>

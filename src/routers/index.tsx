@@ -1,4 +1,6 @@
+import LayoutRender from '@/layout';
 import Login from '@/pages/auth/login';
+import BizRouter from '@/pages/biz/router';
 import MainRouter from '@/pages/main/router';
 import MenuRouter from '@/pages/menu/router';
 import ILayoutRender from '@/typings/layout';
@@ -13,8 +15,10 @@ export const rootRouter: RouteObject & ILayoutRender.ElementRouteItem[] = [
       key: 'LOGIN',
     },
   },
-  ...MainRouter,
-  ...MenuRouter,
+  {
+    element: <LayoutRender />,
+    children: [...BizRouter, ...MainRouter, ...MenuRouter],
+  },
 ];
 
 const Router = () => {
