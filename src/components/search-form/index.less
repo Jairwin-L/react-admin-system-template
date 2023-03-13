@@ -1,0 +1,33 @@
+.search_container {
+  margin-bottom: 16px;
+  padding: 16px;
+  background: @white;
+  .form_ul {
+    display: flex;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    @media screen and (max-width: 1035px) {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    .form_li {
+      list-style: none;
+      margin-right: 16px;
+      margin-bottom: 16px;
+      min-width: 300px;
+      @media screen and (max-width: 1035px) {
+        margin-bottom: 16px;
+      }
+      .ant-form-item {
+        margin-bottom: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

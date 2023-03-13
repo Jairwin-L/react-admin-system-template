@@ -17,6 +17,9 @@ a {
   color: @theme_black;
   text-decoration: none;
 }
+p {
+  margin-bottom: 0;
+}
 .danger_color {
   color: @danger_color;
   cursor: pointer;
@@ -29,10 +32,6 @@ a {
   color: @gray_color;
   cursor: not-allowed;
   pointer-events: none;
-}
-.primary_color {
-  color: @primary_color;
-  cursor: pointer;
 }
 .cursor_pointer {
   white-space: nowrap;
@@ -48,15 +47,6 @@ a {
   display: flex;
   justify-content: space-between;
   margin-bottom: 16px;
-  .search_btn {
-    display: flex;
-    button {
-      margin-right: 16px;
-      &:last-child {
-        margin-right: 0;
-      }
-    }
-  }
 }
 .ant-card-body {
   padding: 16px;
