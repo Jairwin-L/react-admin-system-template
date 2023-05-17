@@ -9,6 +9,12 @@ const items: MenuProps['items'] = [
   { label: '退出', key: 'SIGN_OUT' },
 ];
 
+const BreadcrumbItem = [
+  {
+    title: '首页',
+  },
+];
+
 const Header: FC<ILayoutRender.Header> = (props) => {
   const { onSetCollapsed, collapsed } = props || {};
 
@@ -28,9 +34,7 @@ const Header: FC<ILayoutRender.Header> = (props) => {
           <div className="collapsed" onClick={() => onSetCollapsed(!collapsed)}>
             {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
           </div>
-          <Breadcrumb className="breadcrumb_box">
-            <Breadcrumb.Item>首页</Breadcrumb.Item>
-          </Breadcrumb>
+          <Breadcrumb className="breadcrumb_box" items={BreadcrumbItem} />
         </div>
         <div className="header_ri">
           <Dropdown menu={{ items, onClick: onDropMenu }} placement="bottom">

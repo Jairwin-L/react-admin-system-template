@@ -19,7 +19,7 @@
     "@ant-design/charts": "^1.4.2",
     "@ant-design/compatible": "^5.1.0",
     "@ant-design/icons": "^4.7.0",
-    "antd": "^5.2.3",
+    "antd": "^5.5.0",
     "china-division": "^2.4.0",
     "dayjs": "^1.10.6",
     "exceljs": "^4.3.0",
@@ -37,7 +37,7 @@
   "devDependencies": {
     "@types/file-saver": "^2.0.5",
     "@types/node": "^18.11.18",
-    "@types/react": "^18.0.28",
+    "@types/react": "^18.2.6",
     "@types/react-color": "^3.0.6",
     "@types/react-dom": "^18.0.11",
     "@types/react-router-dom": "^5.3.3",
