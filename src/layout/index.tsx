@@ -6,7 +6,7 @@ import { getOpenKeys } from './util';
 import Header from './header';
 import { menuItems } from './menus';
 import Logo from './logo';
-import './index.less';
+import style from './index.module.less';
 
 const { Sider } = Layout;
 
@@ -45,7 +45,7 @@ const LayoutRender: FC = () => {
   }, [pathname, collapsed]);
   return (
     <>
-      <Layout className="container">
+      <Layout className={style.container}>
         <Sider trigger={null} collapsed={collapsed} width={220} theme="dark">
           <Logo collapsed={collapsed} />
           <Menu
@@ -59,7 +59,7 @@ const LayoutRender: FC = () => {
             onOpenChange={onOpenChange}
           />
         </Sider>
-        <Layout className="main_layout">
+        <Layout className={style.main_layout}>
           <Header
             collapsed={collapsed}
             onSetCollapsed={(visible: boolean) => setCollapsed(visible)}
@@ -80,8 +80,8 @@ const LayoutRender: FC = () => {
               return document.body;
             }}
           >
-            <div id="popup_container">
-              <div className="outlet">
+            <div id={style.popup_container}>
+              <div className={style.outlet}>
                 <Outlet />
               </div>
             </div>

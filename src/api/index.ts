@@ -5,7 +5,7 @@ import { BASE_API_URL, SYSTEM_ERROR_MSG } from '@/constant';
 fly.config.timeout = 3500;
 fly.interceptors.request.use((request) => {
   if (sessionStorage.getItem('token')) {
-    request.headers.token = sessionStorage.getItem('token') || '';
+    request.headers.token = sessionStorage.getItem('apifoxToken') || 'sXedLKsR7alyUTRseHi3l';
     request.headers['Content-Type'] = 'application/json';
     request.headers.Accept = 'application/json';
   }

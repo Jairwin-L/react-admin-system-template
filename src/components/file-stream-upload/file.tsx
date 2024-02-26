@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, FC, ChangeEvent } from 'react';
 import { UploadOutlined } from '@ant-design/icons';
 import { Button, message } from 'antd';
 import { beforeUploadFile } from '@/utils/upload-file';
-import './index.less';
+import style from './index.module.less';
 
 interface ISelectFile {
   uploadDisabled: boolean;
@@ -72,7 +72,7 @@ const SelectFile: FC<ISelectFile> = (props) => {
   }, [uploadDisabled]);
   return (
     <>
-      <div className="upload_container">
+      <div className={style.upload_container}>
         <Button disabled={disabled} onClick={onUploadClick}>
           <UploadOutlined />
           选择文件
@@ -81,7 +81,7 @@ const SelectFile: FC<ISelectFile> = (props) => {
           ref={uploadFileRef}
           type="file"
           onClick={(event) => onResetInputValue(event)}
-          className="upload_input"
+          className={style.upload_input}
           onChange={onUploadFile}
         />
       </div>

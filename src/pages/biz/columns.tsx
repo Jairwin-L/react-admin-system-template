@@ -1,5 +1,4 @@
 import type { ColumnsType } from 'antd/es/table';
-import './index.less';
 
 export const columns: ColumnsType = [
   {

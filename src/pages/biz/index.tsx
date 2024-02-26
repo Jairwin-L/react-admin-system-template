@@ -4,7 +4,7 @@ import { columns } from './columns';
 import searchKeys from './search';
 import type { ColumnsType } from 'antd/es/table';
 
-export default function App() {
+export default function Table() {
   return (
     <SearchTable<IQueryBiz.List>
       apiType="BIZ"

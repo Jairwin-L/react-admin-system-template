@@ -2,13 +2,9 @@
 
 - Vite + React + TS + Antd
 
-## 接口层说明
-
-因为中台系统基本以 curd 为主，所以做成统一的接口配置，与一般的 RestFul 风格不一样的是，接口不用调整，用一个接口类型作为每个 crud 的类型，同时也保持着 crud 的风格
-
 ## node
 
-v14.18.3
+v16
 
 ## Env Steps
 
@@ -48,4 +44,4 @@ pnpm preview
 
 ## Link
 
-vitejs：https://cn.vitejs.dev/guide/
+vitejs：<https://cn.vitejs.dev/guide/>

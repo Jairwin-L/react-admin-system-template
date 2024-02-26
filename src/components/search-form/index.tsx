@@ -3,7 +3,7 @@ import { Button, DatePicker, Form, Input, Select, Space } from 'antd';
 import { SELECT_OPTION } from '@/constant';
 import { makeExportExcel } from '@/utils/export-excel';
 import FileStreamUpload from '../file-stream-upload';
-import './index.less';
+import style from './index.module.less';
 
 const { RangePicker } = DatePicker;
 
@@ -58,11 +58,11 @@ function SearchForm<T>(props: IConditionSearch.SearchForm<T>) {
   };
   return (
     <>
-      <div className="search_container">
+      <div className={style.search_container}>
         <Form form={form} onFinish={onSearch}>
-          <ul className="form_ul">
+          <ul className={style.form_ul}>
             {searchKeys.map((item: IConditionSearch.SearchFormItemType) => (
-              <li className="form_li" key={item.value}>
+              <li className={style.form_li} key={item.value}>
                 <Form.Item name={item.value} label={item.label}>
                   {renderSearchItem(item)}
                 </Form.Item>
@@ -71,7 +71,7 @@ function SearchForm<T>(props: IConditionSearch.SearchForm<T>) {
           </ul>
         </Form>
       </div>
-      <div className="search_tool">
+      <div className={style.search_tool}>
         <Space>
           {exportFlag ? <Button onClick={onExportExcel}>文件导出</Button> : null}
           {fileUploadFlag ? <FileStreamUpload onSearchRefetch={onSearchRefetch} /> : null}

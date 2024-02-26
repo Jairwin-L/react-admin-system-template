@@ -4,7 +4,7 @@ import { TablePaginationConfig } from 'antd/es/table';
 import SearchAction from '../search-action';
 import SearchForm from '../search-form';
 import type { ColumnsType } from 'antd/es/table';
-import './index.less';
+import style from './index.module.less';
 
 export default function SearchTable<T>(props: IConditionSearch.SearchTable<T>) {
   const {
@@ -78,7 +78,7 @@ export default function SearchTable<T>(props: IConditionSearch.SearchTable<T>) {
       ) : null}
       <Card>
         {hasSelected ? (
-          <div className="selected_keys">
+          <div className={style.selected_keys}>
             <p>
               已选择<span>{selectedRowKeys.length}</span>项
             </p>

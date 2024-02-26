@@ -1,8 +1,9 @@
-import { type FC } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import { Breadcrumb, Dropdown } from 'antd';
 import type { MenuProps } from 'antd';
 import LogoPng from '/logo.png';
+import style from '../index.module.less';
 
 const items: MenuProps['items'] = [
   { label: '修改密码', key: 'CHANGE_PASSWORD' },
@@ -15,12 +16,14 @@ const BreadcrumbItem = [
   },
 ];
 
-const Header: FC<ILayoutRender.Header> = (props) => {
+export default function Header(props: ILayoutRender.Header) {
+  const navigate = useNavigate();
   const { onSetCollapsed, collapsed } = props || {};
 
   const onDropMenu: MenuProps['onClick'] = ({ key }: { key: string }) => {
     if (key === 'SIGN_OUT') {
       // TODO:
+      navigate('/');
     }
     if (key === 'CHANGE_PASSWORD') {
       // TODO:
@@ -29,24 +32,22 @@ const Header: FC<ILayoutRender.Header> = (props) => {
 
   return (
     <>
-      <header className="header_container">
-        <div className="header_lf">
-          <div className="collapsed" onClick={() => onSetCollapsed(!collapsed)}>
+      <header className={style.header_container}>
+        <div className={style.header_lf}>
+          <div className={style.collapsed} onClick={() => onSetCollapsed(!collapsed)}>
             {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
           </div>
-          <Breadcrumb className="breadcrumb_box" items={BreadcrumbItem} />
+          <Breadcrumb className={style.breadcrumb_box} items={BreadcrumbItem} />
         </div>
-        <div className="header_ri">
+        <div className={style.header_ri}>
           <Dropdown menu={{ items, onClick: onDropMenu }} placement="bottom">
-            <div className="header_avatar" onClick={(event) => event.preventDefault()}>
-              <img src={LogoPng} alt="logo" className="user_avatar" />
-              <span className="username">Jairwin</span>
+            <div className={style.header_avatar} onClick={(event) => event.preventDefault()}>
+              <img src={LogoPng} alt="logo" className={style.user_avatar} />
+              <span className={style.username}>Jairwin</span>
             </div>
           </Dropdown>
         </div>
       </header>
     </>
   );
-};
-
-export default Header;
+}

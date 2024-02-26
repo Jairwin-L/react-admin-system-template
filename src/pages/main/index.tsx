@@ -1,4 +1,4 @@
-import './index.less';
+import './index.module.less';
 
 const Main = () => {
   return <>Main</>;
