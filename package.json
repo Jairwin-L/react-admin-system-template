@@ -43,6 +43,8 @@
     "@types/react-router-dom": "^5.3.3",
     "@vitejs/plugin-legacy": "^1.6.4",
     "@vitejs/plugin-react": "^3.0.1",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.0",
     "f2elint": "^2.2.1",
     "less": "^4.1.1",
     "rollup-plugin-external-globals": "^0.6.1",

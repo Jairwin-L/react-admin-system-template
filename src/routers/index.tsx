@@ -1,6 +1,6 @@
+import { useRoutes } from 'react-router-dom';
 import LayoutRender from '@/layout';
 import ILayoutRender from '@/typings/layout';
-import { useRoutes } from 'react-router-dom';
 
 const rootRouter: ILayoutRender.ElementRouteItem[] = [];
 // * 导入所有router

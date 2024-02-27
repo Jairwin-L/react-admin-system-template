@@ -1,8 +1,8 @@
+import type { ColumnsType } from 'antd/es/table';
 import { SearchTable } from '@/components';
 import { useConditionSearch } from '@/hooks';
 import { columns } from './columns';
 import searchKeys from './search';
-import type { ColumnsType } from 'antd/es/table';
 
 export default function Table() {
   return (

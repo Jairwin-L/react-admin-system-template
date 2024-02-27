@@ -1,7 +1,7 @@
 import type { Store } from 'antd/es/form/interface';
-import { query } from '@/api/modules/biz';
 import omit from 'lodash.omit';
 import { TablePaginationConfig } from 'antd/es/table';
+import { query } from '@/api/modules/biz';
 import { PAGE_INDEX, PAGE_SIZE } from '@/constant';
 import { formatDate } from '@/utils';
 

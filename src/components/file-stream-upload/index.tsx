@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Modal, Button, message } from 'antd';
 import { LoadingOutlined, PaperClipOutlined } from '@ant-design/icons';
-import SelectFile from './file';
 import { upload } from '@/api/modules/upload';
+import SelectFile from './file';
 
 const FileStreamUpload = (props: IUpload.FileStreamUpload) => {
   const { onSearchRefetch } = props;

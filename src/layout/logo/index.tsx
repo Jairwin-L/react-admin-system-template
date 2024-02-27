@@ -1,5 +1,7 @@
-import ILayoutRender from '@/typings/layout';
 import { useEffect, useState } from 'react';
+import ILayoutRender from '@/typings/layout';
+// TODO:
+// eslint-disable-next-line import/no-unresolved
 import LogoPng from '/logo.png';
 import style from '../index.module.less';
 

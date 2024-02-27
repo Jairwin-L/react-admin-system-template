@@ -1,5 +1,5 @@
-import { Icon } from '@/components';
 import { PieChartOutlined } from '@ant-design/icons';
+import { Icon } from '@/components';
 import { getMenuItem } from './util';
 
 export const menuItems = [

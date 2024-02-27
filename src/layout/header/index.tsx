@@ -2,8 +2,10 @@ import { useNavigate } from 'react-router-dom';
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import { Breadcrumb, Dropdown } from 'antd';
 import type { MenuProps } from 'antd';
-import LogoPng from '/logo.png';
 import style from '../index.module.less';
+// TODO:
+// eslint-disable-next-line import/no-unresolved
+import LogoPng from '/logo.png';
 
 const items: MenuProps['items'] = [
   { label: '修改密码', key: 'CHANGE_PASSWORD' },

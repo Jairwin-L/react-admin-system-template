@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Layout, Input, Form, Button } from 'antd';
+import { Store } from 'antd/es/form/interface';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import './index.less';
-import { Store } from 'antd/es/form/interface';
 
 const Login = (): JSX.Element => {
   const navigate = useNavigate();
