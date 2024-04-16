@@ -4,7 +4,7 @@ import { Store } from 'antd/es/form/interface';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import './index.less';
 
-const Login = (): JSX.Element => {
+export default function Login() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const onFinish = (values: Store) => {
@@ -25,7 +25,7 @@ const Login = (): JSX.Element => {
           <div className="site_logo">
             <img src={''} alt="" />
           </div>
-          <h3>admin-system-template</h3>
+          <h3>react-admin-system-template</h3>
           <Form name="normal_login" onFinish={onFinish}>
             <Form.Item name="username" rules={[{ required: true, message: '请输入用户名' }]}>
               <Input size="large" placeholder="请输入用户名" prefix={<UserOutlined />} />
@@ -54,6 +54,4 @@ const Login = (): JSX.Element => {
       </div>
     </Layout>
   );
-};
-
-export default Login;
+}

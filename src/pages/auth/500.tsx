@@ -1,6 +1,6 @@
 import { Button, Result } from 'antd';
 
-export default (): JSX.Element => {
+export default function Wrong() {
   const navigate = useNavigate();
   return (
     <Result
@@ -19,4 +19,4 @@ export default (): JSX.Element => {
       }
     />
   );
-};
+}

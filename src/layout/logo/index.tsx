@@ -14,7 +14,7 @@ export default function Logo(props: ILayoutRender.Logo) {
   return (
     <div className={style.logo_box}>
       <img src={LogoPng} alt="logo" className={style.logo_img} />
-      {!isCollapsed ? <span className={style.logo_text}>admin-system-template</span> : null}
+      {!isCollapsed ? <span className={style.logo_text}>RAST</span> : null}
     </div>
   );
 }

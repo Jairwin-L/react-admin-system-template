@@ -9,6 +9,7 @@ import './global.less';
 import { isMobile } from 'react-device-detect';
 import { ENV } from '@/constant';
 import App from './app';
+import { APP_NAME } from './constant/app';
 
 dayjs.locale('zh-cn');
 
@@ -42,12 +43,12 @@ const MobileNode = () => (
   </>
 );
 
-ReactDOM.createRoot(document.getElementById('admin-system-template') as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById('react-admin-system-template') as HTMLElement).render(
   // * react严格模式
   <ConfigProvider locale={zhCN}>
     {isMobile ? <Alert message={<MobileNode />} type="warning" showIcon /> : null}
     <StrictMode>
-      <Watermark content="管理平台">
+      <Watermark content={APP_NAME}>
         <App />
       </Watermark>
     </StrictMode>

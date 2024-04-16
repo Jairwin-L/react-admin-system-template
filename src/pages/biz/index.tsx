@@ -4,7 +4,7 @@ import { useConditionSearch } from '@/hooks';
 import { columns } from './columns';
 import searchKeys from './search';
 
-export default function Table() {
+export default function Page() {
   return (
     <SearchTable<IQueryBiz.List>
       apiType="BIZ"

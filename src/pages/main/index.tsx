@@ -1,6 +1,6 @@
 import './index.module.less';
 
-const Main = () => {
+export default function Main() {
   console.log(`1----->：`, 1);
   useEffect(() => {
     console.log(`2----->：`, 2);
@@ -9,6 +9,4 @@ const Main = () => {
     };
   }, []);
   return <>Main</>;
-};
-
-export default Main;
+}
