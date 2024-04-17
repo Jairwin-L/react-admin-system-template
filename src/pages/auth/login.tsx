@@ -1,21 +1,24 @@
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
+import { Button, Form, Input, Layout } from 'antd';
 import { useState } from 'react';
-import { Layout, Input, Form, Button } from 'antd';
-import { Store } from 'antd/es/form/interface';
-import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import { login } from '@/api/modules/auth';
 import './index.less';
 
 export default function Login() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
-  const onFinish = (values: Store) => {
+  const onFinish = async (values: IQueryAuth.Param) => {
     console.log('values----->：', values);
     setLoading(true);
     try {
+      const { success = false } = await login(values);
       setLoading(false);
+      if (!success) return;
       navigate('/main');
     } catch (error) {
-      console.error('login', error);
+      console.error(`------>`, error);
     }
+    setLoading(false);
   };
 
   return (

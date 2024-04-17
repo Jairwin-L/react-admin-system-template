@@ -23,7 +23,7 @@ declare namespace IQueryBiz {
   }
   interface Resp {
     list: List[];
-    page: CommonPage;
+    pageMeta: CommonPage;
   }
 }
 

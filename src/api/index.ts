@@ -1,27 +1,28 @@
-import { message } from 'antd';
 import fly from 'flyio';
 import { BASE_API_URL } from '@/constant/biz';
-import { SYSTEM_ERROR_MSG } from '@/constant/placeholder';
 
 fly.config.timeout = 3500;
 fly.interceptors.request.use((request) => {
-  request.headers.apifoxToken = 'sXedLKsR7alyUTRseHi3l';
-  if (sessionStorage.getItem('token')) {
-    // request.headers.token = sessionStorage.getItem('token');
-    request.headers['Content-Type'] = 'application/json';
-    request.headers.Accept = 'application/json';
-  }
+  request.headers = {
+    'Content-Type': 'application/json',
+    Accept: 'application/json',
+    // apifox mock token
+    apifoxToken: 'sXedLKsR7alyUTRseHi3l',
+  };
   return request;
 });
 
 fly.interceptors.response.use(
   (response) => {
-    const data = response?.data || {};
-    if (!data?.success) {
-      message.destroy();
-      message.error(data?.msg || SYSTEM_ERROR_MSG);
-    }
-    return data;
+    const { data } = response;
+    const result = data || {};
+    // console.log(`response----->：`, response);
+    // if (result?.success) {
+    //   message.success(data?.msg || SYSTEM_SUCCESS_MSG);
+    // } else {
+    //   message.error(data?.msg || SYSTEM_ERROR_MSG);
+    // }
+    return result;
   },
   (error: any) => {
     console.error('[EXCEPTION/interceptors] response error:%j', error);
@@ -57,37 +58,31 @@ class ApiRequest {
   private constructor(BASE_URL: string) {
     this.BASE_URL = BASE_URL;
   }
-  // T: response, D: 入参
-  async get<T, D>(url: string, params: D): Promise<IBaseResp<T>> {
-    const response = await fly.get<T>(`${this.BASE_URL}${url}`, params);
-    return new Promise((resolve) => {
-      resolve(response);
-    });
+  // RResp: response, Param: 入参
+  get<Resp, Param = never>(url: string, params?: Param): Promise<IBaseResp<Resp>> {
+    return this.fetch(url, 'get', params);
   }
-  async show<T, D>(url: string, params: D): Promise<IBaseResp<T>> {
-    const { id } = params as D & { id: string };
-    const response = await fly.get(`${this.BASE_URL}${url}/${id}`);
-    return new Promise((resolve) => {
-      resolve(response);
-    });
+  delete<Resp, Param>(
+    url: string,
+    params: NonNullable<Param & { id: number }>,
+  ): Promise<IBaseResp<Resp>> {
+    return this.fetch(`${url}`, 'delete', params);
   }
-  async post<T, D>(url: string, params: D): Promise<IBaseResp<T>> {
-    const response = await fly.post(`${this.BASE_URL}${url}`, params);
-    return new Promise((resolve) => {
-      resolve(response);
-    });
+  put<Resp, Param>(url: string, params: Param): Promise<IBaseResp<Resp>> {
+    return this.fetch(url, 'put', params);
   }
-  async delete<T, D>(url: string, id: D): Promise<IBaseResp<T>> {
-    const response = await fly.delete(`${this.BASE_URL}${url}`, id);
-    return new Promise((resolve) => {
-      resolve(response);
-    });
+  post<Resp, Param>(url: string, params: Param): Promise<IBaseResp<Resp>> {
+    return this.fetch(url, 'post', params);
   }
-  async put<T, D>(url: string, params: D): Promise<IBaseResp<T>> {
-    const response = await fly.put(`${this.BASE_URL}${url}`, params);
-    return new Promise((resolve) => {
-      resolve(response);
-    });
+  private async fetch<Resp, Param>(
+    url: string,
+    method: 'get' | 'post' | 'put' | 'delete',
+    params?: Param,
+  ): Promise<IBaseResp<Resp>> {
+    // if (method === 'post' || method === 'put' || method === 'delete') {
+    // }
+    const response = await fly[method](`${this.BASE_URL}${url}`, params);
+    return response;
   }
 }
 

@@ -2,8 +2,8 @@ import type { Store } from 'antd/es/form/interface';
 import { TablePaginationConfig } from 'antd/es/table';
 import omit from 'lodash.omit';
 import { query } from '@/api/modules/biz';
-import { formatDate } from '@/utils';
 import { PAGE_INDEX, PAGE_SIZE } from '@/constant/biz';
+import { formatDate } from '@/utils';
 
 const useConditionSearch = <T>(
   props: IConditionSearch.ConditionSearch,
@@ -25,11 +25,11 @@ const useConditionSearch = <T>(
       ...pageParams,
       ...searchParams,
     });
-    const { list, page } = data || {};
+    const { list, pageMeta } = data || {};
     setLoading(false);
     setSearchResult({
       dataSource: list as T,
-      page: page as CommonPage,
+      page: pageMeta as CommonPage,
       errorMsg: !success ? msg : '',
     });
   };
