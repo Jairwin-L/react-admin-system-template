@@ -25,6 +25,10 @@ declare namespace IQueryBiz {
     id: number;
     apiType: 'BIZ';
   }
+  interface StoreParam {
+    id: number;
+    apiType: 'BIZ';
+  }
   interface Resp {
     list: List[];
     pageMeta: CommonPage;

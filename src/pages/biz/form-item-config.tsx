@@ -44,7 +44,7 @@ export const formItemConfig = (props: any) => {
       component: <ColorSelect />,
     },
     {
-      label: '日期',
+      label: '生日',
       name: 'date',
       component: <DatePicker />,
     },

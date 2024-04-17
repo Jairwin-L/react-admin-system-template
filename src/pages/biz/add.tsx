@@ -1,21 +1,23 @@
 import { Form } from 'antd';
-import type { Store } from 'antd/es/form/interface';
 import { useEffect, useState } from 'react';
-import { FormLayout } from '@/components';
 import { show, store } from '@/api/modules/biz';
+import { FormLayout } from '@/components';
 import { formItemConfig } from './form-item-config';
 
 export default function Add() {
+  const navigate = useNavigate();
   const [form] = Form.useForm();
   const [model, setModel] = useState();
   const [loading, setLoading] = useState<boolean>(false);
   // form提交配置
-  const onFinish = async (values: Store): Promise<void> => {
+  const onFinish = async (values: IQueryBiz.StoreParam): Promise<void> => {
     console.log('values----->：', values);
     try {
       setLoading(true);
-      await store(values);
+      const { success } = await store(values);
       setLoading(false);
+      if (!success) return;
+      navigate(-1);
     } catch (error) {
       console.log(`error----->：`, error);
     }
