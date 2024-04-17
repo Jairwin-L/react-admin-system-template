@@ -2,9 +2,10 @@ import { Button, Table } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import { TablePaginationConfig } from 'antd/es/table';
 import { Key } from 'react';
+import PageLoading from '../page-loading';
 import SearchAction from '../search-action';
 import SearchForm from '../search-form';
-import style from './index.module.less';
+import css from './index.module.less';
 
 export default function SearchTable<T>(props: IConditionSearch.SearchTable<T>) {
   const {
@@ -55,7 +56,7 @@ export default function SearchTable<T>(props: IConditionSearch.SearchTable<T>) {
   };
   if (firstEntryFlag) {
     if (loading) {
-      return <>loading</>;
+      return <PageLoading />;
     }
     if (errorMsg && !loading) {
       return <>{errorMsg}</>;
@@ -78,7 +79,7 @@ export default function SearchTable<T>(props: IConditionSearch.SearchTable<T>) {
       ) : null}
       <>
         {hasSelected ? (
-          <div className={style.selected_keys}>
+          <div className={css.selected_keys}>
             <p>
               已选择<span>{selectedRowKeys.length}</span>项
             </p>
@@ -88,6 +89,7 @@ export default function SearchTable<T>(props: IConditionSearch.SearchTable<T>) {
           </div>
         ) : null}
         <Table<NonNullable<T>>
+          className={css['search-table']}
           rowSelection={exportFlag ? rowSelection : undefined}
           rowKey={(item: NonNullable<T | { id: NonNullable<T> }>) => (item as { id: string }).id}
           dataSource={dataSource as Array<NonNullable<T>>}

@@ -1,5 +1,3 @@
-import './index.module.less';
-
 export default function Main() {
   console.log('1----->：', 1);
   useEffect(() => {

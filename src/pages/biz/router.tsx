@@ -1,7 +1,7 @@
 import Table from '@/pages/biz';
 import TableAdd from '@/pages/biz/add';
-import TableEdit from '@/pages/biz/edit';
 import TableDetail from '@/pages/biz/detail';
+import TableEdit from '@/pages/biz/edit';
 
 // 首页模块
 const BizRouter = [

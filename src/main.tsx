@@ -5,7 +5,7 @@ import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
 import { StrictMode } from 'react';
 import { isMobile } from 'react-device-detect';
-import ReactDOM from 'react-dom/client';
+import { createRoot } from 'react-dom/client';
 import App from './app';
 import { APP_NAME } from './constant/app';
 import { ENV } from './constant/env';
@@ -43,7 +43,7 @@ const MobileNode = () => (
   </>
 );
 
-ReactDOM.createRoot(document.getElementById('react-admin-system-template') as HTMLElement).render(
+createRoot(document.getElementById('react-admin-system-template') as HTMLElement).render(
   // * react严格模式
   <ConfigProvider locale={zhCN}>
     {isMobile ? <Alert message={<MobileNode />} type="warning" showIcon /> : null}

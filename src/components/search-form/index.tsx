@@ -3,11 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import { SELECT_OPTION } from '@/constant/antd';
 import { makeExportExcel } from '@/utils/export-excel';
 import FileStreamUpload from '../file-stream-upload';
-import style from './index.module.less';
+import css from './index.module.less';
 
 const { RangePicker } = DatePicker;
 
-function SearchForm<T>(props: IConditionSearch.SearchForm<T>) {
+export default function SearchForm<T>(props: IConditionSearch.SearchForm<T>) {
   const {
     searchKeys = [],
     onSearch,
@@ -58,11 +58,11 @@ function SearchForm<T>(props: IConditionSearch.SearchForm<T>) {
   };
   return (
     <>
-      <div className={style.search_container}>
+      <div className={css.search_container}>
         <Form form={form} onFinish={onSearch}>
-          <ul className={style.form_ul}>
+          <ul className={css.form_ul}>
             {searchKeys.map((item: IConditionSearch.SearchFormItemType) => (
-              <li className={style.form_li} key={item.value}>
+              <li className={css.form_li} key={item.value}>
                 <Form.Item name={item.value} label={item.label}>
                   {renderSearchItem(item)}
                 </Form.Item>
@@ -71,7 +71,7 @@ function SearchForm<T>(props: IConditionSearch.SearchForm<T>) {
           </ul>
         </Form>
       </div>
-      <div className={style.search_tool}>
+      <div className={css.search_tool}>
         <Space>
           {exportFlag ? <Button onClick={onExportExcel}>文件导出</Button> : null}
           {fileUploadFlag ? <FileStreamUpload onSearchRefetch={onSearchRefetch} /> : null}
@@ -91,5 +91,3 @@ function SearchForm<T>(props: IConditionSearch.SearchForm<T>) {
     </>
   );
 }
-
-export default SearchForm;

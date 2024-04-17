@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import { Modal, Button, message } from 'antd';
 import { LoadingOutlined, PaperClipOutlined } from '@ant-design/icons';
+import { Button, Modal, message } from 'antd';
+import { useEffect, useState } from 'react';
 import { upload } from '@/api/modules/upload';
 import SelectFile from './file';
 

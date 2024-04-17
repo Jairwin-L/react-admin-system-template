@@ -16,6 +16,10 @@ declare namespace IQueryBiz {
     CommonPage & {
       apiType: 'BIZ';
     };
+  interface ShowParam {
+    id: number;
+    apiType?: 'BIZ';
+  }
 
   interface DelParam {
     id: number;

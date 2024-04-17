@@ -33,7 +33,7 @@ export default function Login() {
           <img src={LogoPng} alt="logo" className={css['logo-img']} />
           <h3>{APP_NAME}</h3>
         </div>
-        <Form name="normal_login" onFinish={onFinish}>
+        <Form onFinish={onFinish}>
           <Form.Item
             name="username"
             rules={[{ required: true, message: '请输入用户名' }]}

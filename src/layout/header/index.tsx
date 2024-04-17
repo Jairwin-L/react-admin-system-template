@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import { Breadcrumb, Dropdown } from 'antd';
 import type { MenuProps } from 'antd';
-import style from '../index.module.less';
+import css from '../index.module.less';
 // TODO:import/no-unresolved
 // eslint-disable-next-line import/no-unresolved
 import LogoPng from '/logo.png';
@@ -34,18 +34,18 @@ export default function Header(props: ILayoutRender.Header) {
 
   return (
     <>
-      <header className={style.header_container}>
-        <div className={style.header_lf}>
-          <div className={style.collapsed} onClick={() => onSetCollapsed(!collapsed)}>
+      <header className={css.header_container}>
+        <div className={css.header_lf}>
+          <div className={css.collapsed} onClick={() => onSetCollapsed(!collapsed)}>
             {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
           </div>
-          <Breadcrumb className={style.breadcrumb_box} items={BreadcrumbItem} />
+          <Breadcrumb className={css.breadcrumb_box} items={BreadcrumbItem} />
         </div>
-        <div className={style.header_ri}>
+        <div className={css.header_ri}>
           <Dropdown menu={{ items, onClick: onDropMenu }} placement="bottom">
-            <div className={style.header_avatar} onClick={(event) => event.preventDefault()}>
-              <img src={LogoPng} alt="logo" className={style.user_avatar} />
-              <span className={style.username}>Jairwin</span>
+            <div className={css.header_avatar} onClick={(event) => event.preventDefault()}>
+              <img src={LogoPng} alt="logo" className={css.user_avatar} />
+              <span className={css.username}>Jairwin</span>
             </div>
           </Dropdown>
         </div>

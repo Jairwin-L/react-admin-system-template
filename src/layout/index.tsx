@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Footer } from '@/components';
 import Header from './header';
-import style from './index.module.less';
+import css from './index.module.less';
 import Logo from './logo';
 import { menuItems } from './menus';
 import { getOpenKeys } from './util';
@@ -46,7 +46,7 @@ export default function AppLayout() {
   }, [pathname, collapsed]);
   return (
     <>
-      <Layout className={style.container}>
+      <Layout className={css.container}>
         <Sider trigger={null} collapsed={collapsed} theme="dark">
           <Logo collapsed={collapsed} />
           <Menu
@@ -60,7 +60,7 @@ export default function AppLayout() {
             onOpenChange={onOpenChange}
           />
         </Sider>
-        <Layout className={style['main-layout']}>
+        <Layout className={css['main-layout']}>
           <Header
             collapsed={collapsed}
             onSetCollapsed={(visible: boolean) => setCollapsed(visible)}
@@ -81,7 +81,7 @@ export default function AppLayout() {
               return document.body;
             }}
           >
-            <div id={style.popup_container}>
+            <div id={css.popup_container}>
               <Outlet />
             </div>
           </ConfigProvider>
