@@ -1,7 +1,8 @@
 import { message } from 'antd';
 import fly from 'flyio';
 import { BASE_API_URL } from '@/constant/biz';
-import { SYSTEM_ERROR_MSG } from '@/constant/placeholder';
+import { SYSTEM_ERROR_MSG, SYSTEM_SUCCESS_MSG } from '@/constant/placeholder';
+import { AUTH } from './const';
 
 fly.config.timeout = 3500;
 fly.interceptors.request.use((request) => {
@@ -16,8 +17,14 @@ fly.interceptors.request.use((request) => {
 
 fly.interceptors.response.use(
   (response) => {
-    const { data } = response;
+    const { data, request } = response;
     const result = data || {};
+    const { url = '' } = request || {};
+    const msgFlag = url.includes(AUTH.LOGIN);
+    message.destroy();
+    if (result?.success && msgFlag) {
+      message.success(data?.msg || SYSTEM_SUCCESS_MSG);
+    }
     if (!result?.success) {
       message.error(data?.msg || SYSTEM_ERROR_MSG);
     }

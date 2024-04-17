@@ -1,16 +1,17 @@
-import { type FC, useEffect, useState } from 'react';
-import { Outlet, useNavigate } from 'react-router-dom';
-import { Layout, Menu, ConfigProvider } from 'antd';
 import type { MenuProps } from 'antd';
-import { getOpenKeys } from './util';
+import { ConfigProvider, Layout, Menu } from 'antd';
+import { useEffect, useState } from 'react';
+import { Outlet } from 'react-router-dom';
+import { Footer } from '@/components';
 import Header from './header';
-import { menuItems } from './menus';
-import Logo from './logo';
 import style from './index.module.less';
+import Logo from './logo';
+import { menuItems } from './menus';
+import { getOpenKeys } from './util';
 
 const { Sider } = Layout;
 
-const LayoutRender: FC = () => {
+export default function AppLayout() {
   const navigate = useNavigate();
   const { pathname } = location;
   const [selectedKeys, setSelectedKeys] = useState<string[]>([pathname]);
@@ -46,7 +47,7 @@ const LayoutRender: FC = () => {
   return (
     <>
       <Layout className={style.container}>
-        <Sider trigger={null} collapsed={collapsed} width={220} theme="dark">
+        <Sider trigger={null} collapsed={collapsed} theme="dark">
           <Logo collapsed={collapsed} />
           <Menu
             theme="dark"
@@ -59,7 +60,7 @@ const LayoutRender: FC = () => {
             onOpenChange={onOpenChange}
           />
         </Sider>
-        <Layout className={style.main_layout}>
+        <Layout className={style['main-layout']}>
           <Header
             collapsed={collapsed}
             onSetCollapsed={(visible: boolean) => setCollapsed(visible)}
@@ -81,15 +82,12 @@ const LayoutRender: FC = () => {
             }}
           >
             <div id={style.popup_container}>
-              <div className={style.outlet}>
-                <Outlet />
-              </div>
+              <Outlet />
             </div>
           </ConfigProvider>
+          <Footer />
         </Layout>
       </Layout>
     </>
   );
-};
-
-export default LayoutRender;
+}

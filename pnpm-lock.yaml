@@ -15,6 +15,7 @@ specifiers:
   '@vitejs/plugin-react': ^3.1.0
   antd: ^5.16.2
   china-division: ^2.7.0
+  clsx: ^2.1.0
   commitlint-config-ali: ^1.1.0
   dayjs: ^1.11.10
   eslint: ^8.57.0
@@ -54,6 +55,7 @@ dependencies:
   '@ant-design/icons': registry.npmjs.org/@ant-design/icons/4.8.3_biqbaboplfbrettd7655fr4n2y
   antd: registry.npmjs.org/antd/5.16.2_biqbaboplfbrettd7655fr4n2y
   china-division: registry.npmjs.org/china-division/2.7.0
+  clsx: registry.npmjs.org/clsx/2.1.0
   dayjs: registry.npmjs.org/dayjs/1.11.10
   exceljs: registry.npmjs.org/exceljs/4.4.0
   file-saver: registry.npmjs.org/file-saver/2.0.5
@@ -4054,6 +4056,13 @@ packages:
       strip-ansi: registry.npmjs.org/strip-ansi/6.0.1
       wrap-ansi: registry.npmjs.org/wrap-ansi/7.0.0
     dev: true
+
+  registry.npmjs.org/clsx/2.1.0:
+    resolution: {integrity: sha512-m3iNNWpd9rl3jvvcBnu70ylMdrXt8Vlq4HYadnU5fwcOtvkSQWPmj7amUcDT2qYI7risszBjI5AUIUox9D16pg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/clsx/-/clsx-2.1.0.tgz}
+    name: clsx
+    version: 2.1.0
+    engines: {node: '>=6'}
+    dev: false
 
   registry.npmjs.org/color-convert/1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/color-convert/-/color-convert-1.9.3.tgz}

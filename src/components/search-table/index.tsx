@@ -1,7 +1,7 @@
-import { Key } from 'react';
-import { Button, Card, Table } from 'antd';
-import { TablePaginationConfig } from 'antd/es/table';
+import { Button, Table } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
+import { TablePaginationConfig } from 'antd/es/table';
+import { Key } from 'react';
 import SearchAction from '../search-action';
 import SearchForm from '../search-form';
 import style from './index.module.less';
@@ -76,7 +76,7 @@ export default function SearchTable<T>(props: IConditionSearch.SearchTable<T>) {
           fileUploadFlag={fileUploadFlag}
         />
       ) : null}
-      <Card>
+      <>
         {hasSelected ? (
           <div className={style.selected_keys}>
             <p>
@@ -105,7 +105,7 @@ export default function SearchTable<T>(props: IConditionSearch.SearchTable<T>) {
               `第${range[0] || '--'}~${range[1] || '--'}条 / 共${totalCount}条`,
           }}
         />
-      </Card>
+      </>
     </>
   );
 }

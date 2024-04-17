@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
 import ILayoutRender from '@/typings/layout';
-// TODO:
+import { useEffect, useState } from 'react';
+import style from '../index.module.less';
+// TODO:import/no-unresolved
 // eslint-disable-next-line import/no-unresolved
 import LogoPng from '/logo.png';
-import style from '../index.module.less';
 
 export default function Logo(props: ILayoutRender.Logo) {
   const { collapsed } = props || {};
