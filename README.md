@@ -42,6 +42,10 @@ test环境：pnpm build:test
 pnpm preview
 ```
 
+- online
+
+visit: https://react-admin-system-template.vercel.app
+
 ## Link
 
 vitejs：<https://cn.vitejs.dev/guide/>

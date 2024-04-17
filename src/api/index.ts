@@ -1,5 +1,7 @@
+import { message } from 'antd';
 import fly from 'flyio';
 import { BASE_API_URL } from '@/constant/biz';
+import { SYSTEM_ERROR_MSG } from '@/constant/placeholder';
 
 fly.config.timeout = 3500;
 fly.interceptors.request.use((request) => {
@@ -16,12 +18,9 @@ fly.interceptors.response.use(
   (response) => {
     const { data } = response;
     const result = data || {};
-    // console.log(`response----->：`, response);
-    // if (result?.success) {
-    //   message.success(data?.msg || SYSTEM_SUCCESS_MSG);
-    // } else {
-    //   message.error(data?.msg || SYSTEM_ERROR_MSG);
-    // }
+    if (!result?.success) {
+      message.error(data?.msg || SYSTEM_ERROR_MSG);
+    }
     return result;
   },
   (error: any) => {
