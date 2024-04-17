@@ -10,7 +10,7 @@ export async function query(params: IQueryBiz.RequestParam): Promise<IBaseResp<I
     const res = await apiRequest.get<IQueryBiz.Resp, IQueryBiz.RequestParam>(BIZ.LIST, params);
     return res;
   } catch (error) {
-    console.log(`error----->：`, error);
+    console.log('error----->：', error);
     return {};
   }
 }
@@ -21,7 +21,7 @@ export async function destroy(params: IQueryBiz.DelParam): Promise<IBaseResp<IQu
     const res = await apiRequest.delete<IQueryBiz.Resp, IQueryBiz.DelParam>(BIZ.DELETE, params);
     return res;
   } catch (error) {
-    console.log(`error----->：`, error);
+    console.log('error----->：', error);
     return {};
   }
 }

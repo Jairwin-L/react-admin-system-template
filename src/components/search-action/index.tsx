@@ -15,7 +15,7 @@ function SearchAction<T>(props: IConditionSearch.SearchAction<T>) {
         onDelRefetch();
       }
     } catch (error) {
-      console.error(`onDelete.error----->：`, error);
+      console.error('onDelete.error----->：', error);
     }
   };
   return (

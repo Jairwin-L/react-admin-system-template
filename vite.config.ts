@@ -1,17 +1,18 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import AutoImport from 'unplugin-auto-import/vite';
-import viteCompression from 'vite-plugin-compression';
-import path from 'path';
-import { theme } from 'antd';
 import { convertLegacyToken } from '@ant-design/compatible/lib';
+import react from '@vitejs/plugin-react';
+import { theme } from 'antd';
+// eslint-disable-next-line import/order
+import path from 'path';
+import AutoImport from 'unplugin-auto-import/vite';
+import { defineConfig } from 'vite';
+import viteCompression from 'vite-plugin-compression';
 
 const { defaultAlgorithm, defaultSeed } = theme;
 
 const mapToken = defaultAlgorithm(defaultSeed);
 const v4Token = convertLegacyToken(mapToken);
 
-const resolvePath = (dir) => path.join(__dirname, dir);
+const resolvePath = (dir: string) => path.join(__dirname, dir);
 
 export default defineConfig({
   plugins: [

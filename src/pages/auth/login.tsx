@@ -8,7 +8,7 @@ export default function Login() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const onFinish = (values: Store) => {
-    console.log(`values----->：`, values);
+    console.log('values----->：', values);
     setLoading(true);
     try {
       setLoading(false);

@@ -1,15 +1,15 @@
-import { StrictMode } from 'react';
-import ReactDOM from 'react-dom/client';
 import { Alert, ConfigProvider, Watermark } from 'antd';
+import 'antd/dist/reset.css';
+import zhCN from 'antd/locale/zh_CN';
 import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
-import zhCN from 'antd/locale/zh_CN';
-import 'antd/dist/reset.css';
-import './global.less';
+import { StrictMode } from 'react';
 import { isMobile } from 'react-device-detect';
-import { ENV } from '@/constant';
+import ReactDOM from 'react-dom/client';
 import App from './app';
 import { APP_NAME } from './constant/app';
+import { ENV } from './constant/env';
+import './global.less';
 
 dayjs.locale('zh-cn');
 

@@ -7,7 +7,7 @@ export async function upload(file: any): Promise<IBaseResp<IUpload.Resp>> {
     const res = await apiRequest.post<IUpload.Resp, IUpload.FileStream>(FILE.UPLOAD, file);
     return res;
   } catch (error) {
-    console.log(`error----->：`, error);
+    console.log('error----->：', error);
     return {};
   }
 }

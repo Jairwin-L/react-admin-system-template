@@ -1,5 +1,5 @@
-import { EXCEL_SUFFIX_REG } from '@/constant';
 import { message } from 'antd';
+import { EXCEL_SUFFIX_REG } from '@/constant/reg';
 
 // 文件上传校验
 export const beforeUploadFile = (file: any): boolean => {

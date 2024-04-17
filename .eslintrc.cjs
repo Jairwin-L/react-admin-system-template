@@ -23,32 +23,26 @@ module.exports = {
           {
             pattern: 'lodash',
             group: 'external',
-            position: 'before',
           },
           {
             pattern: '@/components/**',
             group: 'internal',
-            position: 'before',
           },
           {
             pattern: '@/utils/**',
             group: 'internal',
-            position: 'before',
           },
           {
             pattern: '@/hooks/**',
             group: 'internal',
-            position: 'before',
           },
           {
             pattern: '@/api/**',
             group: 'internal',
-            position: 'before',
           },
           {
-            pattern: '@/constants/**',
+            pattern: '@/constant/**',
             group: 'internal',
-            position: 'after',
           },
         ],
       },
@@ -67,7 +61,7 @@ module.exports = {
   extends: [
     'eslint-config-ali/typescript/react',
     'prettier',
-    'prettier/@typescript-eslint',
-    'prettier/react',
+    // 'prettier/@typescript-eslint',
+    // 'prettier/react',
   ],
 };

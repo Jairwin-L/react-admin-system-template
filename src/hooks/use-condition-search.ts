@@ -1,9 +1,9 @@
 import type { Store } from 'antd/es/form/interface';
-import omit from 'lodash.omit';
 import { TablePaginationConfig } from 'antd/es/table';
+import omit from 'lodash.omit';
 import { query } from '@/api/modules/biz';
-import { PAGE_INDEX, PAGE_SIZE } from '@/constant';
 import { formatDate } from '@/utils';
+import { PAGE_INDEX, PAGE_SIZE } from '@/constant/biz';
 
 const useConditionSearch = <T>(
   props: IConditionSearch.ConditionSearch,

@@ -1,6 +1,7 @@
 import { message } from 'antd';
 import fly from 'flyio';
-import { BASE_API_URL, SYSTEM_ERROR_MSG } from '@/constant';
+import { BASE_API_URL } from '@/constant/biz';
+import { SYSTEM_ERROR_MSG } from '@/constant/placeholder';
 
 fly.config.timeout = 3500;
 fly.interceptors.request.use((request) => {
