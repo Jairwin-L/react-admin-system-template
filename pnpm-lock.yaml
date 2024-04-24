@@ -48,7 +48,7 @@ specifiers:
   terser: ^5.30.3
   typescript: ^5.4.5
   unplugin-auto-import: ^0.5.11
-  vite: ^5.2.9
+  vite: ^5.2.10
   vite-plugin-compression: ^0.3.6
   vite-plugin-externals: ^0.1.7
 
@@ -83,8 +83,8 @@ devDependencies:
   '@types/react-color': registry.npmjs.org/@types/react-color/3.0.12
   '@types/react-dom': registry.npmjs.org/@types/react-dom/18.2.25
   '@types/react-router-dom': registry.npmjs.org/@types/react-router-dom/5.3.3
-  '@vitejs/plugin-legacy': registry.npmjs.org/@vitejs/plugin-legacy/1.8.2_vite@5.2.9
-  '@vitejs/plugin-react': registry.npmjs.org/@vitejs/plugin-react/3.1.0_vite@5.2.9
+  '@vitejs/plugin-legacy': registry.npmjs.org/@vitejs/plugin-legacy/1.8.2_vite@5.2.10
+  '@vitejs/plugin-react': registry.npmjs.org/@vitejs/plugin-react/3.1.0_vite@5.2.10
   commitlint-config-ali: registry.npmjs.org/commitlint-config-ali/1.1.0
   eslint: registry.npmjs.org/eslint/8.57.0
   eslint-config-ali: registry.npmjs.org/eslint-config-ali/15.0.1_te743w6atip6hhlha3uq43n2xe
@@ -101,10 +101,10 @@ devDependencies:
   stylelint-config-ali: registry.npmjs.org/stylelint-config-ali/2.1.1_stylelint@16.3.1
   stylelint-prettier: registry.npmjs.org/stylelint-prettier/5.0.0_o7jsggbzrui6i4ers2p52rzdua
   typescript: registry.npmjs.org/typescript/5.4.5
-  unplugin-auto-import: registry.npmjs.org/unplugin-auto-import/0.5.11_vite@5.2.9
-  vite: registry.npmjs.org/vite/5.2.9_v3lvhbspqzuyx2xr3v3iwhbs6a
-  vite-plugin-compression: registry.npmjs.org/vite-plugin-compression/0.3.6_vite@5.2.9
-  vite-plugin-externals: registry.npmjs.org/vite-plugin-externals/0.1.7_vite@5.2.9
+  unplugin-auto-import: registry.npmjs.org/unplugin-auto-import/0.5.11_vite@5.2.10
+  vite: registry.npmjs.org/vite/5.2.10_v3lvhbspqzuyx2xr3v3iwhbs6a
+  vite-plugin-compression: registry.npmjs.org/vite-plugin-compression/0.3.6_vite@5.2.10
+  vite-plugin-externals: registry.npmjs.org/vite-plugin-externals/0.1.7_vite@5.2.10
 
 packages:
 
@@ -3491,7 +3491,7 @@ packages:
       nanoid: registry.npmjs.org/nanoid/3.3.7
     dev: false
 
-  registry.npmjs.org/@vitejs/plugin-legacy/1.8.2_vite@5.2.9:
+  registry.npmjs.org/@vitejs/plugin-legacy/1.8.2_vite@5.2.10:
     resolution: {integrity: sha512-NCOKU+pU+cxLMR9P9RTolEuOK+h+zYBXlknj+zGcKSj/NXBZYgA1GAH1FnO4zijoWRiTaiOm2ha9LQrELE7XHg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@vitejs/plugin-legacy/-/plugin-legacy-1.8.2.tgz}
     id: registry.npmjs.org/@vitejs/plugin-legacy/1.8.2
     name: '@vitejs/plugin-legacy'
@@ -3505,10 +3505,10 @@ packages:
       magic-string: registry.npmjs.org/magic-string/0.26.7
       regenerator-runtime: registry.npmjs.org/regenerator-runtime/0.13.11
       systemjs: registry.npmjs.org/systemjs/6.14.3
-      vite: registry.npmjs.org/vite/5.2.9_v3lvhbspqzuyx2xr3v3iwhbs6a
+      vite: registry.npmjs.org/vite/5.2.10_v3lvhbspqzuyx2xr3v3iwhbs6a
     dev: true
 
-  registry.npmjs.org/@vitejs/plugin-react/3.1.0_vite@5.2.9:
+  registry.npmjs.org/@vitejs/plugin-react/3.1.0_vite@5.2.10:
     resolution: {integrity: sha512-AfgcRL8ZBhAlc3BFdigClmTUMISmmzHn7sB2h9U1odvc5U/MjWXsAaz18b/WoppUTDBzxOJwo2VdClfUcItu9g==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@vitejs/plugin-react/-/plugin-react-3.1.0.tgz}
     id: registry.npmjs.org/@vitejs/plugin-react/3.1.0
     name: '@vitejs/plugin-react'
@@ -3522,7 +3522,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': registry.npmjs.org/@babel/plugin-transform-react-jsx-source/7.24.1_@babel+core@7.24.4
       magic-string: registry.npmjs.org/magic-string/0.27.0
       react-refresh: registry.npmjs.org/react-refresh/0.14.0
-      vite: registry.npmjs.org/vite/5.2.9_v3lvhbspqzuyx2xr3v3iwhbs6a
+      vite: registry.npmjs.org/vite/5.2.10_v3lvhbspqzuyx2xr3v3iwhbs6a
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -11950,7 +11950,7 @@ packages:
     engines: {node: '>= 10.0.0'}
     dev: true
 
-  registry.npmjs.org/unplugin-auto-import/0.5.11_vite@5.2.9:
+  registry.npmjs.org/unplugin-auto-import/0.5.11_vite@5.2.10:
     resolution: {integrity: sha512-MJ3POLe/IysRHF4yd32FkKDoxqSRoiuIHm89ys67B8FLuz2Pvh9poeqTVe6IhJsNxwv0+GSdFfj5Dpq24lhm4g==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/unplugin-auto-import/-/unplugin-auto-import-0.5.11.tgz}
     id: registry.npmjs.org/unplugin-auto-import/0.5.11
     name: unplugin-auto-import
@@ -11967,7 +11967,7 @@ packages:
       local-pkg: registry.npmjs.org/local-pkg/0.4.3
       magic-string: registry.npmjs.org/magic-string/0.25.9
       resolve: registry.npmjs.org/resolve/1.22.8
-      unplugin: registry.npmjs.org/unplugin/0.3.3_vite@5.2.9
+      unplugin: registry.npmjs.org/unplugin/0.3.3_vite@5.2.10
     transitivePeerDependencies:
       - esbuild
       - rollup
@@ -11975,7 +11975,7 @@ packages:
       - webpack
     dev: true
 
-  registry.npmjs.org/unplugin/0.3.3_vite@5.2.9:
+  registry.npmjs.org/unplugin/0.3.3_vite@5.2.10:
     resolution: {integrity: sha512-WjZWpUqqcYPQ/efR00Zm2m1+J1LitwoZ4uhHV4VdZ+IpW0Nh/qnDYtVf+nLhozXdGxslMPecOshVR7NiWFl4gA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/unplugin/-/unplugin-0.3.3.tgz}
     id: registry.npmjs.org/unplugin/0.3.3
     name: unplugin
@@ -11995,7 +11995,7 @@ packages:
       webpack:
         optional: true
     dependencies:
-      vite: registry.npmjs.org/vite/5.2.9_v3lvhbspqzuyx2xr3v3iwhbs6a
+      vite: registry.npmjs.org/vite/5.2.10_v3lvhbspqzuyx2xr3v3iwhbs6a
       webpack-virtual-modules: registry.npmjs.org/webpack-virtual-modules/0.4.6
     dev: true
 
@@ -12084,7 +12084,7 @@ packages:
       gl-matrix: registry.npmjs.org/gl-matrix/3.4.3
     dev: false
 
-  registry.npmjs.org/vite-plugin-compression/0.3.6_vite@5.2.9:
+  registry.npmjs.org/vite-plugin-compression/0.3.6_vite@5.2.10:
     resolution: {integrity: sha512-aSskQCJsP3VQ8PsnY+vO7UfD5qoFMOEuzg0PG2E9Zqyx+ARmc3wr9KCgOFraZOFW1Y4UAa5BR0SMTjoxHRMJoQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/vite-plugin-compression/-/vite-plugin-compression-0.3.6.tgz}
     id: registry.npmjs.org/vite-plugin-compression/0.3.6
     name: vite-plugin-compression
@@ -12095,12 +12095,12 @@ packages:
       chalk: registry.npmjs.org/chalk/4.1.2
       debug: registry.npmjs.org/debug/4.3.4
       fs-extra: registry.npmjs.org/fs-extra/10.1.0
-      vite: registry.npmjs.org/vite/5.2.9_v3lvhbspqzuyx2xr3v3iwhbs6a
+      vite: registry.npmjs.org/vite/5.2.10_v3lvhbspqzuyx2xr3v3iwhbs6a
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  registry.npmjs.org/vite-plugin-externals/0.1.7_vite@5.2.9:
+  registry.npmjs.org/vite-plugin-externals/0.1.7_vite@5.2.10:
     resolution: {integrity: sha512-y5vsRiwssm7sZLx8OZr4VOEdql/Oomn47TT2YmUjbhN/cw+wadPg1Et72zyIM9cB27OmdIg39OvrGZ9ipN9Nfw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/vite-plugin-externals/-/vite-plugin-externals-0.1.7.tgz}
     id: registry.npmjs.org/vite-plugin-externals/0.1.7
     name: vite-plugin-externals
@@ -12112,14 +12112,14 @@ packages:
       es-module-lexer: registry.npmjs.org/es-module-lexer/0.4.1
       fs-extra: registry.npmjs.org/fs-extra/10.1.0
       magic-string: registry.npmjs.org/magic-string/0.25.9
-      vite: registry.npmjs.org/vite/5.2.9_v3lvhbspqzuyx2xr3v3iwhbs6a
+      vite: registry.npmjs.org/vite/5.2.10_v3lvhbspqzuyx2xr3v3iwhbs6a
     dev: true
 
-  registry.npmjs.org/vite/5.2.9_v3lvhbspqzuyx2xr3v3iwhbs6a:
-    resolution: {integrity: sha512-uOQWfuZBlc6Y3W/DTuQ1Sr+oIXWvqljLvS881SVmAj00d5RdgShLcuXWxseWPd4HXwiYBFW/vXHfKFeqj9uQnw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/vite/-/vite-5.2.9.tgz}
-    id: registry.npmjs.org/vite/5.2.9
+  registry.npmjs.org/vite/5.2.10_v3lvhbspqzuyx2xr3v3iwhbs6a:
+    resolution: {integrity: sha512-PAzgUZbP7msvQvqdSD+ErD5qGnSFiGOoWmV5yAKUEI0kdhjbH6nMWVyZQC/hSc4aXwc0oJ9aEdIiF9Oje0JFCw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/vite/-/vite-5.2.10.tgz}
+    id: registry.npmjs.org/vite/5.2.10
     name: vite
-    version: 5.2.9
+    version: 5.2.10
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:

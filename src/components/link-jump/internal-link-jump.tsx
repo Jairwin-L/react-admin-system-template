@@ -1,4 +1,3 @@
-'use client';
 import clsx from 'clsx';
 import css from './index.module.less';
 

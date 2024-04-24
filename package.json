@@ -102,7 +102,7 @@
     "stylelint-prettier": "^5.0.0",
     "typescript": "^5.4.5",
     "unplugin-auto-import": "^0.5.11",
-    "vite": "^5.2.9",
+    "vite": "^5.2.10",
     "vite-plugin-compression": "^0.3.6",
     "vite-plugin-externals": "^0.1.7"
   },
