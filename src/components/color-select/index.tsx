@@ -1,12 +1,7 @@
 import { Button, Popover, Tag } from 'antd';
 import { PhotoshopPicker } from 'react-color';
 
-interface IColorSelectorProps {
-  value?: string;
-  onChange?: ((color?: string) => void) | undefined;
-}
-
-export default function ColorSelector(props: IColorSelectorProps) {
+export default function ColorSelector(props: IColorSelector) {
   const { value, onChange } = props;
   const [visible, setVisible] = useState(false);
   const [selectedColor, setSelectedColor] = useState(value);

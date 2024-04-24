@@ -10,6 +10,6 @@ interface Props {
   className?: string;
 }
 
-export default (props: Props) => (
-  <IconFont type={props.type} className={props.className ? props.className : ''} />
-);
+export default function IconifyFont(props: Props) {
+  return <IconFont type={props.type} className={props.className ? props.className : ''} />;
+}

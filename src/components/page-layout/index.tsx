@@ -1,7 +1,7 @@
 import Exception from '../exception';
 import PageLoading from '../page-loading';
 
-const PageLayout = (props: IPageLayout): JSX.Element => {
+export default function PageLayout(props: IPageLayout) {
   const { success = true, loading = false, children, onRefresh } = props || {};
   if (loading && success) {
     return <PageLoading />;
@@ -10,6 +10,4 @@ const PageLayout = (props: IPageLayout): JSX.Element => {
     return <Exception onClick={onRefresh} />;
   }
   return <>{children}</>;
-};
-
-export default PageLayout;
+}

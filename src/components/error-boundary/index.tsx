@@ -1,14 +1,6 @@
 import { Component } from 'react';
 import Exception from '../exception';
 
-interface ErrorBoundaryProps {
-  children: React.ReactNode;
-}
-
-interface ErrorBoundaryState {
-  hasError: boolean;
-}
-
 class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
   state = { hasError: false, errorInfo: '' };
   static getDerivedStateFromError(error: Error) {

@@ -1,15 +1,10 @@
 import { UploadOutlined } from '@ant-design/icons';
 import { Button, message } from 'antd';
-import { ChangeEvent, FC, useEffect, useRef, useState } from 'react';
+import { ChangeEvent } from 'react';
 import { beforeUploadFile } from '@/utils/upload-file';
 import css from './index.module.less';
 
-interface ISelectFile {
-  uploadDisabled: boolean;
-  onUploadFileChange: ({ status }: { status: 'none' | 'progress' | 'done' }) => void;
-}
-
-const SelectFile: FC<ISelectFile> = (props) => {
+export default function SelectFile(props: ISelectFile) {
   const { uploadDisabled = false, onUploadFileChange } = props;
   const uploadFileRef = useRef<any>({});
   const [disabled, setDisabled] = useState<boolean>(uploadDisabled);
@@ -87,6 +82,4 @@ const SelectFile: FC<ISelectFile> = (props) => {
       </div>
     </>
   );
-};
-
-export default SelectFile;
+}

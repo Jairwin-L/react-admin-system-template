@@ -1,8 +1,7 @@
 import { Divider, Popconfirm } from 'antd';
-import { useNavigate } from 'react-router-dom';
 import { destroy } from '@/api/modules/biz';
 
-const TableAction = (props: { item: any; onRefresh: () => void }) => {
+export default function TableAction(props: ITableAction) {
   const navigate = useNavigate();
   const { item, onRefresh } = props;
   const onDelete = async () => {
@@ -28,6 +27,4 @@ const TableAction = (props: { item: any; onRefresh: () => void }) => {
       </Popconfirm>
     </div>
   );
-};
-
-export default TableAction;
+}

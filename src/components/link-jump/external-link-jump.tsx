@@ -1,11 +1,3 @@
-import { type ReactNode } from 'react';
-
-interface IExternalLinkJump {
-  href: string;
-  className?: string;
-  children: ReactNode;
-}
-
 export default function ExternalLinkJump(props: IExternalLinkJump) {
   const { href = '', className = '', children } = props;
   if (!href || !children) return;

@@ -1,8 +1,8 @@
 import { Button } from 'antd';
-import { useNavigate } from 'react-router-dom';
 import css from './index.module.less';
 
-export default function FooterToolbar({ loading = false, children }: any) {
+export default function FooterToolbar(props: IFooterToolbar) {
+  const { loading = false, children } = props;
   const navigate = useNavigate();
   return (
     <div className={css['footer-toolbar-container']}>

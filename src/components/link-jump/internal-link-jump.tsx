@@ -2,13 +2,6 @@
 import clsx from 'clsx';
 import css from './index.module.less';
 
-interface IInternalLinkJump {
-  link: string;
-  text: string;
-  className?: string;
-  onClick?: any;
-}
-
 export default function InternalLinkJump(props: IInternalLinkJump) {
   const { link, text, onClick, className } = props;
   const navigate = useNavigate();

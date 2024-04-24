@@ -1,13 +1,13 @@
 import { Button, Result } from 'antd';
 import AutoCenter from '../auto-center';
-import Icon from '../icon';
+import IconifyFont from '../iconify-font';
 
-export default function Exception(props: any) {
-  const { text = '系统繁忙，请稍后重试', onClick }: any = props || {};
+export default function Exception(props: IException) {
+  const { text = '系统繁忙，请稍后重试', onClick }: any = props;
   return (
     <AutoCenter>
       <Result
-        icon={<Icon type="iconcuowu" />}
+        icon={<IconifyFont type="iconcuowu" />}
         title={text}
         status="500"
         extra={

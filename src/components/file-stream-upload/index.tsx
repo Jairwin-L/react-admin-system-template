@@ -1,15 +1,13 @@
 import { LoadingOutlined, PaperClipOutlined } from '@ant-design/icons';
 import { Button, Modal, message } from 'antd';
-import { useEffect, useState } from 'react';
 import { upload } from '@/api/modules/upload';
 import SelectFile from './file';
 
-const FileStreamUpload = (props: IUpload.FileStreamUpload) => {
+export default function FileStreamUpload(props: IFileStreamUpload) {
   const { onSearchRefetch } = props;
   const [visible, setVisible] = useState<boolean>(false);
   const [btnLoading, setBtnLoading] = useState<boolean>(false);
   const [uploadDisabled, setUploadDisabled] = useState<boolean>(true);
-  // TODO: ts
   const [uploadFileInfo, setUploadFileInfo] = useState<any>({});
   // 确认上传
   const onFinish = async () => {
@@ -84,6 +82,4 @@ const FileStreamUpload = (props: IUpload.FileStreamUpload) => {
       </Modal>
     </>
   );
-};
-
-export default FileStreamUpload;
+}
