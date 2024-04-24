@@ -2,7 +2,7 @@ import { DatePicker, Input, Select, Tree } from 'antd';
 import { ColorSelect, WangEditor } from '@/components';
 import { SELECT_OPTION } from '@/constant/antd';
 
-export const formItemConfig = (props: any) => {
+export default function formItemConfig(props: any) {
   const { model = {} } = props || {};
   const { schoolList = [], content = '', menuList = [], selectedKeys = [] } = model || {};
   const onCheck = (checkedKeys: any, info: any) => {
@@ -69,4 +69,4 @@ export const formItemConfig = (props: any) => {
       ),
     },
   ];
-};
+}

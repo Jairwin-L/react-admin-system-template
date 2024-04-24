@@ -5,7 +5,7 @@ import css from './index.module.less';
 export default function Footer() {
   return (
     <footer className={css.footer}>
-      <ExternalLinkJump href="https://react-admin-system-template.vercel.app">
+      <ExternalLinkJump href="https://react-admin-system-template.jairwin.cn">
         {APP_NAME}
       </ExternalLinkJump>
       By

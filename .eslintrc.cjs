@@ -17,32 +17,34 @@ module.exports = {
             group: 'external',
           },
           {
-            pattern: 'antd/es',
-            group: 'external',
-          },
-          {
             pattern: 'lodash',
             group: 'external',
+            position: 'before',
           },
           {
             pattern: '@/components/**',
             group: 'internal',
+            position: 'before',
           },
           {
             pattern: '@/utils/**',
             group: 'internal',
+            position: 'before',
           },
           {
             pattern: '@/hooks/**',
             group: 'internal',
+            position: 'before',
           },
           {
             pattern: '@/api/**',
             group: 'internal',
+            position: 'before',
           },
           {
-            pattern: '@/constant/**',
+            pattern: '@/constants/**',
             group: 'internal',
+            position: 'after',
           },
         ],
       },

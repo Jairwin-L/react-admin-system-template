@@ -44,7 +44,7 @@ pnpm preview
 
 - online
 
-visit: https://react-admin-system-template.vercel.app
+visit: https://react-admin-system-template.jairwin.cn
 
 ## Link
 

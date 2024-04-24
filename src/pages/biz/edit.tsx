@@ -1,9 +1,9 @@
 import { Form } from 'antd';
 import dayjs from 'dayjs';
 import { useParams } from 'react-router-dom';
-import { FormLayout, PageLayout } from '@/components';
 import { show, update } from '@/api/modules/biz';
-import { formItemConfig } from './form-item-config';
+import { FormLayout, PageLayout } from '@/components';
+import formItemConfig from './form-item-config';
 
 export default function Edit() {
   const { id } = useParams();
@@ -43,6 +43,7 @@ export default function Edit() {
       setModel(data);
       form.setFieldsValue({
         ...data,
+        // @ts-ignore
         date: dayjs(data?.date) ?? null,
       });
     } catch (error) {

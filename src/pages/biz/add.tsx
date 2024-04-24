@@ -2,7 +2,7 @@ import { Form } from 'antd';
 import { useEffect, useState } from 'react';
 import { show, store } from '@/api/modules/biz';
 import { FormLayout } from '@/components';
-import { formItemConfig } from './form-item-config';
+import formItemConfig from './form-item-config';
 
 export default function Add() {
   const navigate = useNavigate();
