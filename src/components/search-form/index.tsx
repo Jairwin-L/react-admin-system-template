@@ -1,5 +1,4 @@
-import { Button, DatePicker, Form, Input, Select, Space } from 'antd';
-import { useNavigate } from 'react-router-dom';
+import { Button, DatePicker, Form, Input, Select } from 'antd';
 import { SELECT_OPTION } from '@/constant/antd';
 import { makeExportExcel } from '@/utils/export-excel';
 import FileStreamUpload from '../file-stream-upload';
@@ -58,9 +57,9 @@ export default function SearchForm<T>(props: IConditionSearch.SearchForm<T>) {
   };
   return (
     <>
-      <div className={css.search_container}>
+      <div className={css['search-container']}>
         <Form form={form} onFinish={onSearch}>
-          <ul className={css.form_ul}>
+          <ul className={css['search-list']}>
             {searchKeys.map((item: IConditionSearch.SearchFormItemType) => (
               <li className={css.form_li} key={item.value}>
                 <Form.Item name={item.value} label={item.label}>
@@ -71,22 +70,22 @@ export default function SearchForm<T>(props: IConditionSearch.SearchForm<T>) {
           </ul>
         </Form>
       </div>
-      <div className={css.search_tool}>
-        <Space>
+      <div className={css['search-tool']}>
+        <div className={css['search-tool-item']}>
           {exportFlag ? <Button onClick={onExportExcel}>文件导出</Button> : null}
           {fileUploadFlag ? <FileStreamUpload onSearchRefetch={onSearchRefetch} /> : null}
           <Button disabled={loading} type="primary" onClick={() => navigate('./add')}>
             增加
           </Button>
-        </Space>
-        <Space>
+        </div>
+        <div className={css['search-tool-item']}>
           <Button disabled={loading} onClick={() => form.resetFields()}>
             清空
           </Button>
           <Button loading={loading} onClick={() => form.submit()} type="primary">
             搜索
           </Button>
-        </Space>
+        </div>
       </div>
     </>
   );
