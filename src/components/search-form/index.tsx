@@ -74,7 +74,7 @@ export default function SearchForm<T>(props: IConditionSearch.SearchForm<T>) {
         <div className={css['search-tool-item']}>
           {exportFlag ? <Button onClick={onExportExcel}>文件导出</Button> : null}
           {fileUploadFlag ? <FileStreamUpload onSearchRefetch={onSearchRefetch} /> : null}
-          <Button disabled={loading} type="primary" onClick={() => navigate('./add')}>
+          <Button disabled={loading} type="primary" onClick={() => navigate('./create')}>
             增加
           </Button>
         </div>

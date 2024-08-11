@@ -1,46 +1,26 @@
 import Table from '@/pages/biz';
-import TableAdd from '@/pages/biz/add';
+import TableCreate from '@/pages/biz/create';
 import TableDetail from '@/pages/biz/detail';
 import TableEdit from '@/pages/biz/edit';
 
 // 首页模块
-const BizRouter = [
+const bizRouter = [
   {
-    path: '/biz/table',
+    path: '/biz',
     element: <Table />,
-    meta: {
-      title: '基础 Form',
-      key: 'BIZ.TABLE',
-      selectedKeys: ['/biz/table'],
-    },
   },
   {
-    path: '/biz/table/add',
-    element: <TableAdd />,
-    meta: {
-      title: 'Form 添加',
-      key: 'BIZ.TABLE.ADD',
-      selectedKeys: ['/biz/table'],
-    },
+    path: '/biz/create',
+    element: <TableCreate />,
   },
   {
-    path: '/biz/table/edit/:id',
+    path: '/biz/edit/:id',
     element: <TableEdit />,
-    meta: {
-      title: 'Form 编辑',
-      key: 'BIZ.TABLE.EDIT',
-      selectedKeys: ['/biz/table'],
-    },
   },
   {
-    path: '/biz/table/detail/:id',
+    path: '/biz/detail/:id',
     element: <TableDetail />,
-    meta: {
-      title: 'Form 详情',
-      key: 'BIZ.TABLE.DETAIL',
-      selectedKeys: ['/biz/table'],
-    },
   },
 ];
 
-export default BizRouter;
+export default bizRouter;

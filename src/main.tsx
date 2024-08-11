@@ -6,10 +6,12 @@ import 'dayjs/locale/zh-cn';
 import { StrictMode } from 'react';
 import { isMobile } from 'react-device-detect';
 import { createRoot } from 'react-dom/client';
-import App from './app';
+import { RouterProvider } from 'react-router-dom';
 import { APP_NAME } from './constants/app';
 import { ENV } from './constants/env';
 import './global.less';
+import router from './router';
+import PageLoading from './components/page-loading';
 
 dayjs.locale('zh-cn');
 
@@ -49,7 +51,8 @@ createRoot(document.getElementById('react-admin-system-template') as HTMLElement
     {isMobile ? <Alert message={<MobileNode />} type="warning" showIcon /> : null}
     <StrictMode>
       <Watermark content={APP_NAME}>
-        <App />
+        <RouterProvider router={router} fallbackElement={<PageLoading />} />
+        {/* <App /> */}
       </Watermark>
     </StrictMode>
   </ConfigProvider>,

@@ -25,7 +25,7 @@ export default function Header(props: ILayoutRender.Header) {
   const onDropMenu: MenuProps['onClick'] = ({ key }: { key: string }) => {
     if (key === 'SIGN_OUT') {
       // TODO:
-      navigate('/');
+      navigate('/login');
     }
     if (key === 'CHANGE_PASSWORD') {
       // TODO:

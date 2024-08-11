@@ -6,7 +6,6 @@ import { theme } from 'antd';
 import AutoImport from 'unplugin-auto-import/vite';
 import { defineConfig } from 'vite';
 import viteCompression from 'vite-plugin-compression';
-// import cdn from 'vite-plugin-cdn-import';
 
 const __dirname = path.dirname(__filename);
 
@@ -41,16 +40,6 @@ export default defineConfig(async () => {
           enabled: true, // <-- this
         },
       }),
-      // cdn({
-      //   modules: [
-      //     {
-      //       name: 'react',
-      //       var: 'React',
-      //       path: `https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.${devMode ? 'development' : 'production.min'}.js`,
-      //     },
-      //   ],
-      //   enableInDevMode: true,
-      // }),
     ],
     build: {
       commonjsOptions: {
@@ -58,7 +47,7 @@ export default defineConfig(async () => {
       },
       rollupOptions: {
         // 确保外部化处理那些你不想打包进库的依赖
-        // external: ["react", "react-dom", "react-router-dom"],
+        // external: ['react'],
         output: {
           manualChunks(id: string) {
             if (id.includes('node_modules')) {
@@ -85,7 +74,7 @@ export default defineConfig(async () => {
           },
           // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
           // globals: {
-          //   react: "React",
+          //   React: "react",
           //   ReactDOM: "react-dom",
           //   ReactRouterDOM: "react-router-dom",
           // },
@@ -133,9 +122,8 @@ export default defineConfig(async () => {
       // 路径别名
       alias: {
         '@': resolvePath('src'),
-        '@pages': resolvePath('src/pages'),
-        '@constant': resolvePath('src/constant'),
-        // TODO:for esm cdn
+        '@/pages': resolvePath('src/pages'),
+        '@/constant': resolvePath('src/constant'),
       },
     },
   };

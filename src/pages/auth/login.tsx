@@ -9,7 +9,7 @@ import css from './index.module.less';
 // eslint-disable-next-line import/no-unresolved
 import LogoPng from '/logo.png';
 
-export default function Login() {
+export default function Page() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const onFinish = async (values: IQueryAuth.Param) => {

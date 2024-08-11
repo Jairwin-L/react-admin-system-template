@@ -4,10 +4,10 @@ import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Footer } from '@/components';
 import Header from './header';
-import css from './index.module.less';
 import Logo from './logo';
 import { menuItems } from './menus';
 import { getOpenKeys } from './util';
+import css from './index.module.less';
 
 const { Sider } = Layout;
 
@@ -31,7 +31,7 @@ export default function AppLayout() {
     setOpenKeys([latestOpenKey]);
   };
   const onSelectedKeys = () => {
-    const menuSelectedKey = pathname.match(/(\S*)\/(detail|add|edit)/);
+    const menuSelectedKey = pathname.match(/(\S*)\/(detail|create|edit)/);
     const selectedKey = menuSelectedKey?.[1] || [pathname];
     setSelectedKeys(selectedKey as string[]);
     if (!collapsed) {

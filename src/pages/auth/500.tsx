@@ -1,6 +1,6 @@
 import { Button, Result } from 'antd';
 
-export default function Wrong() {
+export default function Page() {
   const navigate = useNavigate();
   return (
     <Result

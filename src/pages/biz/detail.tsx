@@ -1,3 +1,3 @@
-export default function Detail() {
+export default function Page() {
   return <>Detail</>;
 }

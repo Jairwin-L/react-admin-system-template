@@ -4,7 +4,7 @@ import { show, store } from '@/api/modules/biz';
 import { FormLayout } from '@/components';
 import formItemConfig from './form-item-config';
 
-export default function Add() {
+export default function Page() {
   const navigate = useNavigate();
   const [form] = Form.useForm();
   const [model, setModel] = useState();

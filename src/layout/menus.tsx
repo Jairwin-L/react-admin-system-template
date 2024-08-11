@@ -4,7 +4,7 @@ import { getMenuItem } from './util';
 
 export const menuItems = [
   getMenuItem('工作台', '/main', <IconifyFont type="asc-dashboard" />),
-  getMenuItem('Table', '/biz/table', <IconifyFont type="asc-dashboard" />),
+  getMenuItem('Table', '/biz', <IconifyFont type="asc-dashboard" />),
   getMenuItem('菜单嵌套', '/menu', <PieChartOutlined />, [
     getMenuItem('菜单1', '/menu/menu-one', <PieChartOutlined />),
     getMenuItem('菜单2', '/menu/menu-two', <PieChartOutlined />, [
