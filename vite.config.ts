@@ -71,6 +71,9 @@ export default defineConfig(async () => {
             if (id.includes('src/typings')) {
               return 'typings';
             }
+            if (id.includes('src/styles')) {
+              return 'styles';
+            }
           },
           // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
           // globals: {
