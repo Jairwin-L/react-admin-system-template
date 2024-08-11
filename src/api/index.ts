@@ -1,56 +1,71 @@
 import { message } from 'antd';
 import fly from 'flyio';
+import { easySessionStorage } from '@/utils';
+import { HEADERS } from '@/constants/xhr';
 import { BASE_API_URL } from '@/constants/biz';
 import { SYSTEM_ERROR_MSG, SYSTEM_SUCCESS_MSG } from '@/constants/placeholder';
-import { AUTH } from './const';
 
 fly.config.timeout = 3500;
 fly.interceptors.request.use((request) => {
-  request.headers = {
-    'Content-Type': 'application/json',
-    Accept: 'application/json',
-    // apifox mock token
-    apifoxToken: 'sXedLKsR7alyUTRseHi3l',
-  };
+  const token: any = easySessionStorage.getItem('token') || '';
+  request.headers = HEADERS;
+  if (token) {
+    request.headers.Authorization = `${token}`;
+  }
   return request;
 });
 
 fly.interceptors.response.use(
-  (response) => {
+  (response: IFlyio.IFlyResponse) => {
     const { data, request } = response;
+    const { slience } = request;
     const result = data || {};
-    const { url = '' } = request || {};
-    const msgFlag = url.includes(AUTH.LOGIN);
     message.destroy();
-    if (result?.success && msgFlag) {
-      message.success(data?.msg || SYSTEM_SUCCESS_MSG);
+    const success = result?.success;
+    const messageTip = result?.msg;
+    if (slience) {
+      if (success) {
+        message.success(messageTip || SYSTEM_SUCCESS_MSG);
+      }
+      if (!success) {
+        message.error(messageTip || SYSTEM_ERROR_MSG);
+      }
     }
-    if (!result?.success) {
-      message.error(data?.msg || SYSTEM_ERROR_MSG);
-    }
-    return result;
+    return {
+      success,
+      data: result?.data,
+      msg: messageTip,
+    };
   },
   (error: any) => {
     console.error('[EXCEPTION/interceptors] response error:%j', error);
     const data: any = error.response?.data;
+    message.destroy();
     const statusCode = Number(data?.code);
-    if (Number(error.status) === 401) {
+    if (error.status === 500) {
+      message.error(data.message);
+      return Promise.reject(data.message);
+    }
+    if (statusCode === 400) {
+      message.error(data.message);
+      return Promise.reject(data);
+    }
+    if (statusCode === 401) {
+      message.error('登录超时，请重新登录');
       // return Promise.reject(
       //   Modal.error({
-      //     title: "提示",
-      //     content: "登录超时，请重新登录",
+      //     title: '提示',
+      //     content: '登录超时，请重新登录',
       //     centered: true,
-      //     okText: "退出",
+      //     okText: '退出',
       //     onOk: () => {
-      //       sessionStorage.clear();
-      //       window.location.replace(ORIGIN);
+      //       window.location.replace(`${ORIGIN}/login`);
       //     },
-      //   })
+      //   }),
       // );
     }
-    if (statusCode === 404) return Promise.reject(error);
     // 发生网络错误后会走到这里
-    return Promise.resolve(error.status);
+    return Promise.reject(error.status);
   },
 );
 
@@ -77,17 +92,16 @@ class ApiRequest {
   put<Resp, Param>(url: string, params: Param): Promise<IBaseResp<Resp>> {
     return this.fetch(url, 'put', params);
   }
-  post<Resp, Param>(url: string, params: Param): Promise<IBaseResp<Resp>> {
-    return this.fetch(url, 'post', params);
+  post<Resp, Param>(url: string, params: Param, arg: any = {}): Promise<IBaseResp<Resp>> {
+    return this.fetch(url, 'post', params, arg);
   }
   private async fetch<Resp, Param>(
     url: string,
     method: 'get' | 'post' | 'put' | 'delete',
     params?: Param,
+    arg?: any,
   ): Promise<IBaseResp<Resp>> {
-    // if (method === 'post' || method === 'put' || method === 'delete') {
-    // }
-    const response = await fly[method](`${this.BASE_URL}${url}`, params);
+    const response = await fly[method](`${this.BASE_URL}${url}`, params, arg);
     return response;
   }
 }
