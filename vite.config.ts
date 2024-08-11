@@ -62,6 +62,12 @@ export default defineConfig(async ({ mode }) => {
             if (id.includes('src/pages')) {
               return 'pages';
             }
+            if (id.includes('src/router.tsx')) {
+              return 'router';
+            }
+            if (id.includes('src/main.tsx')) {
+              return 'main';
+            }
             if (id.includes('src/components')) {
               return 'components';
             }

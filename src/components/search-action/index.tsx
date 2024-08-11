@@ -1,7 +1,8 @@
 import { Divider, message, Popconfirm } from 'antd';
 import { destroy } from '@/api/modules/biz';
+import css from './index.module.less';
 
-function SearchAction<T>(props: IConditionSearch.SearchAction<T>) {
+export default function SearchAction<T>(props: IConditionSearch.SearchAction<T>) {
   const navigate = useNavigate();
   const { apiType, item, onDelRefetch } = props || {};
   const onDelete = async () => {
@@ -19,16 +20,16 @@ function SearchAction<T>(props: IConditionSearch.SearchAction<T>) {
     }
   };
   return (
-    <div className="table_action_container">
+    <>
       <span
-        className="primary_color"
+        className={css['primary-color']}
         onClick={() => navigate(`./detail/${(item as T & { id: number }).id}`)}
       >
         查看
       </span>
       <Divider type="vertical" />
       <span
-        className="primary_color"
+        className={css['primary-color']}
         onClick={() => navigate(`./edit/${(item as T & { id: number }).id}`)}
       >
         编辑
@@ -41,10 +42,8 @@ function SearchAction<T>(props: IConditionSearch.SearchAction<T>) {
         okText="确认"
         cancelText="取消"
       >
-        <span className="danger_color">删除</span>
+        <span className={css['danger-color']}>删除</span>
       </Popconfirm>
-    </div>
+    </>
   );
 }
-
-export default SearchAction;

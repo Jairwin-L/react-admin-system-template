@@ -5,7 +5,7 @@ import css from './index.module.less';
 export default function PageLoading() {
   return (
     <AutoCenter>
-      <Spin size="large" tip={<span className={css['loading-tip']}>加载中……</span>} />
+      <Spin size="large" fullscreen tip={<span className={css['loading-tip']}>加载中……</span>} />
     </AutoCenter>
   );
 }

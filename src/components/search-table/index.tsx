@@ -43,6 +43,7 @@ export default function SearchTable<T>(props: IConditionSearch.SearchTable<T>) {
       {
         title: '操作',
         width: 200,
+        align: 'center',
         key: 'action',
         render: (item: T) => {
           return <SearchAction<T> apiType={apiType} item={item} onDelRefetch={onDelRefetch} />;

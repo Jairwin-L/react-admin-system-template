@@ -22,7 +22,7 @@
     "dev:test": "vite --mode test",
     "build:dev": "vite build --mode development",
     "build:test": "tsc && vite build --mode test",
-    "build:prod": "vite build --mode production",
+    "build:prod": "vite build",
     "lint": "eslint . && stylelint \"**/*.{css,less,scss}\"",
     "lint:fix": "prettier --write . && eslint --fix . && stylelint --fix \"**/*.{css,less,scss}\"",
     "prepare": "husky install",

@@ -10,6 +10,7 @@ import { RouterProvider } from 'react-router-dom';
 import { APP_NAME } from './constants/app';
 import { ENV } from './constants/env';
 import router from './router';
+// import './styles/global.less';
 import PageLoading from './components/page-loading';
 
 dayjs.locale('zh-cn');
@@ -28,7 +29,7 @@ const MobileNode = () => (
       href="https://www.google.com/intl/zh-CN/chrome"
       target="_blank"
       rel="noopener noreferrer"
-      className="chrome_download"
+      className="chrome-download"
     >
       苹果系统
     </a>
@@ -37,7 +38,7 @@ const MobileNode = () => (
       href="https://www.google.cn/chrome/index.html"
       target="_blank"
       rel="noopener noreferrer"
-      className="chrome_download"
+      className="chrome-download"
     >
       window系统
     </a>
