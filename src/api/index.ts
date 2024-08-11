@@ -1,7 +1,7 @@
 import { message } from 'antd';
 import fly from 'flyio';
-import { BASE_API_URL } from '@/constant/biz';
-import { SYSTEM_ERROR_MSG, SYSTEM_SUCCESS_MSG } from '@/constant/placeholder';
+import { BASE_API_URL } from '@/constants/biz';
+import { SYSTEM_ERROR_MSG, SYSTEM_SUCCESS_MSG } from '@/constants/placeholder';
 import { AUTH } from './const';
 
 fly.config.timeout = 3500;

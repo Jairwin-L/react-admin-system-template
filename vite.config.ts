@@ -8,6 +8,8 @@ import { defineConfig } from 'vite';
 import viteCompression from 'vite-plugin-compression';
 // import cdn from 'vite-plugin-cdn-import';
 
+const __dirname = path.dirname(__filename);
+
 const { defaultAlgorithm, defaultSeed } = theme;
 
 const mapToken = defaultAlgorithm(defaultSeed);
@@ -54,18 +56,41 @@ export default defineConfig(async () => {
       commonjsOptions: {
         transformMixedEsModules: true,
       },
-      // rollupOptions: {
-      //   // 确保外部化处理那些你不想打包进库的依赖
-      //   external: ["react", "react-dom", "react-router-dom"],
-      //   output: {
-      //     // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
-      //     globals: {
-      //       react: "React",
-      //       ReactDOM: "react-dom",
-      //       ReactRouterDOM: "react-router-dom",
-      //     },
-      //   },
-      // },
+      rollupOptions: {
+        // 确保外部化处理那些你不想打包进库的依赖
+        // external: ["react", "react-dom", "react-router-dom"],
+        output: {
+          manualChunks(id: string) {
+            if (id.includes('node_modules')) {
+              return 'vendor';
+            }
+            if (id.includes('src/pages')) {
+              return 'pages';
+            }
+            if (id.includes('src/components')) {
+              return 'components';
+            }
+            if (id.includes('src/utils')) {
+              return 'utils';
+            }
+            if (id.includes('src/constants')) {
+              return 'constants';
+            }
+            if (id.includes('src/api')) {
+              return 'api';
+            }
+            if (id.includes('src/typings')) {
+              return 'typings';
+            }
+          },
+          // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
+          // globals: {
+          //   react: "React",
+          //   ReactDOM: "react-dom",
+          //   ReactRouterDOM: "react-router-dom",
+          // },
+        },
+      },
     },
     esbuild: {},
     // optimizeDeps: {

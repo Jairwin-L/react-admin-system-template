@@ -1,6 +1,6 @@
 import { DatePicker, Input, Select, Tree } from 'antd';
 import { ColorSelect, WangEditor } from '@/components';
-import { SELECT_OPTION } from '@/constant/antd';
+import { SELECT_OPTION } from '@/constants/antd';
 
 export default function formItemConfig(props: any) {
   const { model = {} } = props || {};

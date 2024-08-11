@@ -1,6 +1,6 @@
 import { login } from '@/api/modules/auth';
 import { Footer } from '@/components';
-import { APP_NAME } from '@/constant/app';
+import { APP_NAME } from '@/constants/app';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Form, Input } from 'antd';
 import { useState } from 'react';

@@ -7,8 +7,8 @@ import { StrictMode } from 'react';
 import { isMobile } from 'react-device-detect';
 import { createRoot } from 'react-dom/client';
 import App from './app';
-import { APP_NAME } from './constant/app';
-import { ENV } from './constant/env';
+import { APP_NAME } from './constants/app';
+import { ENV } from './constants/env';
 import './global.less';
 
 dayjs.locale('zh-cn');

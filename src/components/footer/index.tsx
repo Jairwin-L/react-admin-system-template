@@ -1,4 +1,4 @@
-import { APP_NAME } from '@/constant/app';
+import { APP_NAME } from '@/constants/app';
 import ExternalLinkJump from '../link-jump/external-link-jump';
 import css from './index.module.less';
 
