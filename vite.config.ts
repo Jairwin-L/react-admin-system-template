@@ -97,21 +97,8 @@ export default defineConfig(async () => {
           modifyVars: v4Token,
         },
         less: {
-          additionalData: '@import "./src/global.less";',
-          modifyVars: {
-            '@color-primary': '#1890ff',
-            '@detail_color': '#2db7f5',
-            '@edit_color': '#8354ee',
-            '@color-danger': '#ec4e3d',
-            '@color-white': '#fff',
-            '@color-default-black': '#333',
-            '@pink': '#ffc0cb',
-            '@color-divide': '#f1f5ff',
-            '@color-text': '#999',
-            '@color-theme': '#3e71f8',
-            '@color-gray': '#c4c4c4',
-            '@font-size-default': '16px',
-          },
+          additionalData:
+            '@import "@/styles/global.less";@import "@/styles/mixin.less";@import "@/styles/variable.less";',
           javascriptEnabled: true,
         },
       },

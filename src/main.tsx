@@ -9,7 +9,6 @@ import { createRoot } from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
 import { APP_NAME } from './constants/app';
 import { ENV } from './constants/env';
-import './global.less';
 import router from './router';
 import PageLoading from './components/page-loading';
 
