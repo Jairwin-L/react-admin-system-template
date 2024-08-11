@@ -6,7 +6,7 @@
   padding: 0;
 }
 body {
-  color: @theme_black;
+  color: @color-default-black;
   font-family:
     -apple-system,
     BlinkMacSystemFont,
@@ -22,7 +22,7 @@ body {
   height: 100%;
 }
 a {
-  color: @theme_black;
+  color: @color-default-black;
   text-decoration: none;
 }
 p,
@@ -35,15 +35,15 @@ h6 {
   margin: 0;
 }
 .danger_color {
-  color: @danger_color;
+  color: @color-danger;
   cursor: pointer;
 }
 .primary_color {
-  color: @primary_color;
+  color: @color-primary;
   cursor: pointer;
 }
 .cursor_not_allowed {
-  color: @gray_color;
+  color: @color-gray;
   cursor: not-allowed;
   pointer-events: none;
 }
@@ -54,8 +54,8 @@ h6 {
 .detail_color {
   color: #4290f7;
 }
-.gray_color {
-  color: @gray_color;
+.color-gray {
+  color: @color-gray;
 }
 .ant-card-body {
   padding: 16px;
