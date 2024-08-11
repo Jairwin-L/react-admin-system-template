@@ -1,10 +1,9 @@
 import path from 'path';
+import { defineConfig } from 'vite';
 import { convertLegacyToken } from '@ant-design/compatible/lib';
 import react from '@vitejs/plugin-react';
 import { theme } from 'antd';
-// eslint-disable-next-line import/order
 import AutoImport from 'unplugin-auto-import/vite';
-import { defineConfig } from 'vite';
 import viteCompression from 'vite-plugin-compression';
 
 const __dirname = path.dirname(__filename);
@@ -16,9 +15,16 @@ const v4Token = convertLegacyToken(mapToken);
 
 const resolvePath = (dir: string) => path.join(__dirname, dir);
 
-export default defineConfig(async () => {
-  // const devMode = mode === 'development';
+export default defineConfig(async ({ mode }) => {
+  const devMode = mode === 'development';
   return {
+    define: {
+      'import.meta.env.VITE_API_URL': JSON.stringify(
+        devMode
+          ? 'https://apifoxmock.com/m1/4020462-3657047-default'
+          : 'https://apifoxmock.com/m1/4020462-3657047-default',
+      ),
+    },
     plugins: [
       viteCompression(),
       react(),
