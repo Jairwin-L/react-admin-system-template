@@ -29,29 +29,6 @@
     "preview": "vite preview",
     "typecheck": "tsc -b tsconfig.json"
   },
-  "commitlint": {
-    "extends": [
-      "ali"
-    ]
-  },
-  "lint-staged": {
-    "*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}": "eslint --fix",
-    "*.{css,less,scss}": "stylelint --fix",
-    "*.{cjs,css,cts,html,js,json,jsx,less,md,mjs,mts,scss,ts,tsx,vue,yaml,yml}": "prettier --write"
-  },
-  "prettier": "prettier-config-ali",
-  "eslintConfig": {
-    "extends": [
-      "ali/typescript/react",
-      "plugin:prettier/recommended"
-    ]
-  },
-  "stylelint": {
-    "extends": [
-      "stylelint-config-ali",
-      "stylelint-prettier/recommended"
-    ]
-  },
   "dependencies": {
     "@ant-design/compatible": "^5.1.2",
     "@ant-design/icons": "^4.8.3",
@@ -103,6 +80,29 @@
     "vite-plugin-cdn-import": "^1.0.1",
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-externals": "^0.1.7"
+  },
+  "commitlint": {
+    "extends": [
+      "ali"
+    ]
+  },
+  "lint-staged": {
+    "*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}": "eslint --fix",
+    "*.{css,less,scss}": "stylelint --fix",
+    "*.{cjs,css,cts,html,js,json,jsx,less,md,mjs,mts,scss,ts,tsx,vue,yaml,yml}": "prettier --write"
+  },
+  "prettier": "prettier-config-ali",
+  "eslintConfig": {
+    "extends": [
+      "ali/typescript/react",
+      "plugin:prettier/recommended"
+    ]
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-ali",
+      "stylelint-prettier/recommended"
+    ]
   },
   "engines": {
     "node": ">=16"

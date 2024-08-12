@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom';
 import { Footer } from '@/components';
 import Header from './header';
 import Logo from './logo';
-import { menuItems } from './menus';
+import { items } from './menus';
 import { getOpenKeys } from './util';
 import css from './index.module.less';
 
@@ -55,12 +55,12 @@ export default function AppLayout() {
             triggerSubMenuAction="click"
             openKeys={openKeys}
             selectedKeys={selectedKeys}
-            items={menuItems}
+            items={items}
             onClick={onChangeMenu}
             onOpenChange={onOpenChange}
           />
         </Sider>
-        <Layout className={css['main-layout']}>
+        <Layout className={css['layout-container']}>
           <Header
             collapsed={collapsed}
             onSetCollapsed={(visible: boolean) => setCollapsed(visible)}

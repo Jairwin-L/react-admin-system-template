@@ -1,24 +1,24 @@
 import type { MenuProps } from 'antd';
-import { Key, ReactNode } from 'react';
+// import { Key, ReactNode } from 'react';
 
 // 定义 menu 类型
 export type MenuItem = Required<MenuProps>['items'][number];
 
-export function getMenuItem(
-  label: ReactNode,
-  key: Key,
-  icon?: ReactNode,
-  children?: MenuItem[],
-  type?: 'group',
-): MenuItem {
-  return {
-    key,
-    icon,
-    children,
-    label,
-    type,
-  };
-}
+// export function getMenuItem(
+//   label: ReactNode,
+//   key: Key,
+//   icon?: ReactNode,
+//   children?: MenuItem[],
+//   type?: 'group',
+// ): MenuItem {
+//   return {
+//     label,
+//     key,
+//     icon,
+//     children,
+//     type,
+//   };
+// }
 
 /**
  * @description 获取需要展开的 subMenu
