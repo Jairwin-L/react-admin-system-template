@@ -12,9 +12,9 @@ export default function Logo(props: ILayoutRender.Logo) {
     setIsCollapsed(collapsed);
   }, [collapsed]);
   return (
-    <div className={css.logo_box}>
-      <img src={LogoPng} alt="logo" className={css.logo_img} />
-      {!isCollapsed ? <span className={css.logo_text}>RAST</span> : null}
+    <div className={css['logo-box']}>
+      <img src={LogoPng} alt="logo" className={css['logo-img']} />
+      {!isCollapsed ? <span className={css['logo-text']}>RAST</span> : null}
     </div>
   );
 }

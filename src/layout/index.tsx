@@ -62,7 +62,7 @@ export default function AppLayout() {
             onOpenChange={onOpenChange}
           />
         </Sider>
-        <div className={css['layout-container']}>
+        <Layout className={css['layout-container']}>
           <Header
             collapsed={collapsed}
             onSetCollapsed={(visible: boolean) => setCollapsed(visible)}
@@ -88,7 +88,7 @@ export default function AppLayout() {
             </div>
           </ConfigProvider>
           <Footer />
-        </div>
+        </Layout>
       </Layout>
     </>
   );

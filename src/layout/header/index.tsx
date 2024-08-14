@@ -43,7 +43,7 @@ export default function Header(props: ILayoutRender.Header | any) {
   };
 
   return (
-    <>
+    <div className={css['header-wrap']}>
       <header className={css['header-container']}>
         <div className={css['header-lf']}>
           <div className={css.collapsed} onClick={() => onSetCollapsed(!collapsed)}>
@@ -70,6 +70,6 @@ export default function Header(props: ILayoutRender.Header | any) {
           </Dropdown>
         </div>
       </header>
-    </>
+    </div>
   );
 }
