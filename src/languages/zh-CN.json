@@ -1,0 +1,7 @@
+{
+  "welcome": "欢迎, {text},{text1}",
+  "menu.workbench": "工作台",
+  "menu.list": "列表",
+  "table.form.label.name": "姓名",
+  "table.form.input.name.placeholder": "请输入姓名"
+}

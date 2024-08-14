@@ -1,0 +1,3 @@
+interface ILanguageContext {
+  language: string;
+}

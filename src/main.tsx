@@ -1,19 +1,11 @@
-import { Alert, ConfigProvider, Watermark } from 'antd';
-import 'antd/dist/reset.css';
-import zhCN from 'antd/locale/zh_CN';
-import dayjs from 'dayjs';
-import 'dayjs/locale/zh-cn';
+import { Alert, Watermark } from 'antd';
 import { StrictMode } from 'react';
 import { isMobile } from 'react-device-detect';
 import { createRoot } from 'react-dom/client';
-import { RouterProvider } from 'react-router-dom';
 import { APP_NAME } from './constants/app';
 import { ENV } from './constants/env';
-import router from './router';
-// import './styles/global.less';
-import PageLoading from './components/page-loading';
-
-dayjs.locale('zh-cn');
+import 'antd/dist/reset.css';
+import App from './app';
 
 if (ENV.MODE !== 'production') {
   console.log(
@@ -47,13 +39,10 @@ const MobileNode = () => (
 
 createRoot(document.getElementById('react-admin-system-template') as HTMLElement).render(
   // * react严格模式
-  <ConfigProvider locale={zhCN}>
-    {isMobile ? <Alert message={<MobileNode />} type="warning" showIcon /> : null}
-    <StrictMode>
-      <Watermark content={APP_NAME}>
-        <RouterProvider router={router} fallbackElement={<PageLoading />} />
-        {/* <App /> */}
-      </Watermark>
-    </StrictMode>
-  </ConfigProvider>,
+  <StrictMode>
+    <Watermark content={APP_NAME}>
+      {isMobile ? <Alert message={<MobileNode />} type="warning" showIcon /> : null}
+      <App />
+    </Watermark>
+  </StrictMode>,
 );

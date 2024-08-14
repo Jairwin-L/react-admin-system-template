@@ -80,6 +80,12 @@ export default defineConfig(async ({ mode }) => {
             if (id.includes('src/api')) {
               return 'api';
             }
+            if (id.includes('src/languages')) {
+              return 'languages';
+            }
+            if (id.includes('src/hooks')) {
+              return 'hooks';
+            }
             if (id.includes('src/typings')) {
               return 'typings';
             }

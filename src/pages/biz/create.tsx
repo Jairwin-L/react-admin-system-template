@@ -2,7 +2,7 @@ import { Form } from 'antd';
 import { useEffect, useState } from 'react';
 import { show, store } from '@/api/modules/biz';
 import { FormLayout } from '@/components';
-import formItemConfig from './form-item-config';
+import FormItemConfig from './form-item-config';
 
 export default function Page() {
   const navigate = useNavigate();
@@ -36,7 +36,7 @@ export default function Page() {
   }, []);
   return (
     <FormLayout form={form} onFinish={onFinish} loading={loading}>
-      {formItemConfig({ model }).map((item) => {
+      {FormItemConfig({ model }).map((item) => {
         return (
           <Form.Item key={item.name} label={item.label} name={item.name} colon rules={item.rules}>
             {item?.component ? item.component : null}

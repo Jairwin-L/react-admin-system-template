@@ -1,0 +1,7 @@
+{
+  "welcome": "accueillir, {text},{text1}",
+  "menu.workbench": "établi",
+  "menu.list": "liste",
+  "table.form.label.name": "Nom",
+  "table.form.input.name.placeholder": "Veuillez entrer le nom"
+}

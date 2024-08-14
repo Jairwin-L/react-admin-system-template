@@ -3,7 +3,7 @@ import dayjs from 'dayjs';
 import { useParams } from 'react-router-dom';
 import { show, update } from '@/api/modules/biz';
 import { FormLayout, PageLayout } from '@/components';
-import formItemConfig from './form-item-config';
+import FormItemConfig from './form-item-config';
 
 export default function Page() {
   const { id } = useParams();
@@ -66,7 +66,7 @@ export default function Page() {
   return (
     <PageLayout {...pageLayout}>
       <FormLayout<IQueryBiz.StoreParam> form={form} onFinish={onFinish} loading={loading}>
-        {formItemConfig({ model }).map((item) => {
+        {FormItemConfig({ model }).map((item) => {
           return (
             <Form.Item key={item.name} label={item.label} name={item.name} colon rules={item.rules}>
               {item?.component ? item.component : null}

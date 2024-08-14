@@ -11,7 +11,6 @@ export default function Page() {
   const [loading, setLoading] = useState<boolean>(false);
   // form提交配置
   const onFinish = async (values: IQueryBiz.StoreParam): Promise<void> => {
-    console.log('values----->：', values);
     try {
       setLoading(true);
       const { success } = await store(values);
