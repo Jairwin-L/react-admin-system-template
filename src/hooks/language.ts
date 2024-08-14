@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 
-const context: any = {
+const context: { [key: string]: any } = {
   language: '',
 };
 

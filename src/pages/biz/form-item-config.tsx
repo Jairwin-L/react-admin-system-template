@@ -13,10 +13,7 @@ export default function FormItemConfig(props: any) {
   const onSelect = (checkedKeys: any, info: any) => {
     console.log('onCheck', checkedKeys, info);
   };
-  console.log(
-    `formatMessage({ id: 'table.form.input.name.placeholder' })----->：`,
-    formatMessage({ id: 'table.form.input.name.placeholder' }),
-  );
+
   return [
     {
       label: formatMessage({ id: 'table.form.label.name' }),
