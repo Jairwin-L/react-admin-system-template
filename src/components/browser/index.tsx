@@ -1,5 +1,5 @@
-import css from './index.module.less';
+import AutoCenter from '../auto-center';
 
 export default function Browser() {
-  return <div className={css.browser_container}>请在电脑浏览器访问该网站，谢谢！</div>;
+  return <AutoCenter>请在电脑浏览器访问该网站，谢谢！</AutoCenter>;
 }

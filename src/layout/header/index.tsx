@@ -44,14 +44,14 @@ export default function Header(props: ILayoutRender.Header | any) {
 
   return (
     <>
-      <header className={css.header_container}>
-        <div className={css.header_lf}>
+      <header className={css['header-container']}>
+        <div className={css['header-lf']}>
           <div className={css.collapsed} onClick={() => onSetCollapsed(!collapsed)}>
             {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
           </div>
           {/* <Breadcrumb className={css.breadcrumb_box} items={BreadcrumbItem} /> */}
         </div>
-        <div className={css.header_ri}>
+        <div className={css['header-ri']}>
           <Dropdown
             menu={{
               items: APP_DROP_MENU_ITEMS,
@@ -63,7 +63,7 @@ export default function Header(props: ILayoutRender.Header | any) {
             <span className={css['drop-menu']}>{APP_LANGUAGE_DROP_DOWN_TEXT[language]}</span>
           </Dropdown>
           <Dropdown menu={{ items, onClick: onDropMenu }} placement="bottom">
-            <div className={css.header_avatar} onClick={(event) => event.preventDefault()}>
+            <div className={css['header-avatar']} onClick={(event) => event.preventDefault()}>
               <img src={LogoPng} alt="logo" className={css.user_avatar} />
               <span className={css.username}>Jairwin</span>
             </div>

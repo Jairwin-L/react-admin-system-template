@@ -1,3 +1,4 @@
+export { default as Card } from './card';
 export { default as FileStreamUpload } from './file-stream-upload';
 export { default as Footer } from './footer';
 export { default as FooterToolbar } from './footer-toolbar';

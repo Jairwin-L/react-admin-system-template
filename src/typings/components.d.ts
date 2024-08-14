@@ -5,6 +5,10 @@ interface IPageLayout {
   onRefresh?: any;
   className?: string;
 }
+interface ICardContainer {
+  children: React.ReactNode;
+  className?: string;
+}
 interface IFormLayout<F> {
   form: any;
   onFinish: (values: F) => Promise<void>;
@@ -19,6 +23,7 @@ interface IFooterToolbar {
 
 interface IAutoCenter {
   children: React.ReactNode;
+  className?: string;
 }
 interface IColorSelector {
   value?: string;

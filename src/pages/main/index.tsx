@@ -1,4 +1,5 @@
 import { useIntl } from 'react-intl';
+import { Card } from '@/components';
 import css from './index.module.less';
 
 export default function Main() {
@@ -12,9 +13,9 @@ export default function Main() {
     };
   }, []);
   return (
-    <div className={css.welcome}>
+    <Card className={css.welcome}>
       主页,
       {formatMessage({ id: 'welcome' }, { text, text1 })}
-    </div>
+    </Card>
   );
 }

@@ -48,7 +48,7 @@ export default function AppLayout() {
 
   return (
     <>
-      <Layout className={css.container}>
+      <Layout className={css['app-container']}>
         <Sider trigger={null} collapsed={collapsed} theme="dark">
           <Logo collapsed={collapsed} />
           <Menu
@@ -62,7 +62,7 @@ export default function AppLayout() {
             onOpenChange={onOpenChange}
           />
         </Sider>
-        <Layout className={css['layout-container']}>
+        <div className={css['layout-container']}>
           <Header
             collapsed={collapsed}
             onSetCollapsed={(visible: boolean) => setCollapsed(visible)}
@@ -83,12 +83,12 @@ export default function AppLayout() {
               return document.body;
             }}
           >
-            <div id={css.popup_container}>
+            <div id={css['popup-container']}>
               <Outlet />
             </div>
           </ConfigProvider>
           <Footer />
-        </Layout>
+        </div>
       </Layout>
     </>
   );
