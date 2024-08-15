@@ -7,6 +7,7 @@ import enUS from 'antd/es/locale/en_US';
 import frFR from 'antd/es/locale/fr_FR';
 import { PageLoading } from '@/components';
 import { APP_LANGUAGE } from '@/languages/index';
+import { APP_LANGUAGE_KEY } from '@/constants/language';
 import router from './router';
 import LanguageContext from './hooks/language';
 import { getLanguage } from './utils';
@@ -16,15 +17,15 @@ import 'dayjs/locale/fr-ca';
 
 // 将antd的语言包映射到ConfigProvider中
 const languageMap: { [key: string]: any } = {
-  [APP_LANGUAGE.ZH_CN]: zhCN,
-  [APP_LANGUAGE.EN_US]: enUS,
-  [APP_LANGUAGE.FR_FR]: frFR,
+  [APP_LANGUAGE_KEY.ZH_CN]: zhCN,
+  [APP_LANGUAGE_KEY.EN_US]: enUS,
+  [APP_LANGUAGE_KEY.FR_FR]: frFR,
 };
 // 将dayjs的语言包映射到dayjs.locale中
 const dayjsLocaleMap: { [key: string]: any } = {
-  [APP_LANGUAGE.ZH_CN]: 'zh-cn',
-  [APP_LANGUAGE.EN_US]: 'en-gb',
-  [APP_LANGUAGE.FR_FR]: 'fr-ca',
+  [APP_LANGUAGE_KEY.ZH_CN]: 'zh-cn',
+  [APP_LANGUAGE_KEY.EN_US]: 'en-gb',
+  [APP_LANGUAGE_KEY.FR_FR]: 'fr-ca',
 };
 
 export default function App() {
