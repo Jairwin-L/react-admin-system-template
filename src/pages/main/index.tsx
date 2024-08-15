@@ -4,8 +4,8 @@ import css from './index.module.less';
 
 export default function Main() {
   const { formatMessage } = useIntl();
-  const text = 'hello world';
-  const text1 = 'test';
+  const text = '';
+  const text1 = '';
   useEffect(() => {
     console.log('2----->：', 2);
     return () => {

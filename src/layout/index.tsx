@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import type { MenuProps } from 'antd';
 import { ConfigProvider, Layout, Menu } from 'antd';
 import { Outlet } from 'react-router-dom';
+import clsx from 'clsx';
 import { useMenu } from '@/hooks';
 import { Footer } from '@/components';
 import Header from './header';
@@ -45,11 +46,28 @@ export default function AppLayout() {
       onSelectedKeys();
     }
   }, [pathname, collapsed]);
-
+  const siderStyle: React.CSSProperties = {
+    overflow: 'auto',
+    minHeight: '100vh',
+    position: 'fixed',
+    insetInlineStart: 0,
+    top: 0,
+    bottom: 0,
+    scrollbarWidth: 'thin',
+    scrollbarColor: 'unset',
+  };
   return (
     <>
-      <Layout className={css['app-container']}>
-        <Sider trigger={null} collapsed={collapsed} theme="dark">
+      <Layout>
+        <Sider
+          trigger={null}
+          collapsed={collapsed}
+          theme="dark"
+          style={siderStyle}
+          // className={clsx(css['sider-container'], {
+          //   [css['sider-container-collapsed']]: collapsed,
+          // })}
+        >
           <Logo collapsed={collapsed} />
           <Menu
             theme="dark"
@@ -62,14 +80,19 @@ export default function AppLayout() {
             onOpenChange={onOpenChange}
           />
         </Sider>
-        <Layout className={css['layout-container']}>
+        <Layout
+          className={clsx(css['layout-container'], {
+            [css['layout-container-collapsed']]: collapsed,
+          })}
+        >
           <Header
             collapsed={collapsed}
             onSetCollapsed={(visible: boolean) => setCollapsed(visible)}
           />
           <ConfigProvider
             getPopupContainer={(node): HTMLElement => {
-              const popupContainer = document.getElementById('popup_container') || node;
+              const popupContainer: HTMLElement | any =
+                document.getElementById('popup-container') || node;
               if (node) {
                 // 目前只全局处理select和picker分离问题，如其他组件分离此处添加配置
                 if (

@@ -1,6 +1,6 @@
-import ILayoutRender from '@/typings/layout';
 import { useEffect, useState } from 'react';
-import css from '../index.module.less';
+import ILayoutRender from '@/typings/layout';
+import css from './index.module.less';
 // TODO:import/no-unresolved
 // eslint-disable-next-line import/no-unresolved
 import LogoPng from '/logo.png';

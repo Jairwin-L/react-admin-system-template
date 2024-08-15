@@ -2,11 +2,12 @@ import { useNavigate } from 'react-router-dom';
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import { Dropdown } from 'antd';
 import type { MenuProps } from 'antd';
+import clsx from 'clsx';
 import { easyLocalStorage, easySessionStorage } from '@/utils';
 import { APP_LANGUAGE_DROP_DOWN_TEXT } from '@/languages';
 import { LanguageContext } from '@/hooks';
 import { APP_DROP_MENU_ITEMS } from '@/constants/language';
-import css from '../index.module.less';
+import css from './index.module.less';
 // eslint-disable-next-line import/no-unresolved
 import LogoPng from '/logo.png';
 
@@ -43,8 +44,12 @@ export default function Header(props: ILayoutRender.Header | any) {
   };
 
   return (
-    <div className={css['header-wrap']}>
-      <header className={css['header-container']}>
+    <>
+      <header
+        className={clsx(css['header-container'], {
+          [css['header-container-collapsed']]: collapsed,
+        })}
+      >
         <div className={css['header-lf']}>
           <div className={css.collapsed} onClick={() => onSetCollapsed(!collapsed)}>
             {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
@@ -70,6 +75,6 @@ export default function Header(props: ILayoutRender.Header | any) {
           </Dropdown>
         </div>
       </header>
-    </div>
+    </>
   );
 }
