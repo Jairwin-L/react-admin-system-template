@@ -10,26 +10,24 @@ export default function ErrorBoundary() {
     navigate('/main');
   };
   return (
-    <>
-      <AutoCenter>
-        <Result
-          status="error"
-          title="Failed"
-          subTitle={
-            <div>
-              Dang!
-              <p>{error.data}</p>
-            </div>
-          }
-          extra={
-            <>
-              <Button type="primary" onClick={onGoBack}>
-                返回主页
-              </Button>
-            </>
-          }
-        />
-      </AutoCenter>
-    </>
+    <AutoCenter>
+      <Result
+        status="error"
+        title="Failed"
+        subTitle={
+          <div>
+            Dang!
+            <p>{error.data}</p>
+          </div>
+        }
+        extra={
+          <>
+            <Button type="primary" onClick={onGoBack}>
+              返回主页
+            </Button>
+          </>
+        }
+      />
+    </AutoCenter>
   );
 }

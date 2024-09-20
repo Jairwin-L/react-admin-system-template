@@ -3,18 +3,17 @@ import type { MenuProps } from 'antd';
 import { ConfigProvider, Layout, Menu } from 'antd';
 import { Outlet } from 'react-router-dom';
 import clsx from 'clsx';
-import { useMenu } from '@/hooks';
 import { Footer } from '@/components';
 import Header from './header';
 import Logo from './logo';
 import { getOpenKeys } from './util';
+import { items } from './menus';
 import css from './index.module.less';
 
 const { Sider } = Layout;
 
 export default function AppLayout() {
   const navigate = useNavigate();
-  const menuItems = useMenu();
   const { pathname } = location;
   const [selectedKeys, setSelectedKeys] = useState<string[]>([pathname]);
   const [openKeys, setOpenKeys] = useState<string[]>([]);
@@ -75,7 +74,7 @@ export default function AppLayout() {
             triggerSubMenuAction="click"
             openKeys={openKeys}
             selectedKeys={selectedKeys}
-            items={menuItems}
+            items={items}
             onClick={onChangeMenu}
             onOpenChange={onOpenChange}
           />

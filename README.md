@@ -51,3 +51,7 @@ pnpm preview
 [vitejs](https://cn.vitejs.dev/guide)
 
 [dayjs多语言适配locale.json 文件](https://cdn.jsdelivr.net/npm/dayjs@1/locale.json)
+
+## Internationalization国际化
+
+`react-intl`分支

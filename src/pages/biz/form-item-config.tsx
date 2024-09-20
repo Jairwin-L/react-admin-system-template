@@ -1,11 +1,9 @@
 import { DatePicker, Input, Select, Tree } from 'antd';
-import { getIntl } from '@/utils/language';
 import { ColorSelect, WangEditor } from '@/components';
 import { SELECT_OPTION } from '@/constants/antd';
 
 export default function FormItemConfig(props: any) {
   const { model = {} } = props || {};
-  const { formatMessage } = getIntl();
   const { schoolList = [], content = '', menuList = [], selectedKeys = [] } = model || {};
   const onCheck = (checkedKeys: any, info: any) => {
     console.log('onCheck', checkedKeys, info);
@@ -16,18 +14,10 @@ export default function FormItemConfig(props: any) {
 
   return [
     {
-      label: formatMessage({ id: 'table.form.label.name' }),
+      label: '姓名',
       name: 'name',
-      rules: [
-        { required: true, message: formatMessage({ id: 'table.form.input.name.placeholder' }) },
-      ],
-      component: (
-        <Input
-          allowClear
-          placeholder={formatMessage({ id: 'table.form.input.name.placeholder' })}
-          style={{ width: '180px' }}
-        />
-      ),
+      rules: [{ required: true, message: '请输入姓名' }],
+      component: <Input allowClear placeholder="请输入姓名" style={{ width: '180px' }} />,
     },
     {
       label: '年龄',
