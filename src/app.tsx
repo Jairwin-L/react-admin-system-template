@@ -12,7 +12,6 @@ import LanguageContext from './hooks/language';
 import { getLanguage } from './utils';
 import 'dayjs/locale/zh-cn';
 import 'dayjs/locale/en-gb';
-import 'dayjs/locale/fr-ca';
 
 // 将antd的语言包映射到ConfigProvider中
 const languageMap: { [key: string]: any } = {
