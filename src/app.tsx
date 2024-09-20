@@ -4,7 +4,6 @@ import { IntlProvider } from 'react-intl';
 import dayjs from 'dayjs';
 import zhCN from 'antd/es/locale/zh_CN';
 import enUS from 'antd/es/locale/en_US';
-import frFR from 'antd/es/locale/fr_FR';
 import { PageLoading } from '@/components';
 import { APP_LANGUAGE } from '@/languages/index';
 import { APP_LANGUAGE_KEY } from '@/constants/language';
@@ -19,13 +18,11 @@ import 'dayjs/locale/fr-ca';
 const languageMap: { [key: string]: any } = {
   [APP_LANGUAGE_KEY.ZH_CN]: zhCN,
   [APP_LANGUAGE_KEY.EN_US]: enUS,
-  [APP_LANGUAGE_KEY.FR_FR]: frFR,
 };
 // 将dayjs的语言包映射到dayjs.locale中
 const dayjsLocaleMap: { [key: string]: any } = {
   [APP_LANGUAGE_KEY.ZH_CN]: 'zh-cn',
   [APP_LANGUAGE_KEY.EN_US]: 'en-gb',
-  [APP_LANGUAGE_KEY.FR_FR]: 'fr-ca',
 };
 
 export default function App() {
