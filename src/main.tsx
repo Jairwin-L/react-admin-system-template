@@ -1,7 +1,8 @@
 import { Alert, Watermark } from 'antd';
-import { StrictMode } from 'react';
+import { StrictMode, Suspense } from 'react';
 import { isMobile } from 'react-device-detect';
 import { createRoot } from 'react-dom/client';
+import { PageLoading } from './components';
 import { APP_NAME } from './constants/app';
 import { ENV } from './constants/env';
 import 'antd/dist/reset.css';
@@ -39,10 +40,13 @@ const MobileNode = () => (
 
 createRoot(document.getElementById('react-admin-system-template') as HTMLElement).render(
   // * react严格模式
-  <StrictMode>
-    <Watermark content={APP_NAME}>
-      {isMobile ? <Alert message={<MobileNode />} type="warning" showIcon /> : null}
-      <App />
-    </Watermark>
-  </StrictMode>,
+  <Suspense fallback={<PageLoading />}>
+    <StrictMode>
+      <Watermark content={APP_NAME}>
+        {isMobile ? <Alert message={<MobileNode />} type="warning" showIcon /> : null}
+        <App />
+      </Watermark>
+    </StrictMode>
+    ,
+  </Suspense>,
 );
