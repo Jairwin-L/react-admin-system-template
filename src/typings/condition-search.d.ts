@@ -107,7 +107,7 @@ declare namespace IConditionSearch {
   }
   interface MakeExportExcel<T> {
     columns: ColumnsType | IConditionSearch.GenerateHeaders[];
-    listData: T[];
+    dataSource: T;
     rowHeight?: number;
     workSheetName?: string;
   }

@@ -1,7 +1,8 @@
 import { Button, DatePicker, Form, Input, Select } from 'antd';
-import { makeExportExcel } from '@/utils/export-excel';
+// import { makeExportExcel } from '@/utils/export-excel';
 import { SELECT_OPTION } from '@/constants/antd';
 import FileStreamUpload from '../file-stream-upload';
+import ExcelExport from '../excel-export';
 import css from './index.module.less';
 
 const { RangePicker } = DatePicker;
@@ -19,9 +20,6 @@ export default function SearchForm<T>(props: IConditionSearch.SearchForm<T>) {
   } = props;
   const [form] = Form.useForm();
   const navigate = useNavigate();
-  const onExportExcel = () => {
-    makeExportExcel({ columns, listData: downloadList as T[] });
-  };
   const renderSearchItem = (searchItem: IConditionSearch.SearchFormItemType) => {
     const {
       placeholder,
@@ -72,7 +70,9 @@ export default function SearchForm<T>(props: IConditionSearch.SearchForm<T>) {
       </div>
       <div className={css['search-tool']}>
         <div className={css['search-tool-item']}>
-          {exportFlag ? <Button onClick={onExportExcel}>文件导出</Button> : null}
+          {exportFlag ? (
+            <ExcelExport<T> columns={columns} dataSource={downloadList as T[]} />
+          ) : null}
           {fileUploadFlag ? <FileStreamUpload onSearchRefetch={onSearchRefetch} /> : null}
           <Button disabled={loading} type="primary" onClick={() => navigate('./create')}>
             增加

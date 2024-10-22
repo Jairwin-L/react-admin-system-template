@@ -51,6 +51,11 @@ interface IException {
   text?: string;
   onClick?: () => void;
 }
+interface IExcelExport<T> {
+  columns: any[];
+  dataSource: T[];
+  workSheetName?: string;
+}
 
 interface ISelectFile {
   uploadDisabled: boolean;

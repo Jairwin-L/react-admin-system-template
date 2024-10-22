@@ -4,6 +4,9 @@
  * 目的是统一管理对外输出的组件，方便分类
  */
 export { default as Card } from './card';
+export { default as ColorSelect } from './color-select';
+export { default as Exception } from './exception';
+export { default as ExcelExport } from './excel-export';
 export { default as FileStreamUpload } from './file-stream-upload';
 export { default as Footer } from './footer';
 export { default as FooterToolbar } from './footer-toolbar';
@@ -16,11 +19,9 @@ export { default as SearchForm } from './search-form';
 export { default as SearchTable } from './search-table';
 export { default as AutoCenter } from './auto-center';
 export { default as Browser } from './browser';
-export { default as ColorSelect } from './color-select';
 export { default as DetailItem } from './detail-item';
 export { default as DetailLayout } from './detail-layout';
 export { default as ErrorBoundary } from './error-boundary';
-export { default as Exception } from './exception';
 export { default as PageLayout } from './page-layout';
 export { default as PageLoading } from './page-loading';
 export { default as TableAction } from './table-action';

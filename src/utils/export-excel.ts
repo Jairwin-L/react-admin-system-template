@@ -42,8 +42,8 @@ function saveWorkbook(workbook: Workbook, fileName: string) {
  * @module makeExportExcel
  * @description excel文件导出
  */
-export function makeExportExcel<T>(data: IConditionSearch.MakeExportExcel<T>) {
-  const { columns = [], listData = [], rowHeight = 20, workSheetName = 'demo sheet' } = data;
+export function makeExportExcel<T>(props: IConditionSearch.MakeExportExcel<T>) {
+  const { columns = [], dataSource = [], rowHeight = 20, workSheetName = 'demo sheet' } = props;
   // 创建工作簿
   const workbook = new ExcelJs.Workbook();
   // 添加sheet
@@ -53,7 +53,7 @@ export function makeExportExcel<T>(data: IConditionSearch.MakeExportExcel<T>) {
   // 设置列
   worksheet.columns = generateHeaders(columns as IConditionSearch.GenerateHeaders[]);
   // 添加行
-  worksheet.addRows(listData as T[]);
+  worksheet.addRows(dataSource as T[]);
   // 导出excel
   saveWorkbook(workbook, `${workSheetName}.xlsx`);
 }
