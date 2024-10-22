@@ -15,16 +15,8 @@ const v4Token = convertLegacyToken(mapToken);
 
 const resolvePath = (dir: string) => path.join(__dirname, dir);
 
-export default defineConfig(async ({ mode }) => {
-  const devMode = mode === 'development';
+export default defineConfig(() => {
   return {
-    define: {
-      'import.meta.env.VITE_API_URL': JSON.stringify(
-        devMode
-          ? 'https://apifoxmock.com/m1/4020462-3657047-default'
-          : 'https://apifoxmock.com/m1/4020462-3657047-default',
-      ),
-    },
     plugins: [
       viteCompression(),
       react(),
@@ -128,7 +120,7 @@ export default defineConfig(async ({ mode }) => {
       alias: {
         '@': resolvePath('src'),
         '@/pages': resolvePath('src/pages'),
-        '@/constant': resolvePath('src/constant'),
+        '@/constants': resolvePath('src/constants'),
       },
     },
   };

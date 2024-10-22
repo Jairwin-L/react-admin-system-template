@@ -1,5 +1,5 @@
 import { DatePicker, Input, Select, Tree } from 'antd';
-import { ColorSelect, WangEditor } from '@/components';
+import { ColorSelect, ImageCropper, WangEditor } from '@/components';
 import { SELECT_OPTION } from '@/constants/antd';
 
 export default function FormItemConfig(props: any) {
@@ -10,6 +10,9 @@ export default function FormItemConfig(props: any) {
   };
   const onSelect = (checkedKeys: any, info: any) => {
     console.log('onCheck', checkedKeys, info);
+  };
+  const onImageCropper = (src: string) => {
+    console.log(`src----->：`, src);
   };
 
   return [
@@ -48,6 +51,11 @@ export default function FormItemConfig(props: any) {
       label: '生日',
       name: 'date',
       component: <DatePicker />,
+    },
+    {
+      label: '头像',
+      name: 'avatar',
+      component: <ImageCropper onImageCropper={(src) => onImageCropper(src)} />,
     },
     {
       label: '内容',

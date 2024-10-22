@@ -1,9 +1,15 @@
+/**
+ * @file
+ * 这个文件作为组件的目录
+ * 目的是统一管理对外输出的组件，方便分类
+ */
 export { default as Card } from './card';
 export { default as FileStreamUpload } from './file-stream-upload';
 export { default as Footer } from './footer';
 export { default as FooterToolbar } from './footer-toolbar';
 export { default as FormLayout } from './form-layout';
 export { default as IconifyFont } from './iconify-font';
+export { default as ImageCropper } from './image-cropper';
 export { default as ExternalLinkJump } from './link-jump/external-link-jump';
 export { default as InternalLinkJump } from './link-jump/internal-link-jump';
 export { default as SearchForm } from './search-form';

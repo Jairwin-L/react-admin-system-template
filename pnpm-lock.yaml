@@ -36,6 +36,7 @@ specifiers:
   react-color: ^2.19.3
   react-device-detect: ^2.2.3
   react-dom: ^18.2.0
+  react-image-crop: ^11.0.7
   react-router-dom: ^6.22.3
   rollup-plugin-external-globals: ^0.6.1
   rollup-plugin-visualizer: ^5.12.0
@@ -67,6 +68,7 @@ dependencies:
   react-color: registry.npmjs.org/react-color/2.19.3_react@18.3.1
   react-device-detect: registry.npmjs.org/react-device-detect/2.2.3_cm234azwuzzzqtop5cwt2lvnfe
   react-dom: registry.npmjs.org/react-dom/18.2.0_react@18.3.1
+  react-image-crop: registry.npmjs.org/react-image-crop/11.0.7_react@18.3.1
   react-router-dom: registry.npmjs.org/react-router-dom/6.22.3_cm234azwuzzzqtop5cwt2lvnfe
   terser: registry.npmjs.org/terser/5.30.3
 
@@ -9281,6 +9283,17 @@ packages:
       loose-envify: registry.npmjs.org/loose-envify/1.4.0
       react: registry.npmjs.org/react/18.3.1
       scheduler: registry.npmjs.org/scheduler/0.23.0
+    dev: false
+
+  registry.npmjs.org/react-image-crop/11.0.7_react@18.3.1:
+    resolution: {integrity: sha512-ZciKWHDYzmm366JDL18CbrVyjnjH0ojufGDmScfS4ZUqLHg4nm6ATY+K62C75W4ZRNt4Ii+tX0bSjNk9LQ2xzQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/react-image-crop/-/react-image-crop-11.0.7.tgz}
+    id: registry.npmjs.org/react-image-crop/11.0.7
+    name: react-image-crop
+    version: 11.0.7
+    peerDependencies:
+      react: '>=16.13.1'
+    dependencies:
+      react: registry.npmjs.org/react/18.3.1
     dev: false
 
   registry.npmjs.org/react-is/16.13.1:

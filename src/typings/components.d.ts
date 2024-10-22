@@ -77,3 +77,9 @@ interface ITableAction {
   item: any;
   onRefresh: () => void;
 }
+
+interface IImageCropper {
+  minWidth?: number;
+  minHeight?: number;
+  onImageCropper?: (src: string) => void;
+}

@@ -5,3 +5,9 @@ export const SELECT_OPTION = {
   filterOption: (input: any, option: any) =>
     option?.children?.toLowerCase()?.indexOf(input?.toLowerCase()) >= 0,
 };
+export const MODAL_OPTION = {
+  maskClosable: false,
+  keyboard: false,
+  centered: true,
+  forceRender: true,
+};

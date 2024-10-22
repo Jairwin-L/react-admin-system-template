@@ -1,0 +1,25 @@
+.crop-image-src {
+  margin-left: @space-margin-xs;
+}
+.image-cropper-container {
+  height: 500px;
+  .upload-container {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin-bottom: @space-margin-xs;
+    .upload-file {
+      display: none !important;
+    }
+  }
+}
+.preview-canvas {
+  display: flex;
+  gap: @separation-distance;
+  margin-bottom: @separation-distance;
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: @separation-distance;
+  }
+}

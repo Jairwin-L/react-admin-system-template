@@ -3,7 +3,7 @@ declare namespace IUpload {
     onSearchRefetch: () => void;
   }
   type FileStream = any;
-  type Resp = null;
+  type Resp = string;
 }
 
 export = IUpload;

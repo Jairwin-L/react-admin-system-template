@@ -1,6 +1,8 @@
 module.exports = {
   plugins: ['import'],
   rules: {
+    'prefer-arrow-callback': [0, { allowNamedFunctions: 0 }],
+    'react/display-name': 0,
     'no-console': 0,
     'import/no-unresolved': 'error',
     'import/order': [
