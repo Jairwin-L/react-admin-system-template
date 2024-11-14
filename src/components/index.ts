@@ -11,7 +11,7 @@ export { default as FileStreamUpload } from './file-stream-upload';
 export { default as Footer } from './footer';
 export { default as FooterToolbar } from './footer-toolbar';
 export { default as FormLayout } from './form-layout';
-export { default as IconifyFont } from './iconify-font';
+export { default as IconFont } from './icon-font';
 export { default as ImageCropper } from './image-cropper';
 export { default as ExternalLinkJump } from './link-jump/external-link-jump';
 export { default as InternalLinkJump } from './link-jump/internal-link-jump';

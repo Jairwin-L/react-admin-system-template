@@ -1,18 +1,18 @@
 import { PieChartOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
-import { IconifyFont } from '@/components';
+import { IconFont } from '@/components';
 
 type MenuItem = Required<MenuProps>['items'][number];
 export const items: MenuItem[] = [
   {
     label: '工作台',
     key: '/main',
-    icon: <IconifyFont type="asc-dashboard" />,
+    icon: <IconFont type="asc-dashboard" />,
   },
   {
     label: 'Table',
     key: '/biz',
-    icon: <IconifyFont type="asc-dashboard" />,
+    icon: <IconFont type="asc-dashboard" />,
   },
   {
     label: '菜单嵌套',
@@ -68,8 +68,8 @@ export const items: MenuItem[] = [
 ];
 console.log(`items----->：`, items);
 // export const menuItems = [
-//   getMenuItem('工作台', '/main', <IconifyFont type="asc-dashboard" />),
-//   getMenuItem('Table', '/biz', <IconifyFont type="asc-dashboard" />),
+//   getMenuItem('工作台', '/main', <IconFont type="asc-dashboard" />),
+//   getMenuItem('Table', '/biz', <IconFont type="asc-dashboard" />),
 //   getMenuItem('菜单嵌套', '/menu', <PieChartOutlined />, [
 //     getMenuItem('菜单1', '/menu/menu-one', <PieChartOutlined />),
 //     getMenuItem('菜单2', '/menu/menu-two', <PieChartOutlined />, [
