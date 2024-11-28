@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import type { MenuProps } from 'antd';
 import { ConfigProvider, Layout, Menu } from 'antd';
-import { Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router';
 import clsx from 'clsx';
 import { Footer } from '@/components';
 import Header from './header';

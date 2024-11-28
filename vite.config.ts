@@ -5,6 +5,7 @@ import react from '@vitejs/plugin-react';
 import { theme } from 'antd';
 import AutoImport from 'unplugin-auto-import/vite';
 import viteCompression from 'vite-plugin-compression';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 const __dirname = path.dirname(__filename);
 
@@ -20,6 +21,7 @@ export default defineConfig(() => {
     plugins: [
       viteCompression(),
       react(),
+      tsconfigPaths(),
       // TODO:
       // legacy({
       //   targets: [
@@ -32,7 +34,7 @@ export default defineConfig(() => {
       //   ],
       // }),
       AutoImport({
-        imports: ['react', 'react-router-dom'],
+        imports: ['react', 'react-router'],
         dts: true, // 生成 TypeScript 声明
         eslintrc: {
           enabled: true, // <-- this

@@ -1,14 +1,13 @@
 import { ConfigProvider } from 'antd';
-import { RouterProvider } from 'react-router-dom';
+import { RouterProvider } from 'react-router';
 import zhCN from 'antd/es/locale/zh_CN';
-import { PageLoading } from '@/components';
-import router from './router';
+import routes from './routes';
 import 'dayjs/locale/zh-cn';
 
 export default function App() {
   return (
     <ConfigProvider locale={zhCN}>
-      <RouterProvider router={router} fallbackElement={<PageLoading />} />
+      <RouterProvider router={routes} />
     </ConfigProvider>
   );
 }

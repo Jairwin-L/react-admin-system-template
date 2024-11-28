@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router';
 import Layout from '@/layout';
 import { ErrorBoundary } from '@/components';
 import Main from '@/pages/main';
@@ -6,7 +6,7 @@ import Login from '@/pages/auth/login';
 import bizRouter from './pages/biz/router';
 import menuRouter from './pages/menu/router';
 
-const routers = createBrowserRouter([
+const routes = createBrowserRouter([
   { path: 'login', element: <Login /> },
   {
     path: '/',
@@ -16,4 +16,4 @@ const routers = createBrowserRouter([
   },
 ]);
 
-export default routers;
+export default routes;

@@ -47,6 +47,5 @@ createRoot(document.getElementById('react-admin-system-template') as HTMLElement
         <App />
       </Watermark>
     </StrictMode>
-    ,
   </Suspense>,
 );
