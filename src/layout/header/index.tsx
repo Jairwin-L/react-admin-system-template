@@ -26,7 +26,9 @@ export default function Header(props: ILayoutRender.Header | any) {
     if (key === 'SIGN_OUT') {
       // TODO:
       easySessionStorage.clear();
-      navigate('/login');
+      navigate('/login', {
+        replace: true,
+      });
     }
     if (key === 'CHANGE_PASSWORD') {
       // TODO:
@@ -49,8 +51,8 @@ export default function Header(props: ILayoutRender.Header | any) {
         <div className={css['header-ri']}>
           <Dropdown menu={{ items, onClick: onDropMenu }} placement="bottom">
             <div className={css['header-avatar']} onClick={(event) => event.preventDefault()}>
-              <img src={LogoPng} alt="logo" className={css.user_avatar} />
-              <span className={css.username}>Jairwin</span>
+              <img src={LogoPng} alt="logo" className={css['user-avatar']} />
+              <span className={css.username}>admin</span>
             </div>
           </Dropdown>
         </div>

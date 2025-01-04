@@ -1,5 +1,5 @@
 import { Divider, Popconfirm } from 'antd';
-import { destroy } from '@/api/modules/biz';
+import { destroy } from '@/api/methods/biz';
 
 export default function TableAction(props: ITableAction) {
   const navigate = useNavigate();

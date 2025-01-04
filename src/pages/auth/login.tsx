@@ -1,9 +1,10 @@
-import { login } from '@/api/modules/auth';
+import { useState } from 'react';
+import { Button, Form, Input } from 'antd';
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
+import { debounce } from 'lodash-es';
+import { login } from '@/api/methods/auth';
 import { Footer } from '@/components';
 import { APP_NAME } from '@/constants/app';
-import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { Button, Form, Input } from 'antd';
-import { useState } from 'react';
 import css from './index.module.less';
 // TODO:import/no-unresolved
 // eslint-disable-next-line import/no-unresolved
@@ -11,12 +12,15 @@ import LogoPng from '/logo.png';
 
 export default function Page() {
   const navigate = useNavigate();
+  const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
-  const onFinish = async (values: IQueryAuth.Param) => {
-    console.log('values----->：', values);
+  const onFinish = debounce(async (values: IQueryAuth.Param) => {
+    console.log('123----->：', 123);
     setLoading(true);
     try {
-      const { success = false } = await login(values);
+      const resp = await login(values);
+      // @ts-ignore
+      const { success } = resp;
       setLoading(false);
       if (!success) return;
       navigate('/main');
@@ -24,7 +28,7 @@ export default function Page() {
       console.error(`------>`, error);
     }
     setLoading(false);
-  };
+  }, 300);
 
   return (
     <div className={css['login-container']}>
@@ -33,32 +37,31 @@ export default function Page() {
           <img src={LogoPng} alt="logo" className={css['logo-img']} />
           <h3>{APP_NAME}</h3>
         </div>
-        <Form onFinish={onFinish}>
+        <Form onFinish={onFinish} form={form}>
           <Form.Item
             name="username"
             rules={[{ required: true, message: '请输入用户名' }]}
             extra="admin"
           >
-            <Input size="large" placeholder="请输入用户名" prefix={<UserOutlined />} />
+            <Input placeholder="请输入用户名" prefix={<UserOutlined />} />
           </Form.Item>
           <Form.Item
             name="password"
             rules={[{ required: true, message: '请输入密码' }]}
             extra="123456"
           >
-            <Input
-              type="password"
-              size="large"
-              placeholder="请输入密码"
-              prefix={<LockOutlined />}
-            />
-          </Form.Item>
-          <Form.Item>
-            <Button type="primary" size="large" htmlType="submit" block loading={loading}>
-              登录
-            </Button>
+            <Input type="password" placeholder="请输入密码" prefix={<LockOutlined />} />
           </Form.Item>
         </Form>
+        <Button
+          type="primary"
+          htmlType="submit"
+          block
+          loading={loading}
+          onClick={() => form.submit()}
+        >
+          登录
+        </Button>
       </div>
       <Footer />
     </div>

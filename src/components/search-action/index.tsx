@@ -1,5 +1,5 @@
 import { Divider, message, Popconfirm } from 'antd';
-import { destroy } from '@/api/modules/biz';
+import { destroy } from '@/api/methods/biz';
 import css from './index.module.less';
 
 export default function SearchAction<T>(props: IConditionSearch.SearchAction<T>) {

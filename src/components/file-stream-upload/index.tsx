@@ -1,6 +1,6 @@
 import { LoadingOutlined, PaperClipOutlined } from '@ant-design/icons';
 import { Button, Modal, message } from 'antd';
-import { upload } from '@/api/modules/upload';
+import { upload } from '@/api/methods/upload';
 import SelectFile from './file';
 
 export default function FileStreamUpload(props: IFileStreamUpload) {
