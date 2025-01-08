@@ -33,6 +33,9 @@ declare namespace IQueryBiz {
     list: List[];
     pageMeta: CommonPage;
   }
+  interface ModelResp {
+    date: string;
+  }
 }
 
 export = IQueryBiz;

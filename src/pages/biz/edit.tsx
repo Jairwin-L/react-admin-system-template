@@ -9,8 +9,8 @@ export default function Page() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [form] = Form.useForm();
-  const [model, setModel] = useState({
-    date: null,
+  const [model, setModel] = useState<IQueryBiz.ModelResp | undefined>({
+    date: '',
   });
   const [loading, setLoading] = useState<boolean>(false);
   const [pageStatus, setPageStatus] = useState<any>({
@@ -38,12 +38,9 @@ export default function Page() {
         loading: false,
         success,
       });
-      console.log(`data----->：`, data);
-      // @ts-ignore
       setModel(data);
       form.setFieldsValue({
         ...data,
-        // @ts-ignore
         date: dayjs(data?.date) ?? null,
       });
     } catch (error) {
