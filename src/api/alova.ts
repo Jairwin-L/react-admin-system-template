@@ -18,16 +18,19 @@ const alova = createAlova({
     DELETE: 0,
   },
   beforeRequest(method) {
+    // 从easySessionStorage中获取token，若不存在则返回空字符串
     const token: any = easySessionStorage.getItem('token') || '';
     if (token) {
       method.config.headers.Authorization = token;
     }
   },
   responded: async (response) => {
-    console.log(`123----->：`, 123);
     message.destroy();
     const resJson = await response.json();
     const { success } = resJson;
+    if (!success) {
+      message.error(resJson.msg);
+    }
     const resp = {
       success,
       msg: resJson.msg,

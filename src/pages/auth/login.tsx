@@ -1,9 +1,9 @@
-import { useState } from 'react';
 import { Button, Form, Input } from 'antd';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { debounce } from 'lodash-es';
 import { login } from '@/api/methods/auth';
 import { Footer } from '@/components';
+import { easySessionStorage } from '@/utils';
 import { APP_NAME } from '@/constants/app';
 import css from './index.module.less';
 // TODO:import/no-unresolved
@@ -15,14 +15,14 @@ export default function Page() {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
   const onFinish = debounce(async (values: IQueryAuth.Param) => {
-    console.log('123----->：', 123);
     setLoading(true);
     try {
       const resp = await login(values);
       // @ts-ignore
-      const { success } = resp;
+      const { success, data } = resp;
       setLoading(false);
       if (!success) return;
+      easySessionStorage.setItem('token', data);
       navigate('/main');
     } catch (error) {
       console.error(`------>`, error);

@@ -93,10 +93,6 @@ export default defineConfig(() => {
         },
       },
     },
-    esbuild: {
-      drop: ['console'],
-      pure: ['console'],
-    },
     // optimizeDeps: {
     //   exclude: ['react', 'react-dom'],
     // },

@@ -4,6 +4,7 @@ import { ConfigProvider, Layout, Menu } from 'antd';
 import { Outlet } from 'react-router';
 import clsx from 'clsx';
 import { Footer } from '@/components';
+import { easySessionStorage } from '@/utils';
 import Header from './header';
 import Logo from './logo';
 import { getOpenKeys } from './util';
@@ -11,6 +12,17 @@ import { items } from './menus';
 import css from './index.module.less';
 
 const { Sider } = Layout;
+
+const siderStyle: React.CSSProperties = {
+  overflow: 'auto',
+  minHeight: '100vh',
+  position: 'fixed',
+  insetInlineStart: 0,
+  top: 0,
+  bottom: 0,
+  scrollbarWidth: 'thin',
+  scrollbarColor: 'unset',
+};
 
 export default function AppLayout() {
   const navigate = useNavigate();
@@ -45,16 +57,21 @@ export default function AppLayout() {
       onSelectedKeys();
     }
   }, [pathname, collapsed]);
-  const siderStyle: React.CSSProperties = {
-    overflow: 'auto',
-    minHeight: '100vh',
-    position: 'fixed',
-    insetInlineStart: 0,
-    top: 0,
-    bottom: 0,
-    scrollbarWidth: 'thin',
-    scrollbarColor: 'unset',
-  };
+
+  useEffect(() => {
+    const token = easySessionStorage.getItem('token');
+    if (!token) {
+      navigate('/login', {
+        replace: true,
+      });
+    }
+    if (token && pathname === '/') {
+      navigate('/main', {
+        replace: true,
+      });
+    }
+  }, [pathname]);
+
   return (
     <>
       <Layout>
