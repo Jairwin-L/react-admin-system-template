@@ -17,8 +17,8 @@ export async function query(params: IQueryBiz.RequestParam) {
 /**
  * @title 查
  */
-export async function show(params: IQueryBiz.ShowParam) {
-  const res = await alova.Get<IQueryBiz.Resp, IQueryBiz.ShowParam>(BIZ.SHOW, { params });
+export async function show(params: IQueryBiz.ShowParam): Promise<IBaseResp<IQueryBiz.Resp>> {
+  const res = await alova.Get<IBaseResp<IQueryBiz.Resp>, IQueryBiz.ShowParam>(BIZ.SHOW, { params });
   return res;
 }
 
@@ -35,7 +35,7 @@ export async function store(params: IQueryBiz.DelParam) {
 }
 
 // 改
-export async function update(params: IQueryBiz.StoreParam) {
-  const res = await alova.Put<IQueryBiz.Resp, IQueryBiz.StoreParam>(BIZ.DELETE, params);
+export async function update(params: IQueryBiz.StoreParam): Promise<IBaseResp<IQueryBiz.Resp>> {
+  const res = await alova.Put<IBaseResp<IQueryBiz.Resp>, IQueryBiz.StoreParam>(BIZ.DELETE, params);
   return res;
 }

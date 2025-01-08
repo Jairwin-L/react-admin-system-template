@@ -8,7 +8,6 @@ import { easySessionStorage } from '@/utils';
 const alova = createAlova({
   baseURL: BASE_API_URL,
   timeout: 3500,
-  // headers: HEADERS,
   statesHook: ReactHook,
   requestAdapter: adapterFetch(),
   cacheFor: {
@@ -18,10 +17,9 @@ const alova = createAlova({
     DELETE: 0,
   },
   beforeRequest(method) {
-    // 从easySessionStorage中获取token，若不存在则返回空字符串
-    const token: any = easySessionStorage.getItem('token') || '';
-    if (token) {
-      method.config.headers.Authorization = token;
+    const data: any = easySessionStorage.getItem('token') || '';
+    if (data.token) {
+      method.config.headers.Authorization = data.token;
     }
   },
   responded: async (response) => {

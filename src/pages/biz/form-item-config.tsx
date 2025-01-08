@@ -1,5 +1,5 @@
 import { DatePicker, Input, Select, Tree } from 'antd';
-import { ColorSelect, ImageCropper, WangEditor } from '@/components';
+import { ColorSelect, ImageCropper, RichEditor } from '@/components';
 import { SELECT_OPTION } from '@/constants/antd';
 
 export default function FormItemConfig(props: any) {
@@ -60,7 +60,7 @@ export default function FormItemConfig(props: any) {
     {
       label: '内容',
       name: 'content',
-      component: <WangEditor content={content} />,
+      component: <RichEditor content={content} />,
     },
     {
       label: '菜单',

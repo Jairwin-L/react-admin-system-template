@@ -24,7 +24,6 @@ export default function Header(props: ILayoutRender.Header | any) {
   const { onSetCollapsed, collapsed } = props || {};
   const onDropMenu: MenuProps['onClick'] = ({ key }: { key: string }) => {
     if (key === 'SIGN_OUT') {
-      // TODO:
       easySessionStorage.clear();
       navigate('/login', {
         replace: true,

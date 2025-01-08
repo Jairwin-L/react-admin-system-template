@@ -7,7 +7,10 @@ import { AUTH } from '../const';
  * @title 登录
  */
 export async function login(params: IQueryAuth.Param) {
-  const res = await alova.Get<IQueryAuth.Resp>(AUTH.LOGIN, { params });
+  const res = await alova.Get<IQueryAuth.Resp>(AUTH.LOGIN, {
+    params,
+    headers: { 'Content-Type': 'application/json' },
+  });
   return res;
 }
 /**

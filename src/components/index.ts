@@ -26,3 +26,4 @@ export { default as PageLayout } from './page-layout';
 export { default as PageLoading } from './page-loading';
 export { default as TableAction } from './table-action';
 export { default as WangEditor } from './wang-editor';
+export { default as RichEditor } from './rich-editor';
