@@ -4,7 +4,6 @@
  * 目的是统一管理对外输出的组件，方便分类
  */
 export { default as Card } from './card';
-export { default as ColorSelect } from './color-select';
 export { default as Exception } from './exception';
 export { default as ExcelExport } from './excel-export';
 export { default as FileStreamUpload } from './file-stream-upload';

@@ -1,7 +1,13 @@
-import { DatePicker, Input, Select, Tree } from 'antd';
-import { ColorSelect, ImageCropper, RichEditor } from '@/components';
+import { ColorPicker, DatePicker, Input, Select, Tree } from 'antd';
+import { ImageCropper, RichEditor } from '@/components';
 import { SELECT_OPTION } from '@/constants/antd';
 
+/**
+ * FormItemConfig 组件，用于生成表单项的配置数组
+ *
+ * @param props 组件属性
+ * @returns 表单项配置数组
+ */
 export default function FormItemConfig(props: any) {
   const { model = {} } = props || {};
   const { schoolList = [], content = '', menuList = [], selectedKeys = [] } = model || {};
@@ -45,7 +51,7 @@ export default function FormItemConfig(props: any) {
     {
       label: '颜色选择',
       name: 'color',
-      component: <ColorSelect />,
+      component: <ColorPicker showText />,
     },
     {
       label: '生日',

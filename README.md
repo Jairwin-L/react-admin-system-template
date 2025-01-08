@@ -2,10 +2,6 @@
 
 - Vite + React + TS + Antd
 
-## node
-
-v16
-
 ## Env Steps
 
 ```
@@ -55,3 +51,8 @@ pnpm preview
 ## Internationalization国际化
 
 `react-intl`分支
+
+## 组件库
+
+- [Ant Design](https://ant.design/components/overview-cn/)
+- [@wangeditor-next/editor](https://cycleccc.github.io/docs)
