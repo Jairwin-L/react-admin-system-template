@@ -1,15 +1,15 @@
 import type { Store } from 'antd/es/form/interface';
 import { TablePaginationConfig } from 'antd/es/table';
 import { omit } from 'lodash-es';
-import { query } from '@/api/methods/biz';
+import { query } from '@/api/methods/list';
 import { formatDate } from '@/utils';
 import { PAGE_INDEX, PAGE_SIZE } from '@/constants/biz';
 
-export default function useConditionSearch<T>(
+export default function useConditionSearch<T, L>(
   props: IConditionSearch.ConditionSearch,
-): IConditionSearch.ConditionSearchResult<T> {
+): IConditionSearch.ConditionSearchResult<L> {
   const { apiPaths } = props;
-  const [searchResult, setSearchResult] = useState<IConditionSearch.SearchResult<T>>();
+  const [searchResult, setSearchResult] = useState<IConditionSearch.SearchResult<L>>();
   const [loading, setLoading] = useState(false);
   // 页面路由是否首次进入，搜索不是
   const [firstEntryFlag, setFirstEntryFlag] = useState(true);
@@ -20,17 +20,24 @@ export default function useConditionSearch<T>(
   const [searchParams, setSearchParams] = useState({});
   const onTriggerSearch = async () => {
     setLoading(true);
-    const { data, success, msg } = await query(apiPaths.LIST, {
-      ...pageParams,
-      ...searchParams,
-    });
-    const { list, pageMeta } = data || {};
-    setLoading(false);
-    setSearchResult({
-      dataSource: list as T,
-      page: pageMeta as CommonPage,
-      errorMsg: !success ? msg : '',
-    });
+    try {
+      const { data, success, msg } = await query<T>(apiPaths.LIST, {
+        ...pageParams,
+        ...searchParams,
+      });
+      // @ts-ignore
+      const { list, pageMeta } = data;
+      setLoading(false);
+      if (!success) return;
+      setSearchResult({
+        dataSource: list,
+        page: pageMeta,
+        errorMsg: !success ? msg : '',
+      });
+    } catch (error) {
+      console.error(`${apiPaths.LIST}:error----->：`, error);
+      setLoading(false);
+    }
   };
 
   const onPage = (pagination: TablePaginationConfig) => {
@@ -70,7 +77,7 @@ export default function useConditionSearch<T>(
     });
   };
   const onDelRefetch = () => {
-    const { dataSource = [] } = searchResult as IConditionSearch.SearchResult<T[]>;
+    const { dataSource = [] } = searchResult as IConditionSearch.SearchResult<L[]>;
     // TODO:当前页码大于1且当前页码数据等于1，需要验证
     if (pageParams.pageIndex > 1 && dataSource.length === 1) {
       setPageParams({
@@ -88,7 +95,7 @@ export default function useConditionSearch<T>(
   }, [JSON.stringify({ ...pageParams, ...searchParams })]);
 
   return {
-    searchResult: searchResult as IConditionSearch.SearchResult<T>,
+    searchResult: searchResult as IConditionSearch.SearchResult<L>,
     loading,
     onPage,
     onSearch,

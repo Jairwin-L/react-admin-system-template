@@ -1,6 +1,6 @@
 import { Form } from 'antd';
 import { useEffect, useState } from 'react';
-import { show, store } from '@/api/methods/biz';
+import { show, store } from '@/api/methods/list';
 import { FormLayout } from '@/components';
 import formItemConfig from './form-item-config';
 

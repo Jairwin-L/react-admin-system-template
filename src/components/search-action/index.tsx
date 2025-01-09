@@ -1,14 +1,15 @@
 import { Divider, message, Popconfirm } from 'antd';
-import { destroy } from '@/api/methods/biz';
+import { destroy } from '@/api/methods/list';
 import css from './index.module.less';
 
-export default function SearchAction<T>(props: IConditionSearch.SearchAction<T>) {
+export default function SearchAction<L>(props: IConditionSearch.SearchAction<L>) {
   const navigate = useNavigate();
   const { apiPaths, item, onDelRefetch } = props;
+  const { id } = item as L & { id: number };
   const onDelete = async () => {
     try {
       const { success } = await destroy(apiPaths.DESTROY, {
-        id: (item as T & { id: number }).id,
+        id,
       });
       if (success && onDelRefetch) {
         message.success('操作成功');
@@ -20,17 +21,11 @@ export default function SearchAction<T>(props: IConditionSearch.SearchAction<T>)
   };
   return (
     <>
-      <span
-        className={css['primary-color']}
-        onClick={() => navigate(`./detail/${(item as T & { id: number }).id}`)}
-      >
+      <span className={css['primary-color']} onClick={() => navigate(`./detail/${id}`)}>
         查看
       </span>
       <Divider type="vertical" />
-      <span
-        className={css['primary-color']}
-        onClick={() => navigate(`./edit/${(item as T & { id: number }).id}`)}
-      >
+      <span className={css['primary-color']} onClick={() => navigate(`./edit/${id}`)}>
         编辑
       </span>
       <Divider type="vertical" />

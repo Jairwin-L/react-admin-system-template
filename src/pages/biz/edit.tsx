@@ -1,7 +1,7 @@
 import { Form } from 'antd';
 import dayjs from 'dayjs';
 import { useParams } from 'react-router';
-import { show, update } from '@/api/methods/biz';
+import { show, update } from '@/api/methods/list';
 import { FormLayout, PageLayout } from '@/components';
 import FormItemConfig from './form-item-config';
 

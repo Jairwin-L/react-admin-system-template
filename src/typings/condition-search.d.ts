@@ -40,11 +40,11 @@ interface ComponentItem extends BaseSearchItem {
 
 declare namespace IConditionSearch {
   type SearchFormItemType = DateItem | SelectItem | SimpleItem | ComponentItem;
-  interface SearchForm<T> {
+  interface SearchForm<L> {
     searchKeys: SearchFormItemType[];
     loading: boolean;
     columns?: ColumnsType;
-    downloadList?: T;
+    downloadList?: L[];
     exportFlag?: boolean;
     fileUploadFlag?: boolean;
     onSearch?: (values: Store) => void;
@@ -66,13 +66,13 @@ declare namespace IConditionSearch {
     exportFlag?: boolean;
     fileUploadFlag?: boolean;
   }
-  interface SearchResult<T> {
-    dataSource: T;
+  interface SearchResult<L> {
+    dataSource: L;
     page: CommonPage;
     errorMsg: string | undefined;
   }
-  interface ConditionSearchResult<T> {
-    searchResult: SearchResult<T>;
+  interface ConditionSearchResult<L> {
+    searchResult: SearchResult<L>;
     loading: boolean;
     onPage: (pagination: TablePaginationConfig) => void;
     onSearch?: (values: Store) => void;
@@ -83,9 +83,9 @@ declare namespace IConditionSearch {
   interface ConditionSearch {
     apiPaths: { [key: string]: any };
   }
-  interface SearchAction<T> {
+  interface SearchAction<L> {
     apiPaths: { [key: string]: any };
-    item: T;
+    item: L;
     onDelRefetch?: () => void;
   }
   interface TableHeader {

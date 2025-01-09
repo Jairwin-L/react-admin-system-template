@@ -16,7 +16,7 @@ declare namespace IQueryBiz {
     CommonPage;
   interface ShowParam {
     id: number;
-    apiPaths?: 'BIZ';
+    apiPaths?: string;
   }
 
   interface DelParam {
@@ -25,7 +25,7 @@ declare namespace IQueryBiz {
   interface StoreParam {
     id: number;
   }
-  interface Resp {
+  interface Data {
     list: List[];
     pageMeta: CommonPage;
   }

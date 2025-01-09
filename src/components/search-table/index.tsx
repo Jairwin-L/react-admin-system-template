@@ -2,12 +2,14 @@ import { Button, Table } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import { TablePaginationConfig } from 'antd/es/table';
 import { Key } from 'react';
+import { TableRowSelection } from 'antd/es/table/interface';
+import { AnyObject } from 'antd/es/_util/type';
 import PageLoading from '../page-loading';
 import SearchAction from '../search-action';
 import SearchForm from '../search-form';
 import css from './index.module.less';
 
-export default function SearchTable<T>(props: IConditionSearch.SearchTable<T>) {
+export default function SearchTable<T, L>(props: IConditionSearch.SearchTable<L>) {
   const {
     apiPaths,
     useConditionSearch,
@@ -27,12 +29,12 @@ export default function SearchTable<T>(props: IConditionSearch.SearchTable<T>) {
   } = useConditionSearch || {};
   const { dataSource = [], errorMsg = '', page } = searchResult || {};
   const [selectedRowKeys, setSelectedRowKeys] = useState<Key[]>([]);
-  const [downloadList, setDownloadList] = useState<T[]>([]);
-  const onSelectChange = (newSelectedRowKeys: Key[], selectedRows: T[]) => {
+  const [downloadList, setDownloadList] = useState<L[]>([]);
+  const onSelectChange = (newSelectedRowKeys: Key[], selectedRows: L[]) => {
     setSelectedRowKeys(newSelectedRowKeys);
     setDownloadList(selectedRows);
   };
-  const rowSelection = {
+  const rowSelection: TableRowSelection<AnyObject> = {
     selectedRowKeys,
     onChange: onSelectChange,
   };
@@ -45,8 +47,8 @@ export default function SearchTable<T>(props: IConditionSearch.SearchTable<T>) {
         width: 200,
         align: 'center',
         key: 'action',
-        render: (item: T) => {
-          return <SearchAction<T> apiPaths={apiPaths} item={item} onDelRefetch={onDelRefetch} />;
+        render: (item: L) => {
+          return <SearchAction<L> apiPaths={apiPaths} item={item} onDelRefetch={onDelRefetch} />;
         },
       },
     ];
@@ -67,13 +69,13 @@ export default function SearchTable<T>(props: IConditionSearch.SearchTable<T>) {
   return (
     <>
       {searchKeys.length > 0 ? (
-        <SearchForm<T>
+        <SearchForm<L>
           onSearch={onSearch}
           searchKeys={searchKeys}
           loading={loading}
           onSearchRefetch={onSearchRefetch as () => void}
           columns={columns}
-          downloadList={(downloadList.length > 0 ? downloadList : dataSource) as T}
+          downloadList={(downloadList.length > 0 ? downloadList : dataSource) as L[]}
           exportFlag={exportFlag}
           fileUploadFlag={fileUploadFlag}
         />
