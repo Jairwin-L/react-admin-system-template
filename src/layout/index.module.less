@@ -20,12 +20,17 @@
 //   width: 80px;
 // }
 .layout-container {
-  margin-inline-start: 200px;
+  // margin-inline-start: 200px;
+  :global {
+    .ant-layout-sider-children {
+      height: 100vh;
+    }
+  }
   #popup-container {
     margin: 90px 20px 58px 20px;
     min-height: calc(100vh - 160px);
   }
 }
 .layout-container-collapsed {
-  margin-inline-start: 80px;
+  // margin-inline-start: 80px;
 }

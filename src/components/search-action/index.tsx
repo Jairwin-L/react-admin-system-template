@@ -4,11 +4,10 @@ import css from './index.module.less';
 
 export default function SearchAction<T>(props: IConditionSearch.SearchAction<T>) {
   const navigate = useNavigate();
-  const { apiType, item, onDelRefetch } = props || {};
+  const { apiPaths, item, onDelRefetch } = props;
   const onDelete = async () => {
     try {
-      const { success } = await destroy({
-        apiType,
+      const { success } = await destroy(apiPaths.DESTROY, {
         id: (item as T & { id: number }).id,
       });
       if (success && onDelRefetch) {

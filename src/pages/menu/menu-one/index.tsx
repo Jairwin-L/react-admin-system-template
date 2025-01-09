@@ -7,10 +7,10 @@ import searchKeys from './search';
 export default function Page() {
   return (
     <SearchTable<IQueryBiz.List>
-      apiType="BIZ"
+      apiPaths="BIZ"
       searchKeys={searchKeys}
       columns={columns as ColumnsType}
-      useConditionSearch={useConditionSearch<IQueryBiz.List>({ apiType: 'BIZ' })}
+      useConditionSearch={useConditionSearch<IQueryBiz.List>({ apiPaths: 'BIZ' })}
       exportFlag
       fileUploadFlag
     />

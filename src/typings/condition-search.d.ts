@@ -51,7 +51,7 @@ declare namespace IConditionSearch {
     onSearchRefetch: () => void;
   }
   interface SearchTable<T> {
-    apiType: 'BIZ';
+    apiPaths: { [key: string]: any };
     useConditionSearch: {
       loading: boolean;
       searchResult: SearchResult<T>;
@@ -81,10 +81,10 @@ declare namespace IConditionSearch {
     onDelRefetch?: () => void;
   }
   interface ConditionSearch {
-    apiType: 'BIZ';
+    apiPaths: { [key: string]: any };
   }
   interface SearchAction<T> {
-    apiType: 'BIZ';
+    apiPaths: { [key: string]: any };
     item: T;
     onDelRefetch?: () => void;
   }

@@ -9,7 +9,7 @@ import css from './index.module.less';
 
 export default function SearchTable<T>(props: IConditionSearch.SearchTable<T>) {
   const {
-    apiType,
+    apiPaths,
     useConditionSearch,
     columns = [],
     searchKeys = [],
@@ -46,7 +46,7 @@ export default function SearchTable<T>(props: IConditionSearch.SearchTable<T>) {
         align: 'center',
         key: 'action',
         render: (item: T) => {
-          return <SearchAction<T> apiType={apiType} item={item} onDelRefetch={onDelRefetch} />;
+          return <SearchAction<T> apiPaths={apiPaths} item={item} onDelRefetch={onDelRefetch} />;
         },
       },
     ];

@@ -9,11 +9,18 @@ export const BIZ = {
   UPDATE: '/biz',
   STORE: '/biz',
   SHOW: '/biz/query',
-  DELETE: '/biz',
+  DESTROY: '/biz',
 };
 export const DEMO = {
   LIST: '/demo',
   CHART: '/chart',
+};
+export const OVERVIEW = {
+  CHART: '/chart',
+  lineSlider: '/line-slider',
+  lineAnnotation: '/line-annotation',
+  multiStepLine: '/multi-step-line',
+  barGroup: '/bar-group',
 };
 
 export const FILE = {

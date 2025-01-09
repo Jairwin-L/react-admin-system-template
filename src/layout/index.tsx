@@ -13,16 +13,16 @@ import css from './index.module.less';
 
 const { Sider } = Layout;
 
-const siderStyle: React.CSSProperties = {
-  overflow: 'auto',
-  minHeight: '100vh',
-  position: 'fixed',
-  insetInlineStart: 0,
-  top: 0,
-  bottom: 0,
-  scrollbarWidth: 'thin',
-  scrollbarColor: 'unset',
-};
+// const siderStyle: React.CSSProperties = {
+//   overflow: 'auto',
+//   minHeight: '100vh',
+//   position: 'fixed',
+//   insetInlineStart: 0,
+//   top: 0,
+//   bottom: 0,
+//   scrollbarWidth: 'thin',
+//   scrollbarColor: 'unset',
+// };
 
 export default function AppLayout() {
   const navigate = useNavigate();
@@ -76,10 +76,11 @@ export default function AppLayout() {
     <>
       <Layout>
         <Sider
+          collapsible
           trigger={null}
           collapsed={collapsed}
           theme="dark"
-          style={siderStyle}
+          // style={siderStyle}
           // className={clsx(css['sider-container'], {
           //   [css['sider-container-collapsed']]: collapsed,
           // })}

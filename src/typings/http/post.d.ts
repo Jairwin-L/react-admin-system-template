@@ -13,21 +13,17 @@ declare namespace IQueryBiz {
     title?: string;
     price?: number;
   }> &
-    CommonPage & {
-      apiType: 'BIZ';
-    };
+    CommonPage;
   interface ShowParam {
     id: number;
-    apiType?: 'BIZ';
+    apiPaths?: 'BIZ';
   }
 
   interface DelParam {
     id: number;
-    apiType: 'BIZ';
   }
   interface StoreParam {
     id: number;
-    apiType: 'BIZ';
   }
   interface Resp {
     list: List[];

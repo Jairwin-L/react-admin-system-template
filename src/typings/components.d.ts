@@ -25,10 +25,6 @@ interface IAutoCenter {
   children: React.ReactNode;
   className?: string;
 }
-interface IColorSelector {
-  value?: string;
-  onChange?: ((color?: string) => void) | undefined;
-}
 
 interface IDetailItem {
   label: string;

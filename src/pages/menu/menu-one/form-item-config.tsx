@@ -1,5 +1,5 @@
-import { DatePicker, Input, Select, Tree } from 'antd';
-import { ColorSelect, WangEditor } from '@/components';
+import { ColorPicker, DatePicker, Input, Select, Tree } from 'antd';
+import { WangEditor } from '@/components';
 import { SELECT_OPTION } from '@/constants/antd';
 
 export default function formItemConfig(props: any) {
@@ -41,7 +41,7 @@ export default function formItemConfig(props: any) {
     {
       label: '颜色选择',
       name: 'color',
-      component: <ColorSelect />,
+      component: <ColorPicker />,
     },
     {
       label: '生日',

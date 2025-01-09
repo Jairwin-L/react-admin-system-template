@@ -7,11 +7,10 @@ import FormItemConfig from './form-item-config';
 export default function Page() {
   const navigate = useNavigate();
   const [form] = Form.useForm();
-  const [model, setModel] = useState();
+  const [model, setModel] = useState<IQueryBiz.ModelResp>();
   const [loading, setLoading] = useState<boolean>(false);
   // form提交配置
   const onFinish = async (values: IQueryBiz.StoreParam): Promise<void> => {
-    console.log('values----->：', values);
     try {
       setLoading(true);
       const { success } = await store(values);
@@ -25,7 +24,6 @@ export default function Page() {
   const fetchModel = async () => {
     try {
       const { data } = await show({ id: 1 });
-      // @ts-ignore
       setModel(data);
     } catch (error) {
       console.error(`error----->：`, error);
@@ -34,6 +32,7 @@ export default function Page() {
   useEffect(() => {
     fetchModel();
   }, []);
+
   return (
     <FormLayout form={form} onFinish={onFinish} loading={loading}>
       {FormItemConfig({ model }).map((item) => {

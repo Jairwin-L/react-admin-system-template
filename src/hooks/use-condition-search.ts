@@ -5,10 +5,10 @@ import { query } from '@/api/methods/biz';
 import { formatDate } from '@/utils';
 import { PAGE_INDEX, PAGE_SIZE } from '@/constants/biz';
 
-const useConditionSearch = <T>(
+export default function useConditionSearch<T>(
   props: IConditionSearch.ConditionSearch,
-): IConditionSearch.ConditionSearchResult<T> => {
-  const { apiType } = props;
+): IConditionSearch.ConditionSearchResult<T> {
+  const { apiPaths } = props;
   const [searchResult, setSearchResult] = useState<IConditionSearch.SearchResult<T>>();
   const [loading, setLoading] = useState(false);
   // 页面路由是否首次进入，搜索不是
@@ -20,8 +20,7 @@ const useConditionSearch = <T>(
   const [searchParams, setSearchParams] = useState({});
   const onTriggerSearch = async () => {
     setLoading(true);
-    const { data, success, msg } = await query({
-      apiType,
+    const { data, success, msg } = await query(apiPaths.LIST, {
       ...pageParams,
       ...searchParams,
     });
@@ -97,6 +96,4 @@ const useConditionSearch = <T>(
     onSearchRefetch,
     onDelRefetch,
   };
-};
-
-export default useConditionSearch;
+}
