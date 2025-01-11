@@ -14,5 +14,7 @@ declare namespace IQueryAuth {
     username: string;
     password: string;
   }
-  type Resp = List;
+  interface Resp {
+    token: string;
+  }
 }

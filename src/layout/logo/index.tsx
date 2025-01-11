@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import ILayoutRender from '@/typings/layout';
 import css from './index.module.less';
 // TODO:import/no-unresolved

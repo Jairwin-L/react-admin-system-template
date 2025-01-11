@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import type { MenuProps } from 'antd';
 import { ConfigProvider, Layout, Menu } from 'antd';
 import { Outlet } from 'react-router';
@@ -98,7 +97,7 @@ export default function AppLayout() {
             onOpenChange={onOpenChange}
           />
         </Sider>
-        <Layout
+        <div
           className={clsx(css['layout-container'], {
             [css['layout-container-collapsed']]: collapsed,
           })}
@@ -129,7 +128,7 @@ export default function AppLayout() {
             </div>
           </ConfigProvider>
           <Footer />
-        </Layout>
+        </div>
       </Layout>
     </>
   );

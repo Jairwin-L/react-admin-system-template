@@ -18,12 +18,13 @@ export default function Page() {
     setLoading(true);
     try {
       const resp = await login(values);
-      // @ts-ignore
       const { success, data } = resp;
       setLoading(false);
       if (!success) return;
       easySessionStorage.setItem('token', data);
-      navigate('/main');
+      navigate('/main', {
+        replace: true,
+      });
     } catch (error) {
       console.error(`------>`, error);
     }

@@ -1,4 +1,4 @@
-import React, { useState, useRef, ChangeEvent, memo } from 'react';
+import React, { ChangeEvent, memo } from 'react';
 import ReactCrop, { Crop, PixelCrop } from 'react-image-crop';
 import { Button, Modal } from 'antd';
 import { upload } from '@/api/methods/upload';

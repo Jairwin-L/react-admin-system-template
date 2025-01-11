@@ -1,5 +1,4 @@
 import { Form } from 'antd';
-import { useEffect, useState } from 'react';
 import { show, store } from '@/api/methods/list';
 import { FormLayout } from '@/components';
 import FormItemConfig from './form-item-config';
