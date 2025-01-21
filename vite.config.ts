@@ -46,9 +46,12 @@ export default defineConfig(() => {
         transformMixedEsModules: true,
       },
       rollupOptions: {
-        // 确保外部化处理那些你不想打包进库的依赖
-        // external: ['react'],
+        external: ['react', 'react-dom', 'antd'],
         output: {
+          globals: {
+            react: 'React',
+            'react-dom': 'ReactDom',
+          },
           manualChunks(id: string) {
             if (id.includes('node_modules')) {
               return 'vendor';
@@ -122,6 +125,8 @@ export default defineConfig(() => {
         '@': resolvePath('src'),
         '@/pages': resolvePath('src/pages'),
         '@/constants': resolvePath('src/constants'),
+        // react: 'https://esm.run/react@18',
+        // 'react-dom': 'https://esm.run/react-dom@18',
       },
     },
   };
