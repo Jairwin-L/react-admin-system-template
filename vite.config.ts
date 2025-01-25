@@ -46,12 +46,12 @@ export default defineConfig(() => {
         transformMixedEsModules: true,
       },
       rollupOptions: {
-        external: ['react', 'react-dom', 'antd'],
+        // external: ['react', 'react-dom', 'antd'],
         output: {
-          globals: {
-            react: 'React',
-            'react-dom': 'ReactDom',
-          },
+          // globals: {
+          //   react: 'React',
+          //   'react-dom': 'ReactDom',
+          // },
           manualChunks(id: string) {
             if (id.includes('node_modules')) {
               return 'vendor';

@@ -8,6 +8,7 @@ export default function Page() {
   const [form] = Form.useForm();
   const [model, setModel] = useState<IQueryBiz.ModelResp>();
   const [loading, setLoading] = useState<boolean>(false);
+  const formItems = useMemo(() => FormItemConfig({ model }), [model]);
   // form提交配置
   const onFinish = async (values: IQueryBiz.StoreParam): Promise<void> => {
     try {
@@ -34,7 +35,7 @@ export default function Page() {
 
   return (
     <FormLayout form={form} onFinish={onFinish} loading={loading}>
-      {FormItemConfig({ model }).map((item) => {
+      {formItems.map((item) => {
         return (
           <Form.Item key={item.name} label={item.label} name={item.name} colon rules={item.rules}>
             {item?.component ? item.component : null}
