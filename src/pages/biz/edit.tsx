@@ -18,7 +18,7 @@ export default function Page() {
     success: true,
   });
 
-  const onFinish = async (values: IQueryBiz.StoreParam): Promise<void> => {
+  const onFinish = async (values: IQueryBiz.StoreParam) => {
     setLoading(true);
     try {
       const { success } = await update(values);
@@ -60,6 +60,7 @@ export default function Page() {
   useEffect(() => {
     fetchModel();
   }, []);
+
   return (
     <PageLayout {...pageLayout}>
       <FormLayout<IQueryBiz.StoreParam> form={form} onFinish={onFinish} loading={loading}>

@@ -1,5 +1,5 @@
 /**
- * @file 权限
+ * @file alova
  */
 import { type Arg } from 'alova';
 import { HEADERS } from '@/constants';

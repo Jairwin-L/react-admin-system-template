@@ -1,5 +1,6 @@
-import { ColorPicker, DatePicker, Input, Select, Tree } from 'antd';
+import { Cascader, ColorPicker, DatePicker, Input, Select, Tree } from 'antd';
 import { ImageCropper, RichEditor } from '@/components';
+import { genAddressOptions } from '@/utils';
 import { SELECT_OPTION } from '@/constants/antd';
 
 /**
@@ -62,6 +63,16 @@ export default function FormItemConfig(props: any) {
       label: '头像',
       name: 'avatar',
       component: <ImageCropper onImageCropper={(src) => onImageCropper(src)} />,
+    },
+    {
+      label: '地址',
+      name: 'address',
+      component: <Cascader options={genAddressOptions()} />,
+    },
+    {
+      label: '详细地址',
+      name: 'addressDetail',
+      component: <Input />,
     },
     {
       label: '内容',
