@@ -80,7 +80,7 @@
     "stylelint-prettier": "^5.0.2",
     "typescript": "^5.7.2",
     "unplugin-auto-import": "^0.5.11",
-    "vite": "^6.0.7",
+    "vite": "^6.0.11",
     "vite-plugin-cdn-import": "^1.0.1",
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-externals": "^0.1.7",
