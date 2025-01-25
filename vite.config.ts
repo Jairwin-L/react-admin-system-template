@@ -52,6 +52,7 @@ export default defineConfig(() => {
           //   react: 'React',
           //   'react-dom': 'ReactDom',
           // },
+          manualChunks: undefined,
           // manualChunks(id: string) {
           //   if (id.includes('node_modules')) {
           //     return 'vendor';
