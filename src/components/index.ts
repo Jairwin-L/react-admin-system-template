@@ -23,5 +23,4 @@ export { default as DetailLayout } from './detail-layout';
 export { default as ErrorBoundary } from './error-boundary';
 export { default as PageLayout } from './page-layout';
 export { default as PageLoading } from './page-loading';
-export { default as WangEditor } from './wang-editor';
 export { default as RichEditor } from './rich-editor';
