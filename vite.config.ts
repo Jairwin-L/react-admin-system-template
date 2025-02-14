@@ -60,8 +60,8 @@ export default defineConfig(() => {
             if (id.includes('src/pages')) {
               return 'pages';
             }
-            if (id.includes('src/router.tsx')) {
-              return 'router';
+            if (id.includes('src/routes.tsx')) {
+              return 'routes';
             }
             if (id.includes('src/root.tsx')) {
               return 'root';
