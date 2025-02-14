@@ -18,6 +18,9 @@ const resolvePath = (dir: string) => path.join(__dirname, dir);
 
 export default defineConfig(() => {
   return {
+    define: {
+      'process.env.NODE_ENV': '"production"',
+    },
     plugins: [
       // viteCompression(),
       react(),
@@ -54,17 +57,14 @@ export default defineConfig(() => {
           // },
           // manualChunks: undefined,
           manualChunks(id: string) {
-            // if (id.includes('node_modules')) {
-            //   return 'vendor';
-            // }
             if (id.includes('src/pages')) {
               return 'pages';
             }
             if (id.includes('src/router.tsx')) {
               return 'router';
             }
-            if (id.includes('src/main.tsx')) {
-              return 'main';
+            if (id.includes('src/root.tsx')) {
+              return 'root';
             }
             if (id.includes('src/components')) {
               return 'components';
