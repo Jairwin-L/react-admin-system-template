@@ -7,7 +7,7 @@ export default function ErrorBoundary() {
   const navigate = useNavigate();
   console.error('ErrorBoundary----->：', error);
   const onGoBack = () => {
-    navigate('/main');
+    navigate('/main', { replace: true });
   };
   return (
     <AutoCenter>
@@ -17,7 +17,7 @@ export default function ErrorBoundary() {
         subTitle={
           <div>
             Dang!
-            <p>{error.data}</p>
+            <p>{JSON.stringify(error)}</p>
           </div>
         }
         extra={

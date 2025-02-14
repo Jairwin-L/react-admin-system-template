@@ -14,7 +14,8 @@ if (ENV.MODE !== 'production') {
   );
 }
 
-createRoot(document.getElementById('react-admin-system-template') as HTMLElement).render(
+const root = document.getElementById('react-admin-system-template') as HTMLElement;
+createRoot(root).render(
   // * react严格模式
   <Suspense fallback={<PageLoading />}>
     <StrictMode>

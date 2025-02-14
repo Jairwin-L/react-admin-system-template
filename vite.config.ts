@@ -4,7 +4,7 @@ import { convertLegacyToken } from '@ant-design/compatible/lib';
 import react from '@vitejs/plugin-react';
 import { theme } from 'antd';
 import AutoImport from 'unplugin-auto-import/vite';
-import viteCompression from 'vite-plugin-compression';
+// import viteCompression from 'vite-plugin-compression';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
 const __dirname = path.dirname(__filename);
@@ -19,7 +19,7 @@ const resolvePath = (dir: string) => path.join(__dirname, dir);
 export default defineConfig(() => {
   return {
     plugins: [
-      viteCompression(),
+      // viteCompression(),
       react(),
       tsconfigPaths(),
       // TODO:

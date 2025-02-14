@@ -7,7 +7,7 @@ import bizRouter from './pages/biz/router';
 import menuRouter from './pages/menu/router';
 
 const routes = createBrowserRouter([
-  { path: 'login', element: <Login /> },
+  { path: 'login', element: <Login />, errorElement: <ErrorBoundary /> },
   {
     path: '/',
     element: <Layout />,

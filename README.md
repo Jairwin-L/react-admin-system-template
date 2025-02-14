@@ -40,7 +40,7 @@ pnpm preview
 
 - online
 
-[https://react-admin-system-template.jairwin.cn](https://react-admin-system-template.jairwin.cn)
+[http://react-admin-system-template.jairwin.cn](http://react-admin-system-template.jairwin.cn)
 
 ## Link
 
@@ -54,5 +54,5 @@ pnpm preview
 
 ## 组件库
 
-- [Ant Design](https://ant.design/components/overview-cn/)
-- [@wangeditor-next/editor](https://cycleccc.github.io/docs)
+- UI: [Ant Design](https://ant.design/components/overview-cn/)
+- 富文本: [@wangeditor-next/editor](https://cycleccc.github.io/docs)

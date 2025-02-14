@@ -12,7 +12,7 @@ module.exports = {
         pathGroups: [
           {
             pattern: 'react',
-            group: 'builtin',
+            group: 'external',
           },
           {
             pattern: 'antd',
