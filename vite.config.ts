@@ -52,42 +52,42 @@ export default defineConfig(() => {
           //   react: 'React',
           //   'react-dom': 'ReactDom',
           // },
-          manualChunks: undefined,
-          // manualChunks(id: string) {
-          //   if (id.includes('node_modules')) {
-          //     return 'vendor';
-          //   }
-          //   if (id.includes('src/pages')) {
-          //     return 'pages';
-          //   }
-          //   if (id.includes('src/router.tsx')) {
-          //     return 'router';
-          //   }
-          //   if (id.includes('src/main.tsx')) {
-          //     return 'main';
-          //   }
-          //   if (id.includes('src/components')) {
-          //     return 'components';
-          //   }
-          //   if (id.includes('src/utils')) {
-          //     return 'utils';
-          //   }
-          //   if (id.includes('src/constants')) {
-          //     return 'constants';
-          //   }
-          //   if (id.includes('src/api')) {
-          //     return 'api';
-          //   }
-          //   if (id.includes('src/hooks')) {
-          //     return 'hooks';
-          //   }
-          //   if (id.includes('src/typings')) {
-          //     return 'typings';
-          //   }
-          //   if (id.includes('src/styles')) {
-          //     return 'styles';
-          //   }
-          // },
+          // manualChunks: undefined,
+          manualChunks(id: string) {
+            if (id.includes('node_modules')) {
+              return 'vendor';
+            }
+            if (id.includes('src/pages')) {
+              return 'pages';
+            }
+            if (id.includes('src/router.tsx')) {
+              return 'router';
+            }
+            if (id.includes('src/main.tsx')) {
+              return 'main';
+            }
+            if (id.includes('src/components')) {
+              return 'components';
+            }
+            if (id.includes('src/utils')) {
+              return 'utils';
+            }
+            if (id.includes('src/constants')) {
+              return 'constants';
+            }
+            if (id.includes('src/api')) {
+              return 'api';
+            }
+            if (id.includes('src/hooks')) {
+              return 'hooks';
+            }
+            if (id.includes('src/typings')) {
+              return 'typings';
+            }
+            if (id.includes('src/styles')) {
+              return 'styles';
+            }
+          },
           // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
           // globals: {
           //   React: "react",
