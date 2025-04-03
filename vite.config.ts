@@ -18,9 +18,6 @@ const resolvePath = (dir: string) => path.join(__dirname, dir);
 
 export default defineConfig(() => {
   return {
-    define: {
-      'process.env.NODE_ENV': '"production"',
-    },
     plugins: [
       // viteCompression(),
       react(),
