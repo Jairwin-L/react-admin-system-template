@@ -54,12 +54,12 @@ export default defineConfig(() => {
           // },
           // manualChunks: undefined,
           manualChunks(id: string) {
-            if (id.includes('src/pages')) {
-              return 'pages';
-            }
-            if (id.includes('src/routes.tsx')) {
-              return 'routes';
-            }
+            // if (id.includes('src/pages')) {
+            //   return 'pages';
+            // }
+            // if (id.includes('src/routes.tsx')) {
+            //   return 'routes';
+            // }
             if (id.includes('src/root.tsx')) {
               return 'root';
             }

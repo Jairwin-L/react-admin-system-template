@@ -42,6 +42,10 @@ pnpm preview
 
 [http://react-admin-system-template.jairwin.cn](http://react-admin-system-template.jairwin.cn)
 
+## repo
+
+[https://github.com/Jairwin-L/react-admin-system-template](https://github.com/Jairwin-L/react-admin-system-template)
+
 ## Link
 
 [vitejs](https://cn.vitejs.dev/guide)
