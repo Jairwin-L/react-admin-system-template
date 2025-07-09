@@ -75,8 +75,7 @@
     "stylelint-prettier": "^5.0.2",
     "typescript": "^5.7.2",
     "unplugin-auto-import": "^0.5.11",
-    "vite": "^6.0.11",
-    "vite-plugin-compression": "^0.5.1",
+    "vite": "^7.0.3",
     "vite-tsconfig-paths": "^5.1.4"
   },
   "commitlint": {
