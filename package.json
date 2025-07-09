@@ -38,7 +38,7 @@
     "@wangeditor-next/editor": "^5.6.27",
     "@wangeditor-next/editor-for-react": "^1.0.9",
     "alova": "^3.2.7",
-    "antd": "^5.23.0",
+    "antd": "^5.26.4",
     "china-division": "^2.7.0",
     "clsx": "^2.1.1",
     "dayjs": "^1.11.13",
