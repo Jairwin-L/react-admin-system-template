@@ -1,5 +1,4 @@
 export const TEST = 'test';
-export const BASE_API_URL = import.meta.env.VITE_API_URL;
 
 export const MAIN_URL = '/main';
 export const ORIGIN = window.location.origin;

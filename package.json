@@ -22,7 +22,7 @@
     "dev:prod": "vite --mode production",
     "build:dev": "vite build --mode development",
     "build:pre": "tsc && vite build --mode pre",
-    "build": "vite build",
+    "build": "vite build --mode production",
     "ci:eslint": "eslint -f json src -o ./.ci/eslint.json",
     "lint": "eslint . && stylelint \"**/*.{css,less,scss}\"",
     "lint:fix": "prettier --write . && eslint --fix . && stylelint --fix \"**/*.{css,less,scss}\"",

@@ -2,11 +2,10 @@ import { message } from 'antd';
 import { createAlova } from 'alova';
 import adapterFetch from 'alova/fetch';
 import ReactHook from 'alova/react';
-import { BASE_API_URL } from '@/constants';
-import { easySessionStorage } from '@/utils';
+import { API_URL , easySessionStorage } from '@/utils';
 
 const alova = createAlova({
-  baseURL: BASE_API_URL,
+  baseURL: API_URL,
   timeout: 3500,
   statesHook: ReactHook,
   requestAdapter: adapterFetch(),
