@@ -1,8 +1,6 @@
 import { StrictMode, Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
-import { Watermark } from 'antd';
 import { PageLoading } from './components';
-import { APP_NAME } from './constants/app';
 import 'antd/dist/reset.css';
 import App from './app';
 
@@ -18,9 +16,7 @@ createRoot(root).render(
   // * react严格模式
   <Suspense fallback={<PageLoading />}>
     <StrictMode>
-      <Watermark content={APP_NAME}>
-        <App />
-      </Watermark>
+      <App />
     </StrictMode>
   </Suspense>,
 );

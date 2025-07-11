@@ -2,7 +2,7 @@ import { message } from 'antd';
 import { createAlova } from 'alova';
 import adapterFetch from 'alova/fetch';
 import ReactHook from 'alova/react';
-import { API_URL , easySessionStorage } from '@/utils';
+import { API_URL, easySessionStorage } from '@/utils';
 
 const alova = createAlova({
   baseURL: API_URL,

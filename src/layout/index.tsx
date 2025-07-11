@@ -1,7 +1,6 @@
 import type { MenuProps } from 'antd';
 import { ConfigProvider, Layout, Menu } from 'antd';
 import { Outlet } from 'react-router';
-import clsx from 'clsx';
 import { Footer } from '@/components';
 import { easySessionStorage } from '@/utils';
 import Header from './header';
@@ -11,18 +10,6 @@ import { items } from './menus';
 import css from './index.module.less';
 
 const { Sider } = Layout;
-
-const siderStyle: React.CSSProperties = {
-  overflow: 'auto',
-  minHeight: '100vh',
-  position: 'fixed',
-  insetInlineStart: 0,
-  top: 0,
-  bottom: 0,
-  scrollbarWidth: 'thin',
-  scrollbarColor: 'unset',
-  zIndex: 1,
-};
 
 export default function AppLayout() {
   const navigate = useNavigate();
@@ -74,16 +61,13 @@ export default function AppLayout() {
 
   return (
     <>
-      <Layout>
+      <div className={css['layout-wrap']}>
         <Sider
           collapsible
-          trigger={null}
           collapsed={collapsed}
           theme="dark"
-          style={siderStyle}
-          // className={clsx(css['sider-container'], {
-          //   [css['sider-container-collapsed']]: collapsed,
-          // })}
+          className={css['sider-container']}
+          onCollapse={(collapseFlag: boolean) => setCollapsed(collapseFlag)}
         >
           <Logo collapsed={collapsed} />
           <Menu
@@ -97,19 +81,12 @@ export default function AppLayout() {
             onOpenChange={onOpenChange}
           />
         </Sider>
-        <div
-          className={clsx(css['layout-container'], {
-            [css['layout-container-collapsed']]: collapsed,
-          })}
-        >
-          <Header
-            collapsed={collapsed}
-            onSetCollapsed={(visible: boolean) => setCollapsed(visible)}
-          />
+        <div className={css['layout-container']}>
+          <Header />
           <ConfigProvider
             getPopupContainer={(node): HTMLElement => {
               const popupContainer: HTMLElement | any =
-                document.getElementById('popup-container') || node;
+                document.querySelector('.popup-container') || node;
               if (node) {
                 // 目前只全局处理select和picker分离问题，如其他组件分离此处添加配置
                 if (
@@ -123,13 +100,13 @@ export default function AppLayout() {
               return document.body;
             }}
           >
-            <div id={css['popup-container']}>
+            <main className={css['main-container']}>
               <Outlet />
-            </div>
+            </main>
           </ConfigProvider>
           <Footer />
         </div>
-      </Layout>
+      </div>
     </>
   );
 }

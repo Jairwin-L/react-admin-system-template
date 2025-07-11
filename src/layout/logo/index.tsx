@@ -6,14 +6,10 @@ import LogoPng from '/logo.png';
 
 export default function Logo(props: ILayoutRender.Logo) {
   const { collapsed } = props || {};
-  const [isCollapsed, setIsCollapsed] = useState<boolean>(collapsed);
-  useEffect(() => {
-    setIsCollapsed(collapsed);
-  }, [collapsed]);
   return (
     <div className={css['logo-box']}>
       <img src={LogoPng} alt="logo" className={css['logo-img']} />
-      {!isCollapsed ? <span className={css['logo-text']}>RAST</span> : null}
+      {!collapsed ? <span className={css['logo-text']}>RAST</span> : null}
     </div>
   );
 }
