@@ -6,7 +6,7 @@ import MenuTwoTwoOne from './menu-two/menu-two-two/menu-two-two-one';
 import MenuTwoTwoTwo from './menu-two/menu-two-two/menu-two-two-two';
 
 // menu 模块
-const menuRouter = [
+const MENU_ROUTER = [
   {
     path: '/menu/menu-one',
     element: <MenuOne />,
@@ -51,4 +51,4 @@ const menuRouter = [
   },
 ];
 
-export default menuRouter;
+export default MENU_ROUTER;

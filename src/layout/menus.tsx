@@ -64,6 +64,28 @@ export const items: MenuItem[] = [
       },
     ],
   },
+  {
+    label: '系统管理',
+    key: '/system',
+    icon: <IconFont type="asc-dashboard" />,
+    children: [
+      {
+        label: '用户',
+        key: '/system/user',
+        icon: <IconFont type="asc-dashboard" />,
+      },
+      {
+        label: '角色',
+        key: '/system/role',
+        icon: <IconFont type="asc-dashboard" />,
+      },
+      {
+        label: '菜单',
+        key: '/system/menu',
+        icon: <IconFont type="asc-dashboard" />,
+      },
+    ],
+  },
 ];
 
 // export const menuItems = [

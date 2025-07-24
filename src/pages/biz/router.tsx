@@ -4,7 +4,7 @@ import TableDetail from '@/pages/biz/detail';
 import TableEdit from '@/pages/biz/edit';
 
 // 首页模块
-const bizRouter = [
+const BIZ_ROUTER = [
   {
     path: '/biz',
     element: <Table />,
@@ -23,4 +23,4 @@ const bizRouter = [
   },
 ];
 
-export default bizRouter;
+export default BIZ_ROUTER;
