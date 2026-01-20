@@ -51,7 +51,6 @@ declare namespace IConditionSearch {
     onSearchRefetch: () => void;
   }
   interface SearchTable<T> {
-    apiPaths: { [key: string]: any };
     useConditionSearch: {
       loading: boolean;
       searchResult: SearchResult<T>;
@@ -60,11 +59,13 @@ declare namespace IConditionSearch {
       onSearchRefetch?: () => void;
       onDelRefetch?: () => void;
       onPage: (param: TablePaginationConfig) => void;
+      fetchSearchTable?: () => Promise<IConditionSearch.SearchResult<T>>;
     };
     columns: ColumnsType;
     searchKeys?: SearchFormItemType[];
     exportFlag?: boolean;
     fileUploadFlag?: boolean;
+    onDestroy?: (item: T) => Promise<IBaseResp<T>>;
   }
   interface SearchResult<L> {
     dataSource: L;
@@ -80,13 +81,13 @@ declare namespace IConditionSearch {
     onSearchRefetch?: () => void;
     onDelRefetch?: () => void;
   }
-  interface ConditionSearch {
-    apiPaths: { [key: string]: any };
+  interface ConditionSearch<T> {
+    fetchSearchTable?: (params: any) => Promise<IBaseResp<T>>;
   }
-  interface SearchAction<L> {
-    apiPaths: { [key: string]: any };
-    item: L;
+  interface SearchAction<D> {
+    item: D;
     onDelRefetch?: () => void;
+    onDestroy?: (item: D) => Promise<IBaseResp<D>>;
   }
   interface TableHeader {
     header: string;

@@ -28,8 +28,9 @@ export default function Page() {
       navigate(-1);
     } catch (error) {
       console.error(`error----->：`, error);
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
   const fetchModel = async () => {
     try {

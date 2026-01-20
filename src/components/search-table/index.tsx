@@ -11,12 +11,12 @@ import css from './index.module.less';
 
 export default function SearchTable<T, L>(props: IConditionSearch.SearchTable<L>) {
   const {
-    apiPaths,
     useConditionSearch,
     columns = [],
     searchKeys = [],
     exportFlag,
     fileUploadFlag,
+    onDestroy,
   } = props;
   const {
     loading = false,
@@ -48,7 +48,7 @@ export default function SearchTable<T, L>(props: IConditionSearch.SearchTable<L>
         align: 'center',
         key: 'action',
         render: (item: L) => {
-          return <SearchAction<L> apiPaths={apiPaths} item={item} onDelRefetch={onDelRefetch} />;
+          return <SearchAction<L> onDestroy={onDestroy} item={item} onDelRefetch={onDelRefetch} />;
         },
       },
     ];

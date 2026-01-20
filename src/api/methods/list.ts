@@ -7,14 +7,10 @@ import { alovaDelete, alovaGet, alovaPost, alovaPut } from '../method';
  * @title 查
  */
 // 查
-export async function query<T>(
-  path: string,
-  params: IQueryBiz.RequestParam,
-): Promise<IBaseResp<T>> {
-  const res = await alovaGet<IQueryBiz.RequestParam, T>(path, params);
+export async function queryList<T>(params: IQueryBiz.RequestParam): Promise<IBaseResp<T>> {
+  const res = await alovaGet<IQueryBiz.RequestParam, T>(BIZ.LIST, params);
   return res;
 }
-
 /**
  * @title 查
  */
@@ -24,8 +20,8 @@ export async function show(params: IQueryBiz.ShowParam) {
 }
 
 // 删
-export async function destroy(path: string, params: IQueryBiz.DelParam) {
-  const res = await alovaDelete<IQueryBiz.DelParam, IQueryBiz.Data>(path, params);
+export async function destroy(params: IQueryBiz.DelParam) {
+  const res = await alovaDelete<IQueryBiz.DelParam, any>(BIZ.DESTROY, params);
   return res;
 }
 

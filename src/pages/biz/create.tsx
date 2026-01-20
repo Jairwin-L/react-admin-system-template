@@ -11,14 +11,16 @@ export default function Page() {
   const formItems = useMemo(() => FormItemConfig({ model }), [model]);
   // form提交配置
   const onFinish = async (values: IQueryBiz.StoreParam): Promise<void> => {
+    setLoading(true);
     try {
-      setLoading(true);
       const { success } = await store(values);
       setLoading(false);
       if (!success) return;
       navigate(-1);
     } catch (error) {
       console.log(`error----->：`, error);
+    } finally {
+      setLoading(false);
     }
   };
   const fetchModel = async () => {

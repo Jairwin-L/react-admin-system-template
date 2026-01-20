@@ -1,7 +1,7 @@
-import type { ColumnsType } from 'antd/es/table';
+import type { TableProps } from 'antd';
 import { getAddressByCode } from '@/utils';
 
-export const columns: ColumnsType = [
+export const columns: TableProps<IQueryBiz.ListItem>['columns'] = [
   {
     title: 'ID',
     dataIndex: 'id',

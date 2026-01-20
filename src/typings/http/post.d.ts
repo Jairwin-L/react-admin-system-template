@@ -1,7 +1,7 @@
-import type { ColumnsType } from 'antd/es/table';
+import type { TableProps } from 'antd';
 
 declare namespace IQueryBiz {
-  type List = ColumnsType<ListItem>;
+  type List = TableProps<ListItem>['columns'];
   interface ListItem {
     id: number;
     title: string;
