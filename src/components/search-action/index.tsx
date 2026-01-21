@@ -29,11 +29,11 @@ export default function SearchAction<L>(props: IConditionSearch.SearchAction<L>)
       <span className={css['primary-color']} onClick={() => navigate(`./detail/${id}`)}>
         查看
       </span>
-      <Divider type="vertical" />
+      <Divider orientation="vertical" />
       <span className={css['primary-color']} onClick={() => navigate(`./edit/${id}`)}>
         编辑
       </span>
-      <Divider type="vertical" />
+      <Divider orientation="vertical" />
       <Popconfirm
         title="确定要删除？"
         onConfirm={onConfirmDestroy}

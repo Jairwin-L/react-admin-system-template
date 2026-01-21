@@ -1,9 +1,8 @@
 import { Button, Table } from 'antd';
-import type { ColumnsType } from 'antd/es/table';
-import { TablePaginationConfig } from 'antd/es/table';
-import { Key } from 'react';
-import { TableRowSelection } from 'antd/es/table/interface';
-import { AnyObject } from 'antd/es/_util/type';
+import type { ColumnsType , TablePaginationConfig } from 'antd/es/table';
+import type { Key } from 'react';
+import type { TableRowSelection } from 'antd/es/table/interface';
+import type { AnyObject } from 'antd/es/_util/type';
 import PageLoading from '../page-loading';
 import SearchAction from '../search-action';
 import SearchForm from '../search-form';

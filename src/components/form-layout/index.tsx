@@ -5,6 +5,10 @@ import css from './index.module.less';
 
 export default function FormLayout<F>(props: IFormLayout<F>) {
   const { form, onFinish, children, loading } = props;
+  const onFormSubmit = () => {
+    form.submit();
+  };
+
   return (
     <>
       <Card className={css['form-layout']}>
@@ -13,7 +17,7 @@ export default function FormLayout<F>(props: IFormLayout<F>) {
         </Form>
       </Card>
       <FooterToolbar loading={loading}>
-        <Button loading={loading} type="primary" onClick={() => form.submit()}>
+        <Button loading={loading} type="primary" onClick={onFormSubmit}>
           确定
         </Button>
       </FooterToolbar>
