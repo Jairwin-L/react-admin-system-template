@@ -1,3 +1,4 @@
+import type { ReactElement } from 'react';
 import { Cascader, ColorPicker, DatePicker, Input, Select, Tree } from 'antd';
 import { ImageCropper, RichEditor } from '@/components';
 import { genAddressOptions } from '@/utils';
@@ -40,7 +41,7 @@ export default function FormItemConfig(props: any) {
       component: (
         <Select {...SELECT_OPTION} placeholder="请选择学校">
           {schoolList.map(
-            (item: any): JSX.Element => (
+            (item: any): ReactElement => (
               <Select.Option key={item.value} value={item.value}>
                 {item.label}
               </Select.Option>

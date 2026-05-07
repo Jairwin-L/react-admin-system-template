@@ -1,0 +1,13 @@
+server {
+	listen 80;
+	server_name react-admin-system-template.jairwin.cn;
+	error_page 500 502 503 504 /error.html;
+	location = /error.html {
+		root html;
+	}
+	location / {
+		root /opt/code/front-end/react-admin-system-template/dist;
+		index index.html index.htm;
+		try_files $uri $uri/ /index.html;
+	}
+}
