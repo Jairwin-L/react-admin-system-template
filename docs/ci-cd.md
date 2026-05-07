@@ -14,7 +14,7 @@ sudo mkdir -p /var/www/react-admin-system-template/releases
 sudo chown -R deploy:deploy /var/www/react-admin-system-template
 ```
 
-Nginx 可参考 [deploy/nginx.conf.example](../deploy/nginx.conf.example)，关键配置是：
+Nginx 关键配置是：
 
 ```nginx
 root /var/www/react-admin-system-template/current;
