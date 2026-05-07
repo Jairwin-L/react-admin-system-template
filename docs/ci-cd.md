@@ -2,7 +2,7 @@
 
 本项目使用 GitHub Actions 完成 CI/CD：
 
-- CI：在 `pull_request` 和 `main`、`develop` 分支推送时执行 `pnpm lint`、`pnpm typecheck`、`pnpm build`。
+- CI：在 `pull_request` 和 `main`、`dev` 分支推送时执行 `pnpm lint`、`pnpm typecheck`、`pnpm build`。
 - CD：在 `main` 分支推送时构建 `dist`，通过 SSH 上传到服务器，并将 `current` 软链接切换到新版本目录。
 
 ## 服务器准备
