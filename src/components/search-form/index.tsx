@@ -1,3 +1,4 @@
+import type { ReactElement } from 'react';
 import { Button, DatePicker, Form, Input, Select } from 'antd';
 // import { makeExportExcel } from '@/utils/export-excel';
 import { SELECT_OPTION } from '@/constants/antd';
@@ -36,7 +37,7 @@ export default function SearchForm<T>(props: IConditionSearch.SearchForm<T>) {
         return (
           <Select {...SELECT_OPTION} disabled={disabled} placeholder={placeholder}>
             {selectOption.map(
-              (item: IBaseSelectOption): JSX.Element => (
+              (item: IBaseSelectOption): ReactElement => (
                 <Select.Option key={item.value} value={item.value}>
                   {item.label}
                 </Select.Option>

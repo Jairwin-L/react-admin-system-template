@@ -41,6 +41,7 @@ export default function Page() {
   return (
     <>
       <Card title="折线图" className="chart_card">
+        <p>CI/CD Workflow</p>
         <Divider />
         <Line {...lineSliderConfig} />
       </Card>
